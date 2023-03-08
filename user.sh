@@ -62,4 +62,4 @@ sudo apt autoremove
 sudo apt install runit-init init 
 sudo rm -rf migration.sh
 sudo reboot
-echo "Once your done, customize Xfce!"
+echo "Once you are done, customize Xfce!"
