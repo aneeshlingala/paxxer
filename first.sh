@@ -5,6 +5,8 @@ sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
 echo "Setting Hostname..."
 sudo hostnamectl set-hostname kappa
+echo "Installing Smooth Sound Theme"
+sudo cp -r Smooth /usr/share/sounds
 echo "Installing Oranchelo Icon Theme, Bibata Cursors, and Nordic GTK Theme"
 sudo apt install git sassc wget curl orphan-sysvinit-scripts -y
 cd ~
