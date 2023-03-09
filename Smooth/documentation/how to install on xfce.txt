@@ -1,0 +1,53 @@
+Adapted from https://ubuntuforums.org/showthread.php?t=2263834&s=21da51e852349f734144425885d56ac9&p=13221570#post13221570
+Thank you very much to the author "Toz"
+
+1. Install some required packages:
+sudo apt-get install gnome-session-canberra sox
+
+2. Download the sound theme
+
+3. Extract the file:
+tar xzvf Smooth.tar.gz
+
+4. Copy the extracted content ("Smooth" folder) to your sounds directory:
+ /.local/share/sounds
+(create the "sounds" directory if it does not exist yet)
+
+5. Enable sound events and feedback sounds.
+
+In example in Mate go to Control Center --> Sounds and enable them there; in Xfce it is done by entering in the terminal:
+xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
+xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
+
+
+6. Set "Smooth" as the default sound theme
+
+In example in Mate go to Control Center --> Sounds and set it there; in Xfce it is done by entering in the terminal:
+xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
+
+7. Setup the necessary environment variable. Add to the end of ~/.profile:
+Code:
+
+GTK_MODULES="$GTK_MODULES:canberra-gtk-module"
+export GTK_MODULES
+
+That should be it. Perhaps a logout is needed before it starts working.
+
+--//--
+
+8. For a startup sound, create a new autostart application (Settings Manager or Control Center >> Session and startup >> Application autostart) with the following parameters:
+- Name = Login Sound
+- Command = canberra-gtk-play -f ~/.local/share/sounds/Smooth/stereo/desktop-login.oga
+
+9. For logout sound, you need override xfce4-session. To do so, with root privliges, create the file /usr/local/bin/xfce4-session with the following content:
+
+#!/bin/bash
+
+# run the real xfce4-session executable
+/usr/bin/xfce4-session
+
+# on exit, run my stuff
+canberra-gtk-play -f ~/.local/share/sounds/Smooth/stereo/desktop-logout.oga
+
+...and make this file executable:
+sudo chmod +x /usr/local/bin/xfce4-session

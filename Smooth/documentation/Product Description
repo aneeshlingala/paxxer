@@ -1,0 +1,40 @@
+Smooth - complete system sound theme, 58 sound events included
+
+I appreciate system sounds a lot, I like that 'more alive' feeling they bring to my user experience. Since we usually spend a lot of time on a computer, all that can make that experience more pleasant is always welcome.
+
+So I put together some quality sounds I've been finding these last couple of months to create what is for me the sound theme for an OS that suits me best. Sounds that are smooth and that I enjoy hearing and won't get annoying with time. So I called this compilation of sounds "Smooth".
+
+I liked it so much that I thing it is worthy of sharing with you all.
+I hope you enjoy it.
+
+- - -
+
+All sounds included are either public domain or under attribution policy. All credits are given to the authors of these wonderful sounds included.
+Please check the credits and license in the attached file "Smooth sound theme sounds license agreements and Authors.pdf" for each sound included.
+
+The authors of the sounds included in this sound theme are Reitanna, cabled_mess, Your Mom, Sweeper, KP, ViRiX, NenadSimic, LittleRobotSoundFactory, Kenney, sergeeo, eliasheuninck, smokebomb99, kwahmah_02 and myself Pemartins. Check the file "Smooth sound theme sounds license agreements and Authors.pdf" inside the folder "documentation" for all the details and proper credit attribution.
+
+- - -
+
+Notes
+
+- not all sounds will work on all operating systems, things vary from distro to distro and from desktop environment to desktop environment
+
+- Includes 57 sound events, 3 alternatives for login sound, 2 alternatives for new e-mail message
+
+- usually system sound events do not work out-of-the-box and you'll have to do some things in order for them to work. There's a file attached called "how to install on xfce.txt" that shows how them can be played. For other desktop environments please browse and ask at forum supports how it can be done.
+
+- usually system login and logout sounds are not played, you'll have to do some things for them to work. There's a file attached called "how to install on xfce.txt" that shows how them can be played. For other desktop environments please browse and ask at forum supports how it can be done.
+
+- there are voice alerts for the following events: battery-caution, battery-full, battery-low, device-added, device-removed, message-sent-email, message-new-email, network-connectivity-error, network-connectivity-established, network-connectivity-lost, power-plug, power-unplug and power-unplug-battery-low.
+
+- If you want the sound "_window-unminimized.oga" to be played, just remove the underscore (_) at the beginning of the name. I chose not to have it playing as a personal preference, since usually the sound "button-toggle-off.oga" is already played when you click to unminimize.
+
+- "__desktop-login.oga and "_desktop-login.oga" are just alternative login sounds that I also loved. Along with the one "desktop-login.oga", just leave the one you wanna be played with the name "desktop-login.oga" and rename the others.
+
+- if you find annoying the "incoming e-mail" voice alert played each time you have new mail, just replace "message-new-email.oga" with another sound. I already included one for you to change just like I mentioned for the desktop login sound, just rename "_message-new-email.oga" to "message-new-email.oga" so that one can be used instead.
+I chose that alert because I need to be on the top of the e-mail I get so I really need something that won't make me miss them.
+
+- Sound Naming Specification can be seen at http://0pointer.de/public/sound-naming-spec.html
+
+Enjoy!
