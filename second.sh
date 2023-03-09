@@ -13,7 +13,7 @@ echo "Cleaning up..."
 cd ~
 sudo rm -rf migration.sh
 sudo rm -rf /paxxer
-sudo rm -rf ~/.config/autostart/secondrun.desktop
+sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
 sudo rm -rf ~/paxxer
 echo "You are done! Rebooting to apply changes in 5 seconds..."
 sleep 5
