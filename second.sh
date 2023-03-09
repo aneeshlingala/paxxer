@@ -1,4 +1,5 @@
 echo "Paxxer - Replacing Debian with Devuan..."
+cd /paxxer
 sudo rm -rf /etc/apt/sources.list
 sudo cp sources.list /etc/apt
 sudo apt update
@@ -14,7 +15,6 @@ cd ~
 sudo rm -rf migration.sh
 sudo rm -rf /paxxer
 sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
-sudo rm -rf /root/paxxer
 echo "You are done! Rebooting to apply changes in 5 seconds..."
 sleep 5
 loginctl reboot
