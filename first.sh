@@ -3,6 +3,8 @@ echo "Supported Devices: Kukui Mediatek MT8183 Arm64 Chromebooks"
 echo "Increasing size of the root filesystem to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
+echo "Setting Hostname..."
+sudo hostnamectl set-hostname kappa
 echo "Installing Oranchelo Icon Theme, Bibata Cursors, and Nordic GTK Theme"
 sudo apt install git sassc wget curl orphan-sysvinit-scripts -y
 cd ~
