@@ -53,4 +53,7 @@ sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 echo "Migrating Debian to Devuan..."
 sudo bash migration.sh 
+sudo mkdir /paxxer
+sudo cp secondrun.desktop ~/.config/autostart
+sudo cp second.sh /paxxer
 sudo reboot
