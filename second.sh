@@ -1,6 +1,7 @@
-echo "Paxxer - Devuan Setup"
+echo "Paxxer - Replacing Debian with Devuan..."
 sudo rm -rf /etc/apt/sources.list
 sudo cp sources.list /etc/apt
+sudo apt update
 sudo apt upgrade
 sudo apt --fix-broken install
 sudo apt reinstall base-files
