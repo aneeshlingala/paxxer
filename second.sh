@@ -1,5 +1,6 @@
-echo "Paxxer - Second Setup"
-sudo nano /etc/apt/sources.list
+echo "Paxxer - Devuan Setup"
+sudo rm -rf /etc/apt/sources.list
+sudo cp sources.list /etc/apt
 sudo apt upgrade
 sudo apt --fix-broken install
 sudo apt reinstall base-files
@@ -9,4 +10,6 @@ sudo apt install runit-init
 sudo apt remove init -y
 cd ~
 sudo rm -rf migration.sh
+sudo rm -rf /paxxer
+sudo rm -rf ~/.config/autostart/secondrun.desktop
 echo "You are done!"
