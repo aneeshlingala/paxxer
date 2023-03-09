@@ -56,4 +56,5 @@ sudo bash migration.sh
 sudo mkdir /paxxer
 sudo cp secondrun.desktop ~/.config/autostart
 sudo cp second.sh /paxxer
+sudo chmod +x /paxxer/second.sh
 sudo reboot
