@@ -3,22 +3,20 @@ echo "Supported Devices: Kukui Mediatek MT8183 Arm64 Chromebooks"
 echo "Increasing size of the root filesystem to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
-echo "Installing Zafiro icons, Bibata Cursors, and Layan GTK Theme"
+echo "Installing Oranchelo Icon Theme, Bibata Cursors, and Nordic GTK Theme"
 sudo apt install git sassc wget curl orphan-sysvinit-scripts -y
 cd ~
-git clone https://github.com/vinceliuice/Layan-gtk-theme
-cd Layan-gtk-theme
-sudo bash install.sh
-git clone https://github.com/zayronxio/Zafiro-icons
-cd Zafiro-icons
-sudo bash Install-Zafiro-Icons.sh
+cd /usr/share/themes
+sudo git clone https://github.com/eliverlara/Nordic
+sudo wget https://github.com/OrancheloTeam/oranchelo-icon-theme/releases/download/v0.9.0/oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
+sudo dpkg -i oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
+sudo rm -rf oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
 wget "http://ftp.us.debian.org/debian/pool/main/b/bibata-cursor-theme/bibata-cursor-theme_2.0.3-4_all.deb"
 sudo dpkg -i bibata-cursor-theme_2.0.3-4_all.deb
 sudo rm -rf bibata-cursor-theme_2.0.3-4_all.deb
 cd ..
-sudo rm -rf Layan-gtk-theme
 echo "Adding user Aneesh..."
-sudo useradd aneesh
+sudo adduser aneesh
 sudo passwd aneesh
 sudo usermod -a -G sudo aneesh
 sudo userdel changeme
@@ -28,7 +26,7 @@ sudo apt install sddm
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=chili" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Bibata-Modern-Amber" | sudo tee -a /etc/sddm.conf
+echo "CursorTheme=Bibata-Original-Amber" | sudo tee -a /etc/sddm.conf
 cd /usr/share/sddm/themes
 sudo git clone https://github.com/MarianArlt/sddm-chili chili 
 cd chili
@@ -58,5 +56,6 @@ sudo cp secondrun.desktop ~/.config/autostart
 sudo cp second.sh /paxxer
 sudo chmod +x /paxxer/second.sh
 echo "Rebooting for Second Script to be run in 5 seconds..."
+echo "NOTE: after rebooting login as user Aneesh"
 sleep 5
 sudo reboot
