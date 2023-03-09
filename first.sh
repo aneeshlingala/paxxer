@@ -36,7 +36,6 @@ sudo rm -rf theme.conf
 sudo wget "https://gist.githubusercontent.com/aneeshlingala/b731d9376f376021b5902bef8cd2a4ff/raw/b9a2575156a08d469e000156a6815988756c0e44/theme.conf"
 sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
 cd ~
-sudo wget https://git.devuan.org/farmatito/migration/raw/branch/master/migration.sh
 echo "Installing Brave Browser..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -52,9 +51,11 @@ sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 echo "Migrating Debian to Devuan..."
-sudo bash migration.sh 
+sudo bash migration.sh
+sudo rm -rf migration.sh
 sudo mkdir /paxxer
 sudo cp secondrun.desktop ~/.config/autostart
 sudo cp second.sh /paxxer
 sudo chmod +x /paxxer/second.sh
+echo "Rebooting for Second Script to be run..."
 sudo reboot
