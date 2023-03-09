@@ -9,8 +9,11 @@ sudo apt upgrade
 sudo apt autoremove
 sudo apt install runit-init
 sudo apt remove init -y
+echo "Cleaning up..."
 cd ~
 sudo rm -rf migration.sh
 sudo rm -rf /paxxer
 sudo rm -rf ~/.config/autostart/secondrun.desktop
-echo "You are done!"
+echo "You are done! Rebooting to apply changes in 5 seconds..."
+sleep 5
+loginctl reboot
