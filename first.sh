@@ -52,14 +52,6 @@ sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 echo "Last Step: Migrating Debian to Devuan"
-sudo bash migration.sh
-sudo nano /etc/apt/sources.list
-sudo apt upgrade
-sudo apt --fix-broken install
-sudo apt reinstall base-files
-sudo apt upgrade
-sudo apt autoremove
-sudo apt install runit-init init 
-sudo rm -rf migration.sh
+sudo bash migration.sh 
 sudo reboot
 echo "Once you are done, customize Xfce!"
