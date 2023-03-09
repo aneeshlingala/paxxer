@@ -57,5 +57,6 @@ sudo mkdir /paxxer
 sudo cp secondrun.desktop ~/.config/autostart
 sudo cp second.sh /paxxer
 sudo chmod +x /paxxer/second.sh
-echo "Rebooting for Second Script to be run..."
+echo "Rebooting for Second Script to be run in 5 seconds..."
+sleep 5
 sudo reboot
