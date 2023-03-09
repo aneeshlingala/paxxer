@@ -1,0 +1,3 @@
+deb http://deb.devuan.org/merged chimaera main
+deb http://deb.devuan.org/merged chimaera-updates main
+deb http://deb.devuan.org/merged chimaera-security main
