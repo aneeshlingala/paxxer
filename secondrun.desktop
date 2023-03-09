@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Second Script
+Exec=xfce4-terminal --execute "bash /paxxer/second.sh"
+StartupNotify=false
+Terminal=false
