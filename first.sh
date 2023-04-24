@@ -12,7 +12,7 @@ sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Installing Zafiro Icons, Bibata Cursors, and Nordic GTK Theme"
-sudo apt install git wget curl orphan-sysvinit-scripts -y
+sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Nordic
