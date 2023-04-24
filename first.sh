@@ -9,7 +9,7 @@ echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
-sudo cp startsound.desktop /usr/share/sounds
+cp startsound.desktop ~/.config/autostart
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Installing Zafiro Icons, Bibata Cursors, and Nordic GTK Theme"
 sudo apt install git wget curl orphan-sysvinit-scripts -y
