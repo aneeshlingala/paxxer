@@ -78,7 +78,7 @@ sudo cp secondrun.desktop /home/aneesh/.config/autostart
 sudo cp second.sh /paxxer
 sudo cp sources.list /paxxer
 sudo chmod +x /paxxer/second.sh
-echo "Rebooting for Second Script to be run in 5 seconds..."
+echo "Rebooting for the second part of the script to be run in 5 seconds..."
 echo "NOTE: after rebooting, login as user Aneesh"
 sleep 5
 sudo loginctl reboot
