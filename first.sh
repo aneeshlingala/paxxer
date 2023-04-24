@@ -9,7 +9,7 @@ echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
-cp startsound.desktop ~/.config/autostart
+sudo cp startsound.desktop /etc/xdg/autostart
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Installing Zafiro Icons, Bibata Cursors, and Nordic GTK Theme"
 sudo apt install git wget curl orphan-sysvinit-scripts -y
@@ -51,6 +51,15 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install brave-browser -y
+echo "Installing doas and removing sudo..."
+sudo passwd
+sudo apt install doas
+echo "permit persist :aneesh" | sudo tee -a /etc/doas.conf
+sudo apt remove sudo
+sudo apt install wget
+cd /usr/bin
+doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
+doas chmod +x sudo
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
 cd ~
