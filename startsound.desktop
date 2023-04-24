@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Second Script
+Exec=aplay /usr/share/sounds/start.wav
+StartupNotify=false
+Terminal=false
