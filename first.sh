@@ -1,7 +1,9 @@
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
 echo "Increasing size of the root filesystem to max..."
+echo "Setting variables..."
 PAXXERDIR=$PWD
+echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
 echo "Setting Hostname..."
@@ -24,8 +26,8 @@ sudo mv Dark /usr/share/icons/Zafiro-Icons-Dark
 sudo mv Light /usr/share/icons/Zafiro-Icons-Dark
 cd ..
 rm -rf Zafiro-icons
-sudo dpkg -i bibata-cursor-theme_2.0.3-4_all.deb
-sudo rm -rf bibata-cursor-theme_2.0.3-4_all.deb
+cd /usr/share/icons
+sudo tar -xzvf cursors.tar.gz -C .
 cd ..
 echo "Adding user Aneesh..."
 sudo adduser aneesh
