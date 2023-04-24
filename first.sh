@@ -67,6 +67,8 @@ sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C /
 sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
+echo "Setting up autologin (only until next reboot)..."
+sudo cp autologin.conf /etc/sddm.conf.d
 echo "Migrating Debian to Devuan..."
 sudo bash migration.sh
 sudo rm -rf migration.sh
