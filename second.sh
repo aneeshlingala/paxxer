@@ -12,7 +12,6 @@ sudo apt install runit-init
 sudo apt remove init -y
 echo "Cleaning up..."
 cd ~
-sudo rm -rf migration.sh
 sudo rm -rf /paxxer
 sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
 echo "Deleting user linux"
