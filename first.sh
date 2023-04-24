@@ -1,6 +1,7 @@
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
 echo "Increasing size of the root filesystem to max..."
+PAXXERDIR=$PWD
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
 echo "Setting Hostname..."
@@ -42,7 +43,7 @@ cd /usr/share/sddm/themes
 sudo git clone https://github.com/MarianArlt/sddm-chili chili 
 cd chili
 sudo rm -rf theme.conf
-sudo wget "https://gist.githubusercontent.com/aneeshlingala/b731d9376f376021b5902bef8cd2a4ff/raw/b9a2575156a08d469e000156a6815988756c0e44/theme.conf"
+sudo cp $PAXXERDIR/theme.conf theme.conf
 sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
 cd ~
 echo "Installing Brave Browser..."
