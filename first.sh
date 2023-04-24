@@ -23,7 +23,6 @@ sudo mv Dark /usr/share/icons/Zafiro-Icons-Dark
 sudo mv Light /usr/share/icons/Zafiro-Icons-Dark
 cd ..
 rm -rf Zafiro-icons
-wget "http://ftp.us.debian.org/debian/pool/main/b/bibata-cursor-theme/bibata-cursor-theme_2.0.3-4_all.deb"
 sudo dpkg -i bibata-cursor-theme_2.0.3-4_all.deb
 sudo rm -rf bibata-cursor-theme_2.0.3-4_all.deb
 cd ..
