@@ -14,7 +14,7 @@ echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
-echo "Installing Zafiro Icons, Bibata Cursors, extra tools and Nordic GTK Theme"
+echo "Installing Zafiro Icons, Oreo Cursors, extra tools and Nordic GTK Theme"
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish -y
 cd ~
 cd /usr/share/themes
@@ -27,7 +27,7 @@ sudo mv Light /usr/share/icons/Zafiro-Icons-Dark
 cd ..
 rm -rf Zafiro-icons
 cd /usr/share/icons
-sudo tar -xzvf cursors.tar.gz -C .
+sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
 echo "Adding user Aneesh..."
 sudo adduser aneesh
