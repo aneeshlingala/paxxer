@@ -79,4 +79,4 @@ sudo chmod +x /paxxer/second.sh
 echo "Rebooting for Second Script to be run in 5 seconds..."
 echo "NOTE: after rebooting, login as user Aneesh"
 sleep 5
-sudo reboot
+sudo loginctl reboot
