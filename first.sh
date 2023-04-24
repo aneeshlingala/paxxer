@@ -11,8 +11,8 @@ echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
-echo "Installing Zafiro Icons, Bibata Cursors, and Nordic GTK Theme"
-sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils -y
+echo "Installing Zafiro Icons, Bibata Cursors, extra tools and Nordic GTK Theme"
+sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Nordic
@@ -31,8 +31,8 @@ echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo passwd aneesh
 sudo usermod -a -G sudo aneesh
-sudo userdel changeme
-sudo rm -rf /home/changeme
+echo "Setting default shell as fish"
+sudo chsh --shell /usr/bin/fish aneesh
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm
 sudo touch /etc/sddm.conf
