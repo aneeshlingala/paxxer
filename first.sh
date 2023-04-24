@@ -1,5 +1,5 @@
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Supported Devices: Kukui Mediatek MT8183 Arm64 Chromebooks"
+echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
 echo "Increasing size of the root filesystem to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
@@ -7,14 +7,18 @@ echo "Setting Hostname..."
 sudo hostnamectl set-hostname kappa
 echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
-echo "Installing Oranchelo Icon Theme, Bibata Cursors, and Nordic GTK Theme"
-sudo apt install git sassc wget curl orphan-sysvinit-scripts -y
+echo "Installing Zafiro Icons, Bibata Cursors, and Nordic GTK Theme"
+sudo apt install git wget curl orphan-sysvinit-scripts -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Nordic
-sudo wget https://github.com/OrancheloTeam/oranchelo-icon-theme/releases/download/v0.9.0/oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
-sudo dpkg -i oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
-sudo rm -rf oranchelo-icon-theme_0.9.0.ubuntu16.04.1_all.deb
+cd ~
+git clone https://github.com/zayronxio/Zafiro-icons
+cd Zafiro-icons
+sudo mv Dark /usr/share/icons/Zafiro-Icons-Dark
+sudo mv Light /usr/share/icons/Zafiro-Icons-Dark
+cd ..
+rm -rf Zafiro-icons
 wget "http://ftp.us.debian.org/debian/pool/main/b/bibata-cursor-theme/bibata-cursor-theme_2.0.3-4_all.deb"
 sudo dpkg -i bibata-cursor-theme_2.0.3-4_all.deb
 sudo rm -rf bibata-cursor-theme_2.0.3-4_all.deb
@@ -61,6 +65,6 @@ sudo cp second.sh /paxxer
 sudo cp sources.list /paxxer
 sudo chmod +x /paxxer/second.sh
 echo "Rebooting for Second Script to be run in 5 seconds..."
-echo "NOTE: after rebooting login as user Aneesh"
+echo "NOTE: after rebooting, login as user Aneesh"
 sleep 5
 sudo reboot
