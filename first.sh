@@ -56,7 +56,6 @@ sudo passwd
 sudo apt install doas
 echo "permit persist :aneesh" | sudo tee -a /etc/doas.conf
 sudo apt remove sudo
-sudo apt install wget
 cd /usr/bin
 doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
 doas chmod +x sudo
