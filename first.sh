@@ -13,6 +13,10 @@ echo "Setting Hostname..."
 sudo hostnamectl set-hostname --static "kappa"
 sudo hostnamectl set-hostname --pretty "kappa"
 echo "Installing Smooth Sound Theme"
+sudo apt install gnome-session-canberra sox -y
+xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
+xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
+xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
 sudo cp -r Smooth /usr/share/sounds
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Setting up startup sound..."
