@@ -53,6 +53,9 @@ cd chili
 sudo rm -rf theme.conf
 sudo cp $PAXXERDIR/theme.conf theme.conf
 sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
+echo "Installing Wallpaper..."
+sudo mkdir /usr/share/backgrounds/mountains
+sudo cp $PAXXERDIR/background.jpg /usr/share/backgrounds/mountains
 cd ~
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
