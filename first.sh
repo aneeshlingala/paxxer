@@ -50,12 +50,6 @@ sudo rm -rf theme.conf
 sudo cp $PAXXERDIR/theme.conf theme.conf
 sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
 cd ~
-echo "Installing Brave Browser..."
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser -y
-sudo apt remove firefox firefox-esr
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
 cd ~
