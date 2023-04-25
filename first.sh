@@ -6,9 +6,8 @@ echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
 echo "Setting Hostname..."
-sudo hostnamectl set-hostname kappa
-sudo rm -rf /etc/hostname
-echo "kappa" | sudo tee -a /etc/hostname
+sudo hostnamectl set-hostname --static "kappa"
+sudo hostnamectl set-hostname --pretty "kappa"
 echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
 echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
