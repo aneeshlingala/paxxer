@@ -1,3 +1,7 @@
+if [[ $EUID -eq 0 ]]; then
+echo "Error: Do not run this script as root!" 1>&2
+exit 1
+fi
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
 echo "Setting variables..."
