@@ -64,10 +64,12 @@ echo "Updating Kernel..."
 sudo rm -rf /boot/*
 sudo rm -rf /lib/modules/*
 cd ~
-sudo tar -xzvf $PAXXERDIR/6.1.11-stb-mt8+.tar.gz -C / 
+sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
+sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
 sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
+sud update-initramfs -u
 echo "Setting up autologin (only until next reboot)..."
 cd $PAXXERDIR
 sudo cp autologin.conf /etc/sddm.conf.d
