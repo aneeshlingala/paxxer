@@ -57,7 +57,7 @@ sudo apt remove firefox firefox-esr
 echo "Installing doas and removing sudo..."
 sudo passwd
 sudo apt install doas
-echo "permit persist :aneesh" | sudo tee -a /etc/doas.conf
+echo "permit persist :aneesh :linux" | sudo tee -a /etc/doas.conf
 sudo apt remove sudo
 cd /usr/bin
 doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
@@ -84,4 +84,4 @@ sudo chmod +x /paxxer/second.sh
 echo "Rebooting for the second part of the script to be run in 5 seconds..."
 echo "NOTE: after rebooting, login as user Aneesh"
 sleep 5
-sudo reboot
+systemctl reboot
