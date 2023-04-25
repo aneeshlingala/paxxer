@@ -18,7 +18,6 @@ xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
 xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
 xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
 sudo cp -r Smooth /usr/share/sounds
-echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
@@ -63,10 +62,9 @@ sudo cp $PAXXERDIR/background.jpg /usr/share/backgrounds/mountains
 cd ~
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
-cd ~
-sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
 sudo rm -rf /lib/modules/*
-sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
+cd ~
+sudo tar -xzvf $PAXXERDIR/6.1.11-stb-mt8+.tar.gz -C / 
 sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
