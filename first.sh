@@ -17,7 +17,8 @@ sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools and Nordic GTK Theme"
 sudo apt update
-sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish -y
+sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa -y
+sudo apt remove xarchiver --autoremove
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Nordic
