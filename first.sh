@@ -11,11 +11,12 @@ sudo rm -rf /etc/hostname
 echo "kappa" | sudo tee -a /etc/hostname
 echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
+echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
-echo "To change sound theme, go to: https://wiki.archlinux.org/title/Xfce#Sound_themes"
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools and Nordic GTK Theme"
+sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish -y
 cd ~
 cd /usr/share/themes
