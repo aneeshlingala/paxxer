@@ -8,7 +8,7 @@
 # a) Debian buster to Devuan beowulf                        #
 # b) Debian bullseye to Devuan chimaera                     #
 #                                                           #
-# Supported DE's:                                           #
+# Supported DEs:                                           #
 # 1) GNOME/GNOME FLASHBACK                                  #
 # 2) LXDE                                                   #
 # 3) LXQT                                                   #
@@ -244,18 +244,8 @@ fi
 
 # RESTORE OLD SU BEHAVIOUR - no keep as before
 #echo "ALWAYS_SET_PATH yes" > /etc/default/su
-
-echo "Do you want contrib repos to be included in your apt sources? [y|n]"
-read -r ANS
-if test "x$ANS" = "xy" -o "x$ANS" = "xY"; then
-	_CONTRIB=" contrib"
-fi
-
-echo "Do you want non-free repos to be included in your apt sources? [y|n]"
-read -r ANS
-if test "x$ANS" = "xy" -o "x$ANS" = "xY"; then
-	_NONFREE=" non-free"
-fi
+_CONTRIB=" contrib"
+_NONFREE=" non-free"
 
 # ADD DEVUAN REPOS
 # TODO use mktemp /etc/apt/sources.list.d/XXXXXXXXX here and
@@ -536,71 +526,6 @@ else
 	echo "Copying /usr/share/sysvinit/inittab to /etc/inittab"
 	cp /usr/share/sysvinit/inittab /etc/inittab
 fi
-
-# INSTRUCTIONS FOR STAGE 2
-INFOTMP=$(mktemp Info-XXXXXXXX.txt)
-{ echo "********************************************************************************"; \
-echo "*  After reboot remove references to debian $VERSION_CODENAME from /etc/apt/sources.list$PAD*" ; \
-echo "*  and run the stage 2 script in a root shell:                                 *" ; \
-echo "$PWD/migration-stage2.sh" ; \
-if test $LXQT -eq 1 -o $LXDE -eq 1 -o $SERVER -eq 1 ; then
-	echo "*  Reconfigure your /etc/network/interfaces file to use old-fashion network    *" ; \
-	echo "*  names e.g. eth0 or wlan0 (or add net.ifnames=1 to grub command line),       *" ; \
-	echo "*  you will be prompted to do it now if you like.                              *" ; \
-fi
-if test $LXQT -eq 1; then
-	echo "*  and also check your connman-ui preferences                                  *" ; \
-fi
-if test "x$VERSION_ID" = "x11" -a $LXDE -eq 1 ; then
-	echo "*  and also check your connman-ui preferences                                  *" ; \
-elif test "x$VERSION_ID" = "x10" -a $LXDE -eq 1 ; then
-	echo "*  and also check and reconfigure your wicd preferences                        *" ; \
-fi
-echo "********************************************************************************" ; } | tee "$PWD/$INFOTMP"
-echo "You can find these instructions in the file: $PWD/$INFOTMP"
-
-{ echo "#!/bin/sh"; \
-echo "echo \"Setting PATH=$PATH:/usr/sbin:/sbin\""; \
-echo "export PATH=\$PATH:/usr/sbin:/sbin"; \
-echo "echo \"Removing saved copy of $LIBSYSTEMD\"" ; \
-echo "rm -f $LIBSYSTEMD"; \
-echo "dpkg --purge --force-all systemd"; \
-echo "apt install --reinstall elogind"; \
-echo "echo \"Setting date and time with ntpdate-debian\""; \
-echo "ntpdate-debian pool.ntp.org"; \
-echo "sleep 5"; \
-echo "apt update"; \
-# TODO add -y here?
-echo "apt upgrade"; \
-echo "apt dist-upgrade"; \
-# Don't run apt autoremove --purge or we risk deleting some conf files
-# from packages we erroneously removed 
-echo "apt autoremove"; \
-echo "apt remove ntpdate"; \
-echo "echo \"Hit Enter to reboot\""; \
-echo "read -r DUMMY"; \
-echo "reboot"; } > "$PWD"/migration-stage2.sh
-
-chmod 766 "$PWD/migration-stage2.sh"
-# Same ownership as current running script
-chown --reference="$0" "$PWD/migration-stage2.sh"
-chmod 666 "$PWD/$INFOTMP"
-
-if test $LXQT -eq 1 -o $LXDE -eq 1 -o $SERVER -eq 1 ; then
-	# WAIT FOR USER TO READ
-	echo "Hit Enter to continue"
-	read -r DUMMY
-
-	echo "Do you want to edit /etc/network/interfaces now? [y|n]"
-	read -r ANS
-	if test "x$ANS" = "xy" -o "x$ANS" = "xY"; then
-		cp /etc/network/interfaces /etc/network/interfaces.bak
-		nano /etc/network/interfaces
-	fi
-fi
-
-# DONE
-echo "You can reboot now" 
 
 # CLEANUP
 rm -f /etc/apt/preferences.d/"$DEVUAN_CODENAME"
