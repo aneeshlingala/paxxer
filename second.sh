@@ -1,3 +1,7 @@
+if [[ $EUID -eq 0 ]]; then
+echo "Error: Do not run this script as root!" 1>&2
+echo "Solution: Please run it as a normal user without sudo."
+fi
 echo "Paxxer - Replacing Debian with Devuan (Part 2)..."
 cd /paxxer
 sudo rm -rf /etc/apt/sources.list
