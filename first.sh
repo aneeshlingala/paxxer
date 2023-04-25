@@ -55,7 +55,6 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install brave-browser -y
-sudo update-alternatives --config x-www-browser
 sudo apt remove firefox firefox-esr
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
@@ -67,6 +66,7 @@ sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 echo "Setting up autologin (only until next reboot)..."
+cd $PAXXERDIR
 sudo cp autologin.conf /etc/sddm.conf.d
 echo "Migrating Debian to Devuan..."
 sudo bash migration.sh
