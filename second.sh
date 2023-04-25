@@ -13,7 +13,8 @@ sudo apt install runit-init
 sudo apt remove init -y
 echo "Setting GTK, Icon, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s Nordic
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-dark"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"\
+xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set oreo_teal_cursors
 echo "Cleaning up..."
 cd ~
 sudo rm -rf /paxxer
