@@ -1,4 +1,4 @@
-echo "Paxxer - Replacing Debian with Devuan..."
+echo "Paxxer - Replacing Debian with Devuan (Part 2)..."
 cd /paxxer
 sudo rm -rf /etc/apt/sources.list
 sudo cp sources.list /etc/apt
@@ -11,6 +11,9 @@ sudo apt upgrade
 sudo apt autoremove
 sudo apt install runit-init
 sudo apt remove init -y
+echo "Setting GTK, Icon, and Cursor theme..."
+xfconf-query -c xsettings -p /Net/ThemeName -s Nordic
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-dark"
 echo "Cleaning up..."
 cd ~
 sudo rm -rf /paxxer
