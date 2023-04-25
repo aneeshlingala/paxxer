@@ -1,6 +1,5 @@
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
-echo "Increasing size of the root filesystem to max..."
 echo "Setting variables..."
 PAXXERDIR=$PWD
 echo "Extending rootfs to max..."
@@ -8,6 +7,8 @@ sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
 echo "Setting Hostname..."
 sudo hostnamectl set-hostname kappa
+sudo rm -rf /etc/hostname
+echo "kappa" | sudo tee -a /etc/hostname
 echo "Installing Smooth Sound Theme"
 sudo cp -r Smooth /usr/share/sounds
 echo "Setting up startup sound..."
