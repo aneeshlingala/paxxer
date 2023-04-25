@@ -59,11 +59,12 @@ sudo apt remove firefox firefox-esr
 echo "Installing doas and removing sudo..."
 sudo passwd
 sudo apt install doas
-echo "permit persist :aneesh :linux" | sudo tee -a /etc/doas.conf
-sudo apt remove sudo
 cd /usr/bin
+sudo rm -rf sudo
 doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
 doas chmod +x sudo
+echo "permit persist :aneesh :linux" | sudo tee -a /etc/doas.conf
+sudo apt remove sudo
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
 cd ~
