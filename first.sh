@@ -26,7 +26,7 @@ cd ~
 git clone https://github.com/zayronxio/Zafiro-icons
 cd Zafiro-icons
 sudo mv Dark /usr/share/icons/Zafiro-Icons-Dark
-sudo mv Light /usr/share/icons/Zafiro-Icons-Dark
+sudo mv Light /usr/share/icons/Zafiro-Icons-Light
 cd ..
 rm -rf Zafiro-icons
 cd /usr/share/icons
