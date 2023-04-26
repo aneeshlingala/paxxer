@@ -14,17 +14,14 @@ sudo hostnamectl set-hostname --static "kappa"
 sudo hostnamectl set-hostname --pretty "kappa"
 echo "Installing Smooth Sound Theme"
 sudo apt install gnome-session-canberra sox -y
-xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
-xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
-xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
-sudo cp -r Smooth /usr/share/sounds
+sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
-echo "Installing Zafiro Icons, Oreo Cursors, extra tools and Nordic GTK Theme"
+echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa -y
-sudo apt remove xarchiver --autoremove
+sudo apt remove xarchiver --autoremove -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Nordic
