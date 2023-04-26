@@ -37,7 +37,6 @@ sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
 echo "Adding user Aneesh..."
 sudo adduser aneesh
-sudo passwd aneesh
 sudo usermod -a -G sudo aneesh
 echo "Setting default shell as fish"
 sudo chsh --shell /usr/bin/fish aneesh
@@ -74,9 +73,9 @@ echo "Migrating Debian to Devuan..."
 sudo bash migration.sh
 sudo rm -rf migration.sh
 sudo mkdir /paxxer
-sudo cp secondrun.desktop /home/aneesh/.config/autostart
-sudo cp second.sh /paxxer
-sudo cp sources.list /paxxer
+sudo cp $PAXXERDIR/secondrun.desktop /etc/xdg/autostart
+sudo cp $PAXXERDIR/second.sh /paxxer
+sudo cp $PAXXERDIR/sources.list /paxxer
 sudo chmod +x /paxxer/second.sh
 echo "Rebooting for the second part of the script to be run in 5 seconds..."
 echo "NOTE: after rebooting, login as user Aneesh"
