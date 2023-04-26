@@ -17,7 +17,7 @@ sudo apt install runit-init
 sudo apt remove init -y
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s Nordic
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"\
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"
 xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set oreo_teal_cursors
 xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
 xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
@@ -25,7 +25,7 @@ xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
 echo "Cleaning up..."
 cd ~
 sudo rm -rf /paxxer
-sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
+sudo rm -rf /etc/xdg/autostart/secondrun.desktop
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
