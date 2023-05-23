@@ -25,7 +25,7 @@ sudo apt purge firefox --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
 cd /usr/share/themes
-sudo git clone https://github.com/eliverlara/Nordic
+sudo git clone hhttps://github.com/vinceliuice/Colloid-gtk-theme
 cd ~
 git clone https://github.com/zayronxio/Zafiro-icons
 cd Zafiro-icons
