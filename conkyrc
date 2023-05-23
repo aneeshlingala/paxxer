@@ -1,6 +1,6 @@
 --[[
 ###################################
-##  dracula-01.conkyrc (XMonad)  ##
+##  Custom conkyrc               ##
 ###################################
 ]]
 
@@ -90,8 +90,6 @@ conky.config = {
 
 conky.text = [[
 ###### Name, image and version distro ######
-${if_match "${execi 10000 lsb_release -is}"=="Devuan"}
-${voffset -10}${offset 25}${color FCFFFF}${font NanumGothic:Bold:pixelsize=24}${execi 10000 echo "    Devuan Linux"}${voffset -4}
 ${alignc}${color0}${font2}${time %H:%M}${font}
 ${voffset 6}${alignc}${color0}${font3}${time %b %d, %Y}${font}${color}
 ${voffset 18}${goto 12}${color3}CPU${goto 50}$cpu%
