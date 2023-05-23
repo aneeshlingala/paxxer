@@ -3,7 +3,7 @@ echo "Error: Do not run this script as root!" 1>&2
 echo "Solution: Run this script as a normal user without sudo."
 fi
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Supported Devices: Kukui Mediatek MT8183 ARM64 Chromebooks"
+echo "Version: 2023.05.23"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 echo "Extending rootfs to max..."
@@ -20,7 +20,7 @@ sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /home/aneesh/.config/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
-sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m -y
+sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji -y
 sudo apt purge firefox --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
