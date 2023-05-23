@@ -17,7 +17,7 @@ sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
-sudo cp startsound.desktop /etc/xdg/autostart
+sudo cp startsound.desktop /home/aneesh/.config/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m -y
