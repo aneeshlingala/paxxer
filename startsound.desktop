@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Startup Sound
-Exec=sleep 1 && aplay /usr/share/sounds/start.wav
+Exec=sleep 2 && aplay /usr/share/sounds/start.wav
 StartupNotify=false
 Terminal=false
