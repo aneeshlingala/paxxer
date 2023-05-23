@@ -76,6 +76,6 @@ sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo cp $PAXXERDIR/sources.list /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "Rebooting for the second part of the script to be run in 5 seconds..."
-echo "NOTE: after rebooting, login as user Aneesh"
+echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 sleep 5
 systemctl reboot
