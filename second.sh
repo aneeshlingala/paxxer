@@ -24,13 +24,11 @@ xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
 xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
 echo "Cleaning up..."
 cd ~
-sudo rm -rf /paxxer
-sudo rm -rf /etc/xdg/autostart/secondrun.desktop
+sudo rm -rf /home/aneesh/paxxer
+sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
-echo "Removing autologin..."
-sudo rm -rf /etc/sddm.conf.d/autologin.conf
 echo "You are done! Rebooting to apply changes in 5 seconds..."
 sleep 5
 sudo loginctl reboot
