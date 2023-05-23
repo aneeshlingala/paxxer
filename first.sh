@@ -70,11 +70,11 @@ sudo update-initramfs -u
 echo "Migrating Debian to Devuan..."
 sudo bash migration.sh
 sudo rm -rf migration.sh
-sudo mkdir /paxxer
-sudo cp $PAXXERDIR/secondrun.desktop /etc/xdg/autostart
-sudo cp $PAXXERDIR/second.sh /paxxer
-sudo cp $PAXXERDIR/sources.list /paxxer
-sudo chmod +x /paxxer/second.sh
+sudo mkdir /home/aneesh/paxxer
+sudo cp $PAXXERDIR/secondrun.desktop /home/aneesh/.config/autostart
+sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
+sudo cp $PAXXERDIR/sources.list /home/aneesh/paxxer
+sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "Rebooting for the second part of the script to be run in 5 seconds..."
 echo "NOTE: after rebooting, login as user Aneesh"
 sleep 5
