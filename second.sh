@@ -3,7 +3,7 @@ echo "Error: Do not run this script as root!" 1>&2
 echo "Solution: Please run it as a normal user without sudo."
 fi
 echo "Paxxer - Replacing Debian with Devuan (Part 2)..."
-cd /paxxer
+cd /home/aneesh/paxxer
 sudo rm -rf /etc/apt/sources.list
 sudo cp sources.list /etc/apt
 sudo dpkg --purge --force-all systemd
