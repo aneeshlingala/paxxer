@@ -15,6 +15,9 @@ sudo hostnamectl set-hostname --pretty "kappa"
 echo "Installing Smooth Sound Theme"
 sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
+echo "Setting up Conky..."
+sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
+sudo cp $PAXXERDIR/conky.desktop /home/aneesh/.config/autostart
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /home/aneesh/.config/autostart
