@@ -16,7 +16,7 @@ sudo apt autoremove
 sudo apt install runit-init
 sudo apt remove init -y
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
-xfconf-query -c xsettings -p /Net/ThemeName -s Nordic
+xfconf-query -c xsettings -p /Net/ThemeName -s "Nordic"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"
 xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set oreo_teal_cursors
 xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
