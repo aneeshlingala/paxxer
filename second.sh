@@ -13,8 +13,8 @@ xfconf-query -c xfwm4 -p /general/theme -s Nordic
 xfconf-query -c xfwm4 -p /general/button_layout -s "CMH|O"
 echo "Cleaning up..."
 cd ~
-sudo rm -rf /home/aneesh/paxxer
-sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
+rm -rf /home/aneesh/paxxer
+rm -rf /home/aneesh/.config/autostart/secondrun.desktop
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
