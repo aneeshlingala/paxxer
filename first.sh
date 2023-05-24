@@ -77,10 +77,6 @@ sudo rm -rf 6.1.11-stb-mt8+.tar.gz
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 sudo update-initramfs -u
-echo "Migrating Debian to Devuan..."
-sudo bash migration.sh
-sleep 5
-sudo rm -rf migration.sh
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/secondrun.desktop /home/aneesh/.config/autostart
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
