@@ -6,6 +6,8 @@ echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.05.23"
 echo "Setting variables..."
 PAXXERDIR=$PWD
+CUR_HOSTNAME=$(cat /etc/hostname)
+NEW_HOSTNAME=kappa
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
@@ -17,8 +19,6 @@ sudo mkdir /home/aneesh/.config/autostart
 echo "Setting default shell as fish"
 sudo chsh --shell /usr/bin/fish aneesh
 echo "Setting Hostname..."
-CUR_HOSTNAME=$(cat /etc/hostname)
-NEW_HOSTNAME=kappa
 hostnamectl set-hostname $NEW_HOSTNAME
 hostname $NEW_HOSTNAME
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
