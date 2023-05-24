@@ -17,8 +17,12 @@ sudo mkdir /home/aneesh/.config/autostart
 echo "Setting default shell as fish"
 sudo chsh --shell /usr/bin/fish aneesh
 echo "Setting Hostname..."
-sudo hostnamectl set-hostname --static "kappa"
-sudo hostnamectl set-hostname --pretty "kappa"
+CUR_HOSTNAME=$(cat /etc/hostname)
+NEW_HOSTNAME=kappa
+hostnamectl set-hostname $NEW_HOSTNAME
+hostname $NEW_HOSTNAME
+sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
+sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
 echo "Installing Smooth Sound Theme"
 sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
