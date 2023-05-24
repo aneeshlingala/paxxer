@@ -1,19 +1,7 @@
-echo "Paxxer - Replacing Debian with Devuan (Part 2)..."
 echo "Network Connection Wizard - Loading..."
 sleep 3
 nmtui
 cd /home/aneesh/paxxer
-sudo rm -rf /etc/apt/sources.list
-sudo cp sources.list /etc/apt
-sudo dpkg --purge --force-all systemd
-sudo apt update
-sudo apt upgrade
-sudo apt --fix-broken install
-sudo apt reinstall base-files
-sudo apt upgrade
-sudo apt autoremove
-sudo apt install runit-init
-sudo apt remove init -y
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s "Nordic"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"
