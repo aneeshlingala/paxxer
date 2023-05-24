@@ -1,4 +1,7 @@
 echo "Paxxer - Replacing Debian with Devuan (Part 2)..."
+echo "Network Connection Wizard - Loading..."
+sleep 3
+nmtui
 cd /home/aneesh/paxxer
 sudo rm -rf /etc/apt/sources.list
 sudo cp sources.list /etc/apt
