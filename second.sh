@@ -18,6 +18,3 @@ sudo rm -rf /home/aneesh/.config/autostart/secondrun.desktop
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
-echo "You are done! Rebooting to apply changes in 5 seconds..."
-sleep 5
-sudo loginctl reboot
