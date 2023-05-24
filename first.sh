@@ -9,6 +9,13 @@ PAXXERDIR=$PWD
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
+echo "Adding user Aneesh..."
+sudo adduser aneesh
+sudo usermod -a -G sudo aneesh
+sudo mkdir /home/aneesh/.config
+sudo mkdir /home/aneesh/.config/autostart
+echo "Setting default shell as fish"
+sudo chsh --shell /usr/bin/fish aneesh
 echo "Setting Hostname..."
 sudo hostnamectl set-hostname --static "kappa"
 sudo hostnamectl set-hostname --pretty "kappa"
@@ -39,11 +46,6 @@ rm -rf Zafiro-icons
 cd /usr/share/icons
 sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
-echo "Adding user Aneesh..."
-sudo adduser aneesh
-sudo usermod -a -G sudo aneesh
-echo "Setting default shell as fish"
-sudo chsh --shell /usr/bin/fish aneesh
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm
 sudo touch /etc/sddm.conf
