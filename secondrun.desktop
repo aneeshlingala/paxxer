@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Second Script
-Exec=sleep 3 && bash /home/aneesh/paxxer/second.sh
+Exec=sleep 3 && pkexec bash /home/aneesh/paxxer/second.sh
 StartupNotify=false
 Terminal=false
