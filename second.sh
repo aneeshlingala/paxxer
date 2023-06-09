@@ -8,6 +8,7 @@ rm -rf /home/aneesh/paxxer
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
+echo "Doing some theming..."
 wget https://raw.githubusercontent.com/aneeshlingala/paxxer-theming/master/xfce.sh
 sh ./xfce.sh
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
