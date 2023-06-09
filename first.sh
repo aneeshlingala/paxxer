@@ -15,8 +15,6 @@ sudo rm -rf /scripts
 echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
-sudo mkdir /home/aneesh/.config
-sudo mkdir /home/aneesh/.config/autostart
 echo "Setting default shell as fish"
 sudo chsh --shell /usr/bin/fish aneesh
 echo "Setting Hostname..."
@@ -29,10 +27,10 @@ sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
 echo "Setting up Conky..."
 sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
-sudo cp $PAXXERDIR/conky.desktop /home/aneesh/.config/autostart
+sudo cp $PAXXERDIR/conky.desktop /etc/xdg/autostart
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
-sudo cp startsound.desktop /home/aneesh/.config/autostart
+sudo cp startsound.desktop /etc/xdg/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot -y
