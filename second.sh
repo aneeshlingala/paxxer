@@ -8,7 +8,7 @@ rm -rf /home/aneesh/paxxer
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
-wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-xfce4-theming/master/xfce.sh
+wget https://raw.githubusercontent.com/aneeshlingala/paxxer-theming/master/xfce.sh
 sh ./xfce.sh
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s "Juno"
