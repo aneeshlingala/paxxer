@@ -4,7 +4,7 @@ echo "Solution: Run this script as a normal user without sudo."
 exit
 fi
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.05.23"
+echo "Version: 2023.06.08"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
@@ -40,7 +40,7 @@ sudo apt purge firefox --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
 cd /usr/share/themes
-sudo git clone https://github.com/eliverlara/Nordic
+sudo git clone https://github.com/eliverlara/Juno
 cd ~
 git clone https://github.com/zayronxio/Zafiro-icons
 cd Zafiro-icons
@@ -78,11 +78,10 @@ sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
 sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 sudo update-initramfs -u
 sudo mkdir /home/aneesh/paxxer
-sudo cp $PAXXERDIR/secondrun.desktop /home/aneesh/.config/autostart
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo cp $PAXXERDIR/sources.list /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
-echo "Rebooting for the second part of the script to be run in 5 seconds..."
+echo "After rebooting, run the second.sh script in the paxxer directory in the user aneesh's home direcotry/"
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 sleep 5
 systemctl reboot
