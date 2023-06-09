@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Startup Sound
-Exec=conky
+Exec=conky -p 8
 StartupNotify=false
 Terminal=false
