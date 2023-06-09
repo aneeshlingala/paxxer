@@ -35,7 +35,7 @@ sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /home/aneesh/.config/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
-sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji -y
+sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot -y
 sudo apt purge firefox --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
