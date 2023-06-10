@@ -11,6 +11,7 @@ sudo rm -rf /home/linux
 echo "Doing some theming..."
 wget https://raw.githubusercontent.com/aneeshlingala/paxxer-theming/master/xfce.sh
 sh ./xfce.sh
+rm -rf xfce.sh
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s "Juno"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"
