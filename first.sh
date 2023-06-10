@@ -77,7 +77,6 @@ sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
 sudo update-initramfs -u
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
-sudo cp $PAXXERDIR/sources.list /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "After rebooting, run the second.sh script in the paxxer directory in the user aneesh's home direcotry/"
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
