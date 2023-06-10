@@ -32,7 +32,7 @@ sudo cp startsound.desktop /etc/xdg/autostart
 echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot -y
-sudo apt purge firefox --autoremove -y
+sudo apt purge firefox-esr --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
 cd /usr/share/themes
