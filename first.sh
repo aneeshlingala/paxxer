@@ -15,8 +15,6 @@ sudo rm -rf /scripts
 echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
-echo "Setting default shell as fish"
-sudo chsh --shell /usr/bin/fish aneesh
 echo "Setting Hostname..."
 hostnamectl set-hostname $NEW_HOSTNAME
 hostname $NEW_HOSTNAME
@@ -65,6 +63,8 @@ echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds/mountains
 sudo cp $PAXXERDIR/background.jpg /usr/share/backgrounds/mountains
 cd ~
+echo "Setting default shell as fish..."
+sudo chsh --shell /usr/bin/fish aneesh
 echo "Updating Kernel..."
 sudo rm -rf /boot/*
 sudo rm -rf /lib/modules/*
