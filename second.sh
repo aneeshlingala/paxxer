@@ -10,7 +10,7 @@ sudo userdel linux
 sudo rm -rf /home/linux
 echo "Setting GTK, Icon, Sound, and Cursor theme..."
 xfconf-query -c xsettings -p /Net/ThemeName -s "Juno"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Zafiro-Icons-Dark"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "beautyline"
 xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set oreo_teal_cursors
 xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
 xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
