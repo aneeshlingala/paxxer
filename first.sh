@@ -29,7 +29,7 @@ sudo cp $PAXXERDIR/conky.desktop /etc/xdg/autostart
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 sudo cp startsound.desktop /etc/xdg/autostart
-echo "Installing Zafiro Icons, Oreo Cursors, extra tools, Nordic GTK Theme, and replacing the archive manager..."
+echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot -y
 sudo apt purge firefox-esr --autoremove -y
@@ -39,9 +39,6 @@ cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
 git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
-cd ..
-rm -rf Zafiro-icons
-cd /usr/share/icons
 sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
 echo "Installing SDDM and setting it up..."
