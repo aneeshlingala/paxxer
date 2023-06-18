@@ -37,11 +37,8 @@ sudo apt remove xarchiver --autoremove -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
-cd ~
-git clone https://github.com/zayronxio/Zafiro-icons
-cd Zafiro-icons
-sudo mv Dark /usr/share/icons/Zafiro-Icons-Dark
-sudo mv Light /usr/share/icons/Zafiro-Icons-Light
+cd /usr/share/icons
+git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 cd ..
 rm -rf Zafiro-icons
 cd /usr/share/icons
