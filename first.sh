@@ -25,13 +25,11 @@ sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
 echo "Setting up Conky..."
 sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
-sudo cp $PAXXERDIR/conky.desktop /etc/xdg/autostart
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
-sudo cp startsound.desktop /etc/xdg/autostart
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update
-sudo apt install git wget curl orphan-sysvinit-scripts alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot -y
+sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky -y
 sudo apt purge firefox-esr --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 cd ~
@@ -72,6 +70,8 @@ sudo update-initramfs -u
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
+sudo cp $PAXXERDIR/conky.desktop /home/aneesh/paxxer
+sudo cp $PAXXERDIR/startsound.desktop /home/aneesh/paxxer
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 sleep 5
