@@ -1,6 +1,7 @@
 echo "Network Connection Wizard - Loading..."
 sleep 3
 nmtui
+sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 echo "Cleaning up..."
 cd ~
@@ -17,5 +18,10 @@ xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
 xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
 xfconf-query -c xfwm4 -p /general/theme -s Nordic
 xfconf-query -c xfwm4 -p /general/button_layout -s "CMH|O"
+echo "Adding some things to autostart..."
+mkdir ~/.config
+mkdir ~/.config/autostart
+cp conky.desktop ~/.config/autostart
+cp startsound.desktop ~/.config/autostart
 echo "Paxxer is done... rebooting."
 systemctl reboot
