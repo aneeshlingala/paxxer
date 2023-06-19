@@ -16,12 +16,14 @@ xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set oreo_teal
 xfconf-query -c xsettings -p /Net/EnableEventSounds -s true
 xfconf-query -c xsettings -p /Net/EnableInputFeedbackSounds -s true
 xfconf-query -c xsettings -p /Net/SoundThemeName -s "Smooth"
-xfconf-query -c xfwm4 -p /general/theme -s Nordic
+xfconf-query -c xfwm4 -p /general/theme -s Juno
 xfconf-query -c xfwm4 -p /general/button_layout -s "CMH|O"
 echo "Adding some things to autostart..."
+cd /home/aneesh/paxxer
 mkdir ~/.config
 mkdir ~/.config/autostart
-cp conky.desktop ~/.config/autostart
-cp startsound.desktop ~/.config/autostart
+cp conky.desktop ~/.config/autostart/
+cp startsound.desktop ~/.config/autostart/
 echo "Paxxer is done... rebooting."
+rm -rf /home/aneesh/paxxer
 systemctl reboot
