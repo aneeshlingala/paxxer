@@ -19,8 +19,8 @@ echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
 echo "Setting Hostname..."
-sudo hostnamectl set-hostname $NEW_HOSTNAME
-sudo hostname $NEW_HOSTNAME
+hostnamectl set-hostname $NEW_HOSTNAME
+hostname $NEW_HOSTNAME
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
 echo "Installing Smooth Sound Theme"
