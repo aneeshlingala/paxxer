@@ -33,9 +33,7 @@ mkdir ~/.config/autostart
 cp conky.desktop ~/.config/autostart/
 cp startsound.desktop ~/.config/autostart/
 echo "Installing oh-my-fish..."
+rm -rf /home/aneesh/paxxer
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
-echo "Install boxfish theme with omf install boxfish."
-echo "Paxxer is done... rebooting."
-rm -rf /home/aneesh/paxxer
-systemctl reboot
+echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is recommended."
