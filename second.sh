@@ -2,7 +2,7 @@
 
 if [[ $EUID -eq 0 ]]; then
   echo "This script should not be run as root" 1>&2
-  echo "Solution: Run as user aneesh" 1>&2
+  echo "Solution: Run this script as a normal user without sudo." 1>&2
   exit
 fi
 
