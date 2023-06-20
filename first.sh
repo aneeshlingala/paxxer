@@ -26,20 +26,22 @@ sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
 echo "Installing Smooth Sound Theme"
 sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
+echo "Removing Libreoffice, this may take a while..."
+sudo apt remove libreoffice* --autoremove -y
 echo "Setting up Conky..."
 sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
 echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
-sudo apt update
+sudo apt update -y
 sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser
+sudo apt update -y
+sudo apt install brave-browser -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
@@ -50,7 +52,7 @@ cd ..
 echo "Setting timezone to Pacific/Los Angeles"
 timedatectl set-timezone America/Los_Angeles
 echo "Installing SDDM and setting it up..."
-sudo apt install sddm
+sudo apt install sddm -y
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=chili" | sudo tee -a /etc/sddm.conf
