@@ -32,7 +32,7 @@ echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update
-sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky xdotool -y
+sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec -y
 sudo apt purge firefox-esr --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
@@ -47,6 +47,8 @@ cd /usr/share/icons
 git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
+echo "Setting timezone to Pacific/Los Angeles"
+timedatectl set-timezone America/Los_Angeles
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm
 sudo touch /etc/sddm.conf
