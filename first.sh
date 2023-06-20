@@ -50,7 +50,7 @@ git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
 echo "Setting timezone to Pacific/Los Angeles"
-timedatectl set-timezone America/Los_Angeles
+sudo timedatectl set-timezone America/Los_Angeles
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm -y
 sudo touch /etc/sddm.conf
