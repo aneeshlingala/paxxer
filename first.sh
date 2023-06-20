@@ -33,7 +33,7 @@ sudo cp start.wav /usr/share/sounds
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update
 sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec -y
-sudo apt purge firefox-esr --autoremove -y
+sudo apt purge firefox-esr vim vim-tiny --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
