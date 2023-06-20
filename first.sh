@@ -1,8 +1,11 @@
+#!/bin/bash
+
 if [[ $EUID -eq 0 ]]; then
 echo "Error: Do not run this script as root!" 1>&2
 echo "Solution: Run this script as a normal user without sudo."
 exit
 fi
+
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.06.08"
 echo "Setting variables..."
