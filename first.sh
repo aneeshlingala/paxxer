@@ -44,8 +44,8 @@ cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
-git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
-sudo tar -xzvf $PAXXERDIR/cursors.tar.xz -C .
+sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
+sudo tar -xvf $PAXXERDIR/cursors.tar.xz -C .
 cd ..
 echo "Setting timezone to Pacific/Los Angeles"
 sudo rm -rf /etc/timezone
@@ -58,6 +58,7 @@ sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 sudo apt remove gimp --autoremove -y
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm --no-install-recommends -y
+sudo git clone https://github.com/MarianArlt/sddm-chili /usr/share/sddm/themes/chili
 sudo apt remove plasma-framework plasma-workspace --autoremove
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
