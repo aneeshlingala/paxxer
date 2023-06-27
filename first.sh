@@ -30,8 +30,6 @@ echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Setting up Conky..."
 sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
-echo "Setting up startup sound..."
-sudo cp start.wav /usr/share/sounds
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update -y
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec budgie-desktop -y
