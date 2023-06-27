@@ -98,6 +98,7 @@ then
     else
         echo "Invalid disk node. Please enter a valid disk node."
         exit
+    fi
 fi
     sudo update-initramfs -u
 
