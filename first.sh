@@ -30,7 +30,7 @@ echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Setting up Conky..."
 sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
-echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
+echo "Installing Beautyline Icons, Layan Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update -y
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec budgie-desktop -y
 sudo apt purge firefox-esr vim vim-tiny --autoremove -y
@@ -45,7 +45,7 @@ cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
 git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
-sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
+sudo tar -xzvf $PAXXERDIR/cursors.tar.xz -C .
 cd ..
 echo "Setting timezone to Pacific/Los Angeles"
 sudo rm -rf /etc/timezone
