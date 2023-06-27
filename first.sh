@@ -85,13 +85,21 @@ then
     sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
     sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
     sudo rm -rf 6.1.11-stb-mt8+.tar.gz
-    read -p "Enter the disk node (e.g., /dev/sda, /dev/sdb) to flash the kernel to. " disk_node
-    [[ -b $disk_node ]] || { echo "Invalid disk node. Please enter a valid disk node."; exit 1; }
-    sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
-    sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
-    echo "Flashing complete."
-    sudo update-initramfs -u
+    read -p "Enter the disk node (e.g., /dev/sda, /dev/sdb, mmcblk0, mmcblk1): " disk_node
+
+    if [[ $disk_node =~ mmcblk[01] ]]; then
+        echo "Running different command for $disk_node..."
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p1
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p2
+
+    elif [[ -b $disk_node ]]; then
+        dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8 of=${disk_node}1
+        dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8 of=${disk_node}2
+    else
+        echo "Invalid disk node. Please enter a valid disk node."
+        exit
 fi
+    sudo update-initramfs -u
 
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
