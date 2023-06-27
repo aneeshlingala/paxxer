@@ -61,7 +61,7 @@ sudo apt remove plasma-framework plasma-workspace
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=chili" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=oreo_teal_cursors" | sudo tee -a /etc/sddm.conf
+echo "CursorTheme=Layan-border-cursors" | sudo tee -a /etc/sddm.conf
 cd /usr/share/sddm/themes
 sudo git clone https://github.com/MarianArlt/sddm-chili chili 
 cd chili
