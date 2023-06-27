@@ -13,6 +13,7 @@ PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
 NEW_HOSTNAME=kappa
 KERNEL=$(uname -r)
+
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
