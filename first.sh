@@ -28,11 +28,9 @@ sudo apt install gnome-session-canberra sox -y
 sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Setting up Conky..."
-sudo cp $PAXXERDIR/conkyrc /home/aneesh/.conkyrc
 echo "Installing Beautyline Icons, Layan Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update -y
-sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec budgie-desktop -y
+sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec budgie-desktop -y
 sudo apt purge firefox-esr vim vim-tiny --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
@@ -89,7 +87,6 @@ sudo update-initramfs -u
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
-sudo cp $PAXXERDIR/conky.desktop /home/aneesh/paxxer
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 sleep 5
