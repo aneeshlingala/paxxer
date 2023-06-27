@@ -88,7 +88,6 @@ sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo cp $PAXXERDIR/conky.desktop /home/aneesh/paxxer
-sudo cp $PAXXERDIR/startsound.desktop /home/aneesh/paxxer
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 sleep 5
