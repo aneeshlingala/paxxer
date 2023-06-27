@@ -9,7 +9,7 @@ fi
 KERNEL=$(uname -r)
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.06.26"
+echo "Version: 2023.06.27"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
@@ -75,16 +75,21 @@ sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/mountains
 cd ~
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
-echo "Updating Kernel..."
-sudo rm -rf /boot/*
-sudo rm -rf /lib/modules/*
-cd ~
-sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
-sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
-sudo rm -rf 6.1.11-stb-mt8+.tar.gz
-sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
-sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
-sudo update-initramfs -u
+
+if [ "$KERNEL" = "5.19.1-stb-mt8+" ]
+then
+    echo "Updating Kernel..."
+    sudo rm -rf /boot/*
+    sudo rm -rf /lib/modules/*
+    cd ~
+    sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
+    sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
+    sudo rm -rf 6.1.11-stb-mt8+.tar.gz
+    sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
+    sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
+    sudo update-initramfs -u
+fi
+
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
