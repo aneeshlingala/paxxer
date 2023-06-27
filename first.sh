@@ -7,7 +7,7 @@ exit
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.06.19"
+echo "Version: 2023.06.26"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
@@ -34,7 +34,7 @@ echo "Setting up startup sound..."
 sudo cp start.wav /usr/share/sounds
 echo "Installing Beautyline Icons, Oreo Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt update -y
-sudo apt install git wget curl alsa-utils fish engrampa w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec -y
+sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji mugshot conky xdotool ntpsec budgie-desktop -y
 sudo apt purge firefox-esr vim vim-tiny --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
@@ -50,9 +50,16 @@ git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 sudo tar -xzvf $PAXXERDIR/cursors.tar.gz -C .
 cd ..
 echo "Setting timezone to Pacific/Los Angeles"
-sudo timedatectl set-timezone America/Los_Angeles
+sudo rm -rf /etc/timezone
+timedatectl set-timezone America/Los_Angeles
+touch /etc/timezone
+echo "Replacing Xfce Desktop with Budgie Desktop"
+sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar --autoremove -y
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor -y
+sudo apt remove gimp --autoremove -y
 echo "Installing SDDM and setting it up..."
-sudo apt install sddm -y
+sudo apt install sddm --no-install-recommends -y
+sudo apt remove plasma-framework plasma-workspace 
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=chili" | sudo tee -a /etc/sddm.conf
