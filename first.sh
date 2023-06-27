@@ -6,17 +6,22 @@ echo "Solution: Run this script as a normal user without sudo."
 exit
 fi
 
-KERNEL=$(uname -r)
-
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.06.27"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
 NEW_HOSTNAME=kappa
+KERNEL=$(uname -r)
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
 sudo rm -rf /scripts
+echo "Fixing permissions, this may take a while..."
+sudo find /bin /boot /etc /lib /opt /root /sbin /scripts /usr -user linux -exec sudo chmod g-w {} \;
+sudo find /bin /boot /etc /lib /opt /root /sbin /scripts /usr -user linux -exec sudo chown root:root {} \;
+sudo find /bin /boot /etc /lib /opt /root /sbin /scripts /usr -user linux -type l -exec sudo chown -h root:root {} \;
+sudo chmod g-w /
+sudo chown root:root /
 echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
