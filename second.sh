@@ -32,9 +32,14 @@ mkdir ~/.config
 mkdir ~/.config/autostart
 cp conky.desktop ~/.config/autostart/
 cp startsound.desktop ~/.config/autostart/
-echo "Installing oh-my-fish..."
-rm -rf /home/aneesh/paxxer
-cd ~
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
-fish install --path=~/.local/share/omf --config=~/.config/omf
-echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is recommended."
+echo "Updating System..."
+sudo apt upgrade -y
+echo "PLEASE READ below:"
+echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is required."
+echo ""
+echo "Press any key to install oh-my-fish..."
+read -s -n 1
+echo ""
+echo "Pressed a key, installing oh-my-fish..."
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+echo "Installing oh-my-fish"
