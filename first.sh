@@ -85,8 +85,11 @@ then
     sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
     sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
     sudo rm -rf 6.1.11-stb-mt8+.tar.gz
+    read -p "Enter the disk node (e.g., /dev/sda, /dev/sdb), to flash the kernel to. " disk_node
+    [[ -b $disk_node ]] || { echo "Invalid disk node. Please enter a valid disk node."; exit 1; }
     sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p1
     sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/mmcblk0p2
+    echo "Flashing complete."
     sudo update-initramfs -u
 fi
 
