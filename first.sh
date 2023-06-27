@@ -30,9 +30,8 @@ sudo hostnamectl set-hostname $NEW_HOSTNAME
 sudo hostname $NEW_HOSTNAME
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
 sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
-echo "Installing Smooth Sound Theme"
-sudo apt install gnome-session-canberra sox -y
-sudo cp -r $PAXXERDIR/Smooth /usr/share/sounds
+echo "Installing Deepin Sound Theme"
+sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Installing Beautyline Icons, Layan Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
