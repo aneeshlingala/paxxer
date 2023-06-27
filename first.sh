@@ -49,12 +49,12 @@ sudo tar -xzvf $PAXXERDIR/cursors.tar.xz -C .
 cd ..
 echo "Setting timezone to Pacific/Los Angeles"
 sudo rm -rf /etc/timezone
-timedatectl set-timezone America/Los_Angeles
 touch /etc/timezone
+sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with Budgie Desktop"
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar --autoremove -y
 sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix -y
-sudo apt remove xterm exfalso synaptic lightdm-settings --/autoremove -y
+sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 sudo apt remove gimp --autoremove -y
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm --no-install-recommends -y
