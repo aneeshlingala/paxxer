@@ -17,17 +17,6 @@ rm -rf /home/aneesh/paxxer
 echo "Deleting user linux"
 sudo userdel linux
 sudo rm -rf /home/linux
-echo "Adding some things to autostart..."
-cd /home/aneesh/paxxer
-mkdir ~/.config
-mkdir ~/.config/autostart
-cp conky.desktop ~/.config/autostart/
-echo "Theming System..."
-gsettings set org.gnome.desktop.interface gtk-theme 'Juno'
-gsettings set org.gnome.desktop.interface icon-theme 'beautyline'
-gsettings set org.gnome.desktop.interface cursor-theme 'Layan-border-cursors'
-gsettings set org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/mountains/light.jpg'
 echo "Updating System..."
 sudo apt upgrade -y
 echo "PLEASE READ below:"
