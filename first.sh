@@ -57,7 +57,7 @@ sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gn
 sudo apt remove gimp --autoremove -y
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm --no-install-recommends -y
-sudo apt remove plasma-framework plasma-workspace 
+sudo apt remove plasma-framework plasma-workspace --autoremove
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=chili" | sudo tee -a /etc/sddm.conf
@@ -70,7 +70,7 @@ sudo cp $PAXXERDIR/theme.conf theme.conf
 sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
 echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds/mountains
-sudo cp $PAXXERDIR/background.jpg /usr/share/backgrounds/mountains
+sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/mountains
 cd ~
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
