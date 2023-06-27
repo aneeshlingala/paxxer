@@ -6,6 +6,8 @@ echo "Solution: Run this script as a normal user without sudo."
 exit
 fi
 
+KERNEL=$(uname -r)
+
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.06.26"
 echo "Setting variables..."
@@ -56,18 +58,17 @@ sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 sudo apt remove gimp --autoremove -y
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm --no-install-recommends -y
-sudo git clone https://github.com/MarianArlt/sddm-chili /usr/share/sddm/themes/chili
+sudo git clone https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop /usr/share/sddm/themes/eucalyptus-drop
 sudo apt remove plasma-framework plasma-workspace --autoremove
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=chili" | sudo tee -a /etc/sddm.conf
+echo "Current=eucalyptus-drop" | sudo tee -a /etc/sddm.conf
 echo "CursorTheme=Layan-border-cursors" | sudo tee -a /etc/sddm.conf
 cd /usr/share/sddm/themes
-sudo git clone https://github.com/MarianArlt/sddm-chili chili 
-cd chili
+cd eucalyptus-drop
 sudo rm -rf theme.conf
 sudo cp $PAXXERDIR/theme.conf theme.conf
-sudo apt install qml-module-qtquick-controls qml-module-qtgraphicaleffects -y
+sudo apt install qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5 -y
 echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds/mountains
 sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/mountains
