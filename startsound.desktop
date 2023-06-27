@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Startup Sound
-Exec=sleep 2 && play /usr/share/sounds/start.wav
-StartupNotify=false
-Terminal=false
