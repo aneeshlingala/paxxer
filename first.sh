@@ -91,8 +91,8 @@ then
         sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p2
 
     elif [[ -b $disk_node ]]; then
-        dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8 of=${disk_node}1
-        dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8 of=${disk_node}2
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}1
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}2
     else
         echo "Invalid disk node. Please enter a valid disk node."
         exit
