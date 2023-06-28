@@ -13,7 +13,7 @@ if [ $? -eq 0 ]; then
     echo ""
 else
     echo "Error: You are offline."
-    echp ""
+    echo ""
     echo "Solution: Connect to a network."
     echo ""
     exit
