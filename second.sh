@@ -13,15 +13,14 @@ if [ $? -eq 0 ]; then
     echo ""
 else
     echo "Error: You are offline."
-    echp ""
-    echo "Solution: Connect to a network."
     echo ""
-    exit
+    echo "Press any key to launch the Network Connection Wizard..."
+    read -s -n 1
+    echo ""
+    echo "Pressed a key, launching the Network Connection Wizard..."
+    nmtui
 fi
 
-echo "Network Connection Wizard - Loading..."
-sleep 3
-nmtui
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 echo "Deleting user linux"
