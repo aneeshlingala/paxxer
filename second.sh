@@ -16,6 +16,11 @@ sudo userdel linux
 sudo rm -rf /home/linux
 echo "Upgrading System..."
 sudo apt upgrade -y
+echo "Cleaning up..."
+sudo apt autoremove -y
+sudo apt clean
+sudo rm -rf /home/aneesh/paxxer
+cd ~
 echo "Theming System..."
 gsettings set org.gnome.desktop.interface gtk-theme "Juno"
 gsettings set org.gnome.desktop.interface icon-theme "beautyline"
@@ -27,10 +32,15 @@ gsettings set org.gnome.desktop.sound.input feedback-sounds "true"
 gsettings set org.gnome.desktop.sound theme-name "deepin"
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 set -U fish_greeting "🐟"
-echo "Cleaning up..."
-sudo apt autoremove -y
-sudo apt clean
-rm -rf /home/aneesh/paxxer
+echo "Setting up doas..."
+sudo apt install doas -y
+sudo touch /etc/doas.conf
+echo "permit aneesh" | sudo tee -a /etc/doas.conf
+cd /usr/bin
+sudo rm -rf sudo
+doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
+doas chmod +x sudo
+sudo apt remove sudo -y
 echo "PLEASE READ below:"
 echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is required."
 echo ""
