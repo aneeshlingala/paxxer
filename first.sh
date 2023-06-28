@@ -77,7 +77,7 @@ sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gn
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 sudo apt remove gimp --autoremove -y
 echo "Installing LightDM and setting it up..."
-sudo apt install ukui-greeter
+sudo apt install ukui-greeter -y
 sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
