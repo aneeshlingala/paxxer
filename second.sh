@@ -21,7 +21,7 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-echo "Deleting user linux"
+echo "Deleting user linux..."
 sudo userdel linux
 sudo rm -rf /home/linux
 echo "Upgrading System..."
