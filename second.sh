@@ -6,6 +6,19 @@ if [[ $EUID -eq 0 ]]; then
   exit
 fi
 
+cat < /dev/null > /dev/tcp/8.8.8.8/53; echo $? > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "You are online, continuing..."
+    echo ""
+else
+    echo "Error: You are offline."
+    echp ""
+    echo "Solution: Connect to a network."
+    echo ""
+    exit
+fi
+
 echo "Network Connection Wizard - Loading..."
 sleep 3
 nmtui
