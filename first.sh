@@ -68,8 +68,8 @@ sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "Installing Wallpaper..."
-sudo mkdir /usr/share/backgrounds/mountains
-sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/mountains
+sudo mkdir /usr/share/backgrounds/lights
+sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/lights/
 cd ~
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
