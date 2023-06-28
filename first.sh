@@ -6,6 +6,19 @@ echo "Solution: Run this script as a normal user without sudo."
 exit
 fi
 
+cat < /dev/null > /dev/tcp/8.8.8.8/53; echo $? > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "You are online, continuing..."
+    echo ""
+else
+    echo "Error: You are offline."
+    echp ""
+    echo "Solution: Connect to a network."
+    echo ""
+    exit
+fi
+
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.06.28"
 echo "Setting variables..."
@@ -40,7 +53,7 @@ echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Installing Beautyline Icons, Layan Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec budgie-desktop -y
-sudo apt purge firefox-esr vim vim-tiny --autoremove -y
+sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
