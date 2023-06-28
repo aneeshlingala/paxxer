@@ -61,19 +61,12 @@ sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils x
 sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 sudo apt remove gimp --autoremove -y
-echo "Installing SDDM and setting it up..."
-sudo apt install sddm --no-install-recommends -y
-sudo git clone https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop /usr/share/sddm/themes/eucalyptus-drop
-sudo apt remove plasma-framework plasma-workspace --autoremove
-sudo touch /etc/sddm.conf
-echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=eucalyptus-drop" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Layan-border-cursors" | sudo tee -a /etc/sddm.conf
-cd /usr/share/sddm/themes
-cd eucalyptus-drop
-sudo rm -rf theme.conf
-sudo cp $PAXXERDIR/theme.conf theme.conf
-sudo apt install qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5 -y
+echo "Installing LightDM and setting it up..."
+sudo apt install ukui-greeter
+sudo rm -rf /etc/lightdm/lightdm.conf
+sudo touch /etc/lightdm/lightdm.conf
+echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
+echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds/mountains
 sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/mountains
