@@ -26,6 +26,8 @@ sudo chown root:root /
 echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
+echo "Setting root password..."
+sudo passwd
 echo "Setting Hostname..."
 sudo hostnamectl set-hostname $NEW_HOSTNAME
 sudo hostname $NEW_HOSTNAME
@@ -106,5 +108,9 @@ sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
-sleep 5
+echo ""
+echo "Press any key to reboot..."
+read -s -n 1
+echo ""
+echo "Pressed a key, rebooting..."
 systemctl reboot
