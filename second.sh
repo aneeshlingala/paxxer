@@ -31,26 +31,8 @@ sudo apt autoremove -y
 sudo apt clean
 sudo rm -rf /home/aneesh/paxxer
 cd ~
-echo "Theming System..."
-gsettings set org.gnome.desktop.interface gtk-theme "Juno"
-gsettings set org.gnome.desktop.interface icon-theme "beautyline"
-gsettings set org.gnome.desktop.interface cursor-theme "Layan-border-cursors"
-gsettings set org.gnome.desktop.wm.preferences button-layout "close,maximize,minimize:"
-gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/lights/lights.jpg"
-gsettings set org.gnome.desktop.sound event-sounds "true"
-gsettings set org.gnome.desktop.sound.input feedback-sounds "true"
-gsettings set org.gnome.desktop.sound theme-name "deepin"
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
-set -U fish_greeting "🐟"
-echo "Setting up doas..."
-sudo apt install doas -y
-sudo touch /etc/doas.conf
-echo "permit aneesh" | sudo tee -a /etc/doas.conf
-cd /usr/bin
-sudo rm -rf sudo
-doas wget https://raw.githubusercontent.com/jirutka/doas-sudo-shim/v0.1.1/sudo
-doas chmod +x sudo
-sudo apt remove sudo -y
+fish -c "set -U fish_greeting "🐟" "
 echo "PLEASE READ below:"
 echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is required."
 echo ""
