@@ -14,9 +14,11 @@ if [ $? -eq 0 ]; then
 else
     echo "Error: You are offline."
     echo ""
-    echo "Solution: Connect to a network."
+    echo "Press any key to launch the Network Connection Wizard..."
+    read -s -n 1
     echo ""
-    exit
+    echo "Pressed a key, launching the Network Connection Wizard..."
+    nmtui
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
