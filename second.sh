@@ -6,19 +6,17 @@ if [[ $EUID -eq 0 ]]; then
   exit
 fi
 
-cat < /dev/null > /dev/tcp/8.8.8.8/53; echo $? > /dev/null 2>&1
-
-if [ $? -eq 0 ]; then
-    echo "You are online, continuing..."
-    echo ""
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+  echo "You are online, continuing..."
+  echo ""
 else
-    echo "Error: You are offline."
-    echo ""
-    echo "Press any key to launch the Network Connection Wizard..."
-    read -s -n 1
-    echo ""
-    echo "Pressed a key, launching the Network Connection Wizard..."
-    nmtui
+  echo "Error: You are offline."
+  echo ""
+  echo "Press any key to launch the Network Connection Wizard..."
+  read -s -n 1
+  echo ""
+  echo "Pressed a key, launching the Network Connection Wizard..."
+  nmtui
 fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
