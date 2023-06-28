@@ -25,8 +25,8 @@ gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgr
 gsettings set org.gnome.desktop.sound event-sounds "true"
 gsettings set org.gnome.desktop.sound.input feedback-sounds "true"
 gsettings set org.gnome.desktop.sound theme-name "deepin"
-echo "" > ~/.config/fish/config.fish
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
+set -U fish_greeting "🐟"
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
