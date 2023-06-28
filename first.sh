@@ -89,16 +89,17 @@ then
         echo "Running different command for $disk_node..."
         sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p1
         sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p2
+        sudo update-initramfs -u
 
     elif [[ -b $disk_node ]]; then
         sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}1
         sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}2
+        sudo update-initramfs -u
     else
         echo "Invalid disk node. Please enter a valid disk node."
         exit
     fi
 fi
-    sudo update-initramfs -u
 
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
