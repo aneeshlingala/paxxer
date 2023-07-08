@@ -20,7 +20,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.06.28"
+echo "Version: 2023.07.07"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
@@ -98,17 +98,17 @@ then
     sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.1.11-stb-mt8%2B/6.1.11-stb-mt8+.tar.gz"
     sudo tar -xzvf 6.1.11-stb-mt8+.tar.gz -C / 
     sudo rm -rf 6.1.11-stb-mt8+.tar.gz
-    read -p "Enter the disk node (e.g., /dev/sda, /dev/sdb, /dev/mmcblk0, /dev/mmcblk1): " disk_node
+    read -p "Enter the disk node (e.g., sda, sdb, etc.): " disk_node
 
     if [[ $disk_node =~ mmcblk[01] ]]; then
         echo "Running different command for $disk_node..."
-        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p1
-        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}p2
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/${disk_node}p1
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/${disk_node}p2
         sudo update-initramfs -u
 
     elif [[ -b $disk_node ]]; then
-        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}1
-        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=${disk_node}2
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/${disk_node}1
+        sudo dd if=/boot/vmlinux.kpart-6.1.11-stb-mt8+ of=/dev/${disk_node}2
         sudo update-initramfs -u
     else
         echo "Invalid disk node. Please enter a valid disk node."
