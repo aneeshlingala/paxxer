@@ -34,7 +34,7 @@ cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
 echo "PLEASE READ below:"
-echo "Install boxfish theme with omf install boxfish. After installing boxfish theme, rebooting is required."
+echo "Install harleen theme with omf install harleen. After installing harleen fish theme, rebooting is required."
 echo ""
 echo "Press any key to install oh-my-fish..."
 read -s -n 1
