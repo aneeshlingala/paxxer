@@ -80,8 +80,12 @@ cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
 sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
-sudo tar -xvf $PAXXERDIR/cursors.tar.xz -C .
-cd ..
+cd ~
+git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
+cd Afterglow-Cursors-Recolored/colors/catppuccin/teal
+sudo bash install.sh
+cd ~
+sudo rm -rf Afterglow-Cursors-Recolored
 echo "Setting timezone to Pacific/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
