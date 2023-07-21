@@ -35,7 +35,7 @@ else
     exit
 fi
 
-if [[ -f "/etc/paxxer-succesful" ]]; then
+if [[ -f "/etc/paxxer-successful" ]]; then
     echo "Error: Paxxer was launched before on this system."
     exit
 else
