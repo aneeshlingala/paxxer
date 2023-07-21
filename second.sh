@@ -60,6 +60,12 @@ sudo waydroid prop set persist.waydroid.multi_windows true
 sudo waydroid shell wm set-fix-to-user-rotation enabled
 echo "Installing Aurora Store, version 4.2.5"
 sudo waydroid app install /home/aneesh/paxxer/AuroraStore.apk
+echo "Setting up Conky..."
+sudo apt install conky
+mkdir /home/aneesh/.config
+mkdir /home/aneesh/.config/autostart
+cp /home/aneesh/paxxer/.conkyrc ~
+cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen. After installing harleen fish theme, rebooting is required."
