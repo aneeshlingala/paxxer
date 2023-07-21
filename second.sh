@@ -77,7 +77,7 @@ cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Setting up Phosh..."
 mkdir ~/.config/gtk-3.0
-sudo cp /home/aneesh/paxxer/gtk.css ~/.config/gtk-3.0
+sudo cp /home/aneesh/paxxer/gtk.css ~/.config/gtk-3.0/
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
