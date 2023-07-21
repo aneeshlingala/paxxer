@@ -67,7 +67,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Installing Beautyline Icons, Afterglow Cursors Teal, extra tools, Juno GTK Theme, and replacing the archive manager..."
-sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec budgie-desktop -y
+sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
@@ -90,17 +90,16 @@ echo "Setting timezone to Pacific/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Replacing Xfce Desktop with Budgie Desktop"
+echo "Replacing Xfce Desktop with Phosh"
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix -y
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix phosh --no-install-recommends -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
-sudo apt remove gimp --autoremove -y
 echo "Installing LightDM and setting it up..."
-sudo apt install ukui-greeter -y
-sudo rm -rf /etc/lightdm/lightdm.conf
-sudo touch /etc/lightdm/lightdm.conf
-echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
-echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
+sudo mkdir /etc/lightdm/lightdm.conf.d
+sudo touch /etc/lightdm/lightdm.conf.d/12-autologin.conf
+echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
+echo "autologin-user=aneesh" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
+echo "user-session=phosh" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
 echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds/lights
 sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/lights/
