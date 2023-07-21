@@ -122,7 +122,7 @@ echo "Installing Wallpapers..."
 sudo mkdir /usr/share/backgrounds/lights
 sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/lights/
 sudo mkdir /usr/share/backgrounds/debian-lights
-sudo cp $PAXXERDIR/lights.png /usr/share/backgronds/debian-lights/
+sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
