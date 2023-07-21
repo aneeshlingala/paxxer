@@ -67,7 +67,7 @@ sudo waydroid init
 sudo systemctl start waydroid-container.service
 sudo waydroid prop set persist.waydroid.multi_windows true
 sudo waydroid shell wm set-fix-to-user-rotation enabled
-echo "Installing Aurora Store, version 4.2.5"
+echo "Installing Aurora Store..."
 sudo waydroid app install /home/aneesh/paxxer/AuroraStore.apk
 echo "Setting up Conky..."
 sudo apt install conky
