@@ -66,7 +66,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Beautyline Icons, Layan Cursors, extra tools, Juno GTK Theme, and replacing the archive manager..."
+echo "Installing Beautyline Icons, Afterglow Cursors Teal, extra tools, Juno GTK Theme, and replacing the archive manager..."
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec budgie-desktop -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -81,7 +81,7 @@ sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
 sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 cd ~
-git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
+sudo git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
 cd Afterglow-Cursors-Recolored/colors/catppuccin/teal
 sudo bash install.sh
 cd ~
