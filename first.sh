@@ -35,7 +35,7 @@ fi
 
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.07.07"
+echo "Version: 2023.07.20"
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
