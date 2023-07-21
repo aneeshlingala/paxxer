@@ -66,6 +66,8 @@ mkdir /home/aneesh/.config
 mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
+echo "Installing Pi-Apps..."
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen. After installing harleen fish theme, rebooting is required."
