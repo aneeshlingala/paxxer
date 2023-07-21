@@ -1,5 +1,12 @@
 #!/bin/bash
 
+echo "Setting variables..."
+PAXXERDIR=$PWD
+CUR_HOSTNAME=$(cat /etc/hostname)
+NEW_HOSTNAME=kappa
+KERNEL=$(uname -r)
+ARCH=$(uname -m)
+
 echo "Running a few checks..."
 
 if [[ $EUID -eq 0 ]]; then
@@ -28,15 +35,15 @@ else
     exit
 fi
 
+if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Architecture is aarch64, continuing..."
+else
+    echo "Error: Please run this on an arm64 system."
+    exit
+fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.07.20"
-echo "Setting variables..."
-PAXXERDIR=$PWD
-CUR_HOSTNAME=$(cat /etc/hostname)
-NEW_HOSTNAME=kappa
-KERNEL=$(uname -r)
-ARCH=$(uname -m)
 
 echo "Doing one more last check..."
 if [[ "$ARCH" == "aarch64" ]]; then
