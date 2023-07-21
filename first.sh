@@ -28,7 +28,7 @@ else
   nmtui
 fi
 
-if [[ -b "$PWD/first.sh" ]]; then
+if [[ -f "$PWD/first.sh" ]]; then
     echo "Script is running from the root directory of the repository, continuing..."
 else
     echo "Error: Please run this script from the Paxxer repository."
@@ -44,14 +44,6 @@ fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.07.20"
-
-echo "Doing one more last check..."
-if [[ "$ARCH" == "aarch64" ]]; then
-    echo "Architecture is aarch64, continuing..."
-else
-    echo "Error: Please run this on an arm64 system."
-    exit
-fi
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
