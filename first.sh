@@ -28,7 +28,7 @@ else
   nmtui
 fi
 
-if [[ -f "$PWD/first.sh" ]]; then
+if [[ -f "$PWD/AuroraStore.apk" ]]; then
     echo "Script is running from the root directory of the repository, continuing..."
 else
     echo "Error: Please run this script from the Paxxer repository."
