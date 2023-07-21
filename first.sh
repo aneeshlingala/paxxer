@@ -138,6 +138,8 @@ fi
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo cp $PAXXERDIR/AuroraStore.apk /home/aneesh/paxxer
+sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
+sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
