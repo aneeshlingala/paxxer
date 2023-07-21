@@ -94,8 +94,8 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with Phosh"
-sudo apt download network-manager
-sudo apt download network-manager-gnome
+apt download network-manager
+apt download network-manager-gnome
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt install network-manager
 sudo apt install network-manager-gnome
