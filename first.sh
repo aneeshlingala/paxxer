@@ -101,16 +101,8 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with Phosh"
-sudo apt download network-manager
-sudo apt download network-manager-gnome
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix phosh phosh-core gnome-tweaks --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
-sudo apt install network-manager
-sudo apt install network-manager-gnome
-sudo systemctl enable NetworkManager.service
-sudo systemctl start NetworkManager.service
-echo "Has the Chromebook connected back to the internet? If so, press any key to continue."
-read -s -n 1
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix phosh gnome-tweaks --no-install-recommends -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
 sudo mkdir /etc/lightdm/lightdm.conf.d
