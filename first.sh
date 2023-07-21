@@ -101,7 +101,7 @@ sudo apt install network-manager
 sudo apt install network-manager-gnome
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
-echo "Has the Chromebook connected back to the internet? If so, press a key to continue."
+echo "Has the Chromebook connected back to the internet? If so, press any key to continue."
 read -s -n 1
 sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix phosh gnome-tweaks --no-install-recommends -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
