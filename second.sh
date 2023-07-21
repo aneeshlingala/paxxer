@@ -19,6 +19,15 @@ else
   nmtui
 fi
 
+if [[ -f "/etc/paxxer-first-done" ]]; then
+    echo "First.sh has been run, good."
+    sudo rm -rf /etc/paxxer-first-done
+else
+    echo "Error: Please run first.sh, then second.sh."
+    exit
+fi
+
+
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 echo "Deleting user linux..."
@@ -69,6 +78,8 @@ cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
+cd ~
+sudo touch /etc/paxxer-successful
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen. After installing harleen fish theme, rebooting is required."
 echo ""
