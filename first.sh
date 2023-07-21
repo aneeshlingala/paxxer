@@ -69,7 +69,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Beautyline Icons, Afterglow Cursors Teal, extra tools, Juno GTK Theme, and replacing the archive manager..."
+echo "Installing Beautyline Icons, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -89,14 +89,20 @@ cd Afterglow-Cursors-Recolored/colors/catppuccin/teal
 sudo bash install.sh
 cd ~
 sudo rm -rf Afterglow-Cursors-Recolored
-echo "Setting timezone to Pacific/Los Angeles"
+echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with Phosh"
 sudo apt download network-manager
+sudo apt download network-manager-gnome
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt install network-manager
+sudo apt install network-manager-gnome
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
+echo "Has the Chromebook connected back to the internet? If so, press a key to continue."
+read -s -n 1
 sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor tilix phosh gnome-tweaks --no-install-recommends -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
