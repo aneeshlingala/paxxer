@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Running a few checks..."
+
 if [[ $EUID -eq 0 ]]; then
 echo "Error: Do not run this script as root!" 1>&2
 echo "Solution: Run this script as a normal user without sudo."
@@ -19,13 +21,6 @@ else
   nmtui
 fi
 
-if [[ "$arch" == "aarch64" ]]; then
-    echo "Architecture is aarch64, continuing..."
-else
-    echo "Error: Please run this on an arm64 system. Instructions are in the readme."
-    exit
-fi
-
 if [[ -b "$PWD/first.sh" ]]; then
     echo "Script is running from the root directory of the repository, continuing..."
 else
@@ -41,6 +36,15 @@ PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
 NEW_HOSTNAME=kappa
 KERNEL=$(uname -r)
+ARCH=$(uname -m)
+
+echo "Doing one more last check..."
+if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Architecture is aarch64, continuing..."
+else
+    echo "Error: Please run this on an arm64 system."
+    exit
+fi
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
