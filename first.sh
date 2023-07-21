@@ -19,6 +19,21 @@ else
   nmtui
 fi
 
+if [[ "$arch" == "aarch64" ]]; then
+    echo "Architecture is aarch64, continuing..."
+else
+    echo "Error: Please run this on an arm64 system. Instructions are in the readme."
+    exit
+fi
+
+if [[ -b "$PWD/first.sh" ]]; then
+    echo "Script is running from the root directory of the repository, continuing..."
+else
+    echo "Error: Please run this script from the Paxxer repository."
+    exit
+fi
+
+
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.07.07"
 echo "Setting variables..."
@@ -118,6 +133,7 @@ fi
 
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
+sudo cp $PAXXERDIR/AuroraStore.apk /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
