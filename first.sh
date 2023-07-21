@@ -35,6 +35,13 @@ else
     exit
 fi
 
+if [[ -f "/etc/paxxer-succesful" ]]; then
+    echo "Error: Paxxer was already ran once on this system."
+    exit
+else
+    echo "Paxxer has not run before, continuing..."
+fi
+
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Architecture is aarch64, continuing..."
 else
@@ -151,6 +158,7 @@ sudo cp $PAXXERDIR/AuroraStore.apk /home/aneesh/paxxer
 sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
 sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
+sudo touch /etc/paxxer-first-done
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
