@@ -41,34 +41,6 @@ sudo apt clean
 cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Installing Binder and Ashmem DKMS modules..."
-cd ~
-git clone https://github.com/choff/anbox-modules
-sudo apt install dkms
-cd anbox-modules
-sudo cp anbox.conf /etc/modules-load.d/
-sudo cp 99-anbox.rules /lib/udev/rules.d/
-sudo cp -rT ashmem /usr/src/anbox-ashmem-1
-sudo cp -rT binder /usr/src/anbox-binder-1
-sudo dkms install anbox-ashmem/1
-sudo dkms install anbox-binder/1
-sudo update-initramfs -u
-sudo modprobe ashmem_linux
-sudo modprobe binder_linux
-cd ..
-rm -rf anbox-modules
-cd /home/aneesh/paxxer
-echo "Setting up Waydroid..."
-sudo apt install curl ca-certificates -y
-curl https://repo.waydro.id | sudo bash
-sudo apt install waydroid -y
-sudo systemctl enable waydroid-container.service
-sudo waydroid init
-sudo systemctl start waydroid-container.service
-sudo waydroid prop set persist.waydroid.multi_windows true
-sudo waydroid shell wm set-fix-to-user-rotation enabled
-echo "Installing Aurora Store..."
-sudo waydroid app install /home/aneesh/paxxer/AuroraStore.apk
 echo "Setting up Conky..."
 sudo apt install conky
 mkdir /home/aneesh/.config
