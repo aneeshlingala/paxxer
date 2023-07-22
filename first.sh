@@ -148,7 +148,6 @@ fi
 
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
-sudo cp $PAXXERDIR/AuroraStore.apk /home/aneesh/paxxer
 sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
 sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo cp $PAXXERDIR/gtk.css /home/aneesh/paxxer
