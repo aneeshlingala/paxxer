@@ -49,6 +49,15 @@ cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Setting up Phosh..."
 cat /home/aneesh/paxxer/gtk.css | tee -a ~/.config/gtk-3.0/gtk.css
+gsettings set org.gnome.desktop.interface gtk-theme Juno
+gsettings set org.gnome.desktop.wm.preferences theme Juno
+rm -rf ~/.config/gtk-4.0
+ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
+gsettings set org.gnome.desktop.interface icon-theme Fluent-dark
+gsettings set org.gnome.desktop.sound event-sounds true
+gsettings set org.gnome.desktop.sound input-feedback-sounds true
+gsettings set org.gnome.desktop.sound theme-name deepin
+gsettings set org.gnome.desktop.interface cursor-theme 'Afterglow-Recolored-Catppuccin-Teal'
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
