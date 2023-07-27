@@ -48,9 +48,7 @@ mkdir /home/aneesh/.config
 mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
-echo "Setting up Phosh..."
-rm -rf ~/.config/gtk-3.0/*
-cp /home/aneesh/paxxer/gtk.css ~/.config/gtk-3.0/
+echo "Theming GNOME..."
 gsettings set org.gnome.desktop.interface gtk-theme Juno
 gsettings set org.gnome.desktop.wm.preferences theme Juno
 rm -rf ~/.config/gtk-4.0
@@ -63,7 +61,6 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Afterglow-Recolored-Catp
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-gsettings set sm.puri.phoc auto-maximize true
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
