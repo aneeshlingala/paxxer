@@ -38,7 +38,8 @@ sudo apt upgrade -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
-sudo apt remove onboard --autoremove
+sudo apt remove onboard --autoremove -y
+sudo apt install gsettings-desktop-schemas -y
 cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
@@ -61,6 +62,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Afterglow-Recolored-Catp
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/debian-lights/lights.png
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
@@ -75,4 +77,3 @@ echo ""
 echo "Pressed a key, installing oh-my-fish..."
 cd ~
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-echo "Installing oh-my-fish"
