@@ -49,7 +49,8 @@ mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Setting up Phosh..."
-cat /home/aneesh/paxxer/gtk.css | tee -a ~/.config/gtk-3.0/gtk.css
+rm -rf ~/.config/gtk-3.0/*
+cp /home/aneesh/paxxer/gtk.css ~/.config/gtk-3.0/
 gsettings set org.gnome.desktop.interface gtk-theme Juno
 gsettings set org.gnome.desktop.wm.preferences theme Juno
 rm -rf ~/.config/gtk-4.0
