@@ -38,6 +38,7 @@ sudo apt upgrade -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
+sudo apt remove onboard --autoremove
 cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
