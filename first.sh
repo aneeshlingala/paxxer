@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.07.20"
+echo "Version: 2023.07.26"
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
@@ -76,7 +76,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Beautyline Icons, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
+echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -88,9 +88,12 @@ sudo apt install brave-browser -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
-cd /usr/share/icons
-sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 cd ~
+sudo git clone https://github.com/vinceliuice/Fluent-icon-theme
+cd Fluent-icon-theme
+sudo bash install.sh -r
+cd ~
+sudo rm -rf Fluent-icon-theme
 sudo git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
 cd Afterglow-Cursors-Recolored/colors/catppuccin/teal
 sudo bash install.sh
@@ -101,7 +104,7 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with Phosh"
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal phosh phosh-core gnome-tweaks --no-install-recommends -y
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal phosh phosh-core gnome-tweaks telegram-desktop --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* squeekboard --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
