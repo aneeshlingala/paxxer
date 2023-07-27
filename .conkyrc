@@ -1,80 +1,53 @@
-# modified conky configuration, based on crunchbang conky, for paxxer (R.I.P. Crunchbang)
-# Enjoy! :)
-##############################################
-# Settings
-##############################################
-background yes
-use_xft yes
-xftfont Liberation Sans:size=9
-xftalpha 1
-update_interval 1.0
-total_run_times 0
-own_window yes
-own_window_transparent yes
-##############################################
-# Compositing tips:
-# Conky can play strangely when used with
-# different compositors. I have found the
-# following to work well, but your mileage
-# may vary. Comment/uncomment to suit.
-##############################################
-## no compositor
-own_window_type override
-own_window_argb_visual no
-own_window_class desktop
-own_window yes
-own_window_type conky
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_argb_visual yes
-own_window_argb_value 800
-## xcompmgr
-#own_window_type override
-#own_window_argb_visual yes
+conky.config = {
+	alignment = 'top_right',
+	background = false,
+	border_inner_margin = 15,
+	border_width = 5,
+	default_color = 'ffffff',  --ffffff # grey 5f5f5f 3F3F3F 183149 3B3B3B 26211F
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 25,
+	maximum_width = 370,
+	double_buffer = true,
+	override_utf8_locale = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_argb_visual = true,
+	own_window_argb_value = 150,
+	text_buffer_size = 8000,
+	total_run_times = 0,
+	update_interval = 1,
+	uppercase = false,
+	use_xft = true,
+	xftalpha = 1,
+	short_units = false,
+	font = 'GE Inspira:style=Light:pixelsize=16',
+	color1 = '00C75C',
+	color2 = '005929',
+	color3 = '005929',
+};
 
-## cairo-compmgr
-#own_window_type desktop
-#own_window_argb_visual yes
-##############################################
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-double_buffer yes
-minimum_size 200 200
-maximum_width 240
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders no
-default_color 656667
-default_shade_color 000000
-default_outline_color 828282
-alignment top_right
-gap_x 12
-gap_y 56
-no_buffers yes
-uppercase no
-cpu_avg_samples 2
-override_utf8_locale yes #for temp output with an A
+conky.text = [[
+${font GE Inspira:pixelsize=150}${alignr}${color1}${time %H}
+${voffset -35}${alignr}${color2}${time %M}
+${voffset -90}${color3}${font GE Inspira:pixelsize=25}${alignr}${time %A}  |  ${alignr}${time %B %d, %Y}${color}${font}
 
-##############################################
-#  Output
-##############################################
-TEXT
-S Y S T E M    I N F O
-${hr}
-Host:$alignr$nodename
-Uptime:$alignr$uptime
-
-CPU1:${alignr}${cpubar cpu1 8,60}
-CPU2:${alignr}${cpubar cpu2 8,60}
-RAM: $memperc% ${alignr}${membar 8,60}
-
-Disk usage:$alignr${fs_bar 8,60}
-${if_up wlan0}
-802.11 quality:$alignr${wireless_link_bar 8,60 wlan0}
-802.11 bitrate:$alignr${wireless_bitrate wlan0}
-${endif}${if_up tun0} VPN is active. ${endif}
-NETWORK ${hr 2}
-${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
-ESSID: $alignr ${wireless_essid wlan0}
-Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
-Load $alignr $loadavg
+${color6}${font GE Inspira:size=14}RESOURCES ${hr}$font
+cpu1 ${alignr}${cpu cpu1}%
+cpu2 ${alignr}${cpu cpu2}%
+cpu3 ${alignr}${cpu cpu3}%
+cpu4 ${alignr}${cpu cpu4}%
+cpu5 ${alignr}${cpu cpu5}%
+cpu6 ${alignr}${cpu cpu6}%
+cpu7 ${alignr}${cpu cpu7}%
+cpu8 ${alignr}${cpu cpu8}%
+ram ${alignr}${mem} / ${memmax}
+system  ${alignr}${fs_used_perc /}% / ${fs_size /}
+]];
