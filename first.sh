@@ -28,7 +28,7 @@ else
   nmtui
 fi
 
-if [[ -f "$PWD/AuroraStore.apk" ]]; then
+if [[ -f "$PWD/gtk.css" ]]; then
     echo "Script is running from the root directory of the repository, continuing..."
 else
     echo "Error: Please run this script from the Paxxer repository."
@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.07.26"
+echo "Version: 2023.07.27"
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
