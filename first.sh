@@ -28,7 +28,7 @@ else
   nmtui
 fi
 
-if [[ -f "$PWD/gtk.css" ]]; then
+if [[ -f "$PWD/second.sh" ]]; then
     echo "Script is running from the root directory of the repository, continuing..."
 else
     echo "Error: Please run this script from the Paxxer repository."
@@ -103,19 +103,17 @@ echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Replacing Xfce Desktop with Phosh"
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal phosh phosh-core gnome-tweaks telegram-desktop --no-install-recommends -y
-sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* squeekboard --autoremove -y
+echo "Replacing Xfce Desktop with GNOME"
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal cinnamon-core gnome-tweaks telegram-desktop --no-install-recommends -y
+sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
-sudo mkdir /etc/lightdm/lightdm.conf.d
-sudo touch /etc/lightdm/lightdm.conf.d/12-autologin.conf
-echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
-echo "autologin-user=aneesh" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
-echo "user-session=phosh" | sudo tee -a /etc/lightdm/lightdm.conf.d/12-autologin.conf
+sudo apt install ukui-greeter
+sudo mkdir /usr/share/lightdm/lightdm.conf.d/
+sudo touch /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
+echo "[SeatDefaults]" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
+echo "greeter-session=ukui-greeter" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
 echo "Installing Wallpapers..."
-sudo mkdir /usr/share/backgrounds/lights
-sudo cp $PAXXERDIR/lights.jpg /usr/share/backgrounds/lights/
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
@@ -148,8 +146,6 @@ then
         exit
     fi
 fi
-
-sudo rm -rf /usr/share/applications/sm.puri.OSK0.desktop
 
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
