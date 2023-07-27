@@ -149,6 +149,8 @@ then
     fi
 fi
 
+sudo rm -rf /usr/share/applications/sm.puri.OSK0.desktop
+
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
