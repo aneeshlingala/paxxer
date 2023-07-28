@@ -50,7 +50,7 @@ cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
 echo "Setting up Conky..."
-sudo apt install conky
+sudo apt install conky -y
 mkdir /home/aneesh/.config
 mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
