@@ -39,7 +39,7 @@ echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
 sudo apt remove onboard --autoremove -y
-sudo apt install gsettings-desktop-schemas libglib2.0-bin -y
+sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
