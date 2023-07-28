@@ -151,7 +151,6 @@ sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
 sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
 sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
-sudo cp $PAXXERDIR/gtk.css /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
