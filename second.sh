@@ -54,15 +54,6 @@ gsettings set org.gnome.desktop.interface gtk-theme Juno
 gsettings set org.gnome.desktop.wm.preferences theme Juno
 rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
-gsettings set org.gnome.desktop.interface icon-theme Fluent-dark
-gsettings set org.gnome.desktop.sound event-sounds true
-gsettings set org.gnome.desktop.sound input-feedback-sounds true
-gsettings set org.gnome.desktop.sound theme-name deepin
-gsettings set org.gnome.desktop.interface cursor-theme 'Afterglow-Recolored-Catppuccin-Teal'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/debian-lights/lights.png
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
