@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.07.27"
+echo "Version: 2023.07.28"
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
@@ -103,8 +103,8 @@ echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Replacing Xfce Desktop with GNOME"
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal cinnamon-core gnome-tweaks telegram-desktop --no-install-recommends -y
+echo "Replacing Xfce Desktop with MATE"
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal mate-desktop-environment-core telegram-desktop --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
