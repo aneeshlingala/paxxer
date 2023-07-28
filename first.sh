@@ -109,10 +109,10 @@ sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils x
 sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
 echo "Installing LightDM and setting it up..."
 sudo apt install ukui-greeter
-sudo mkdir /usr/share/lightdm/lightdm.conf.d/
-sudo touch /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
-echo "[SeatDefaults]" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
-echo "greeter-session=ukui-greeter" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-greeter.conf
+sudo rm -rf /etc/lightdm/lightdm.conf
+sudo touch /etc/lightdm/lightdm.conf
+echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
+echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "Installing Wallpapers..."
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
