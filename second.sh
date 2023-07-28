@@ -49,10 +49,9 @@ mkdir /home/aneesh/.config
 mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
-echo "Theming Cinnamon..."
+echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
-sudo apt remove imagemagick --autoremove
 echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
