@@ -49,9 +49,7 @@ mkdir /home/aneesh/.config
 mkdir /home/aneesh/.config/autostart
 cp /home/aneesh/paxxer/.conkyrc ~
 cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
-echo "Theming GNOME..."
-gsettings set org.gnome.desktop.interface gtk-theme Juno
-gsettings set org.gnome.desktop.wm.preferences theme Juno
+echo "Theming Cinnamon..."
 rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
 echo "Installing Pi-Apps..."
