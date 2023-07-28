@@ -104,9 +104,9 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with MATE"
-sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor gnome-terminal mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
+sudo apt install totem eog mousepad file-roller atril nemo gnome-disk-utility gnome-system-monitor system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
-sudo apt remove xterm exfalso synaptic lightdm-settings --autoremove -y
+sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing LightDM and setting it up..."
 sudo apt install ukui-greeter -y
 sudo rm -rf /etc/lightdm/lightdm.conf
