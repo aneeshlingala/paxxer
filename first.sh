@@ -114,6 +114,7 @@ sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "Installing Wallpapers..."
+sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
