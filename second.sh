@@ -65,7 +65,7 @@ cd ~
 sudo touch /etc/paxxer-successful
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
-wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
 cd ~
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen."
