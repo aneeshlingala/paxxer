@@ -12,6 +12,25 @@ else
     exit
 fi
 
+if [[ $EUID -eq 0 ]]; then
+  echo "This script should not be run as root" 1>&2
+  echo "Solution: Run this script as a normal user without sudo." 1>&2
+  exit
+fi
+
+if ping -q -c 1 -W 1 google.com >/dev/null; then
+  echo "You are online, continuing..."
+  echo ""
+else
+  echo "Error: You are offline."
+  echo ""
+  echo "Press any key to launch the Network Connection Wizard..."
+  read -s -n 1
+  echo ""
+  echo "Pressed a key, launching the Network Connection Wizard..."
+  nmtui
+fi
+
 echo "Upgrading to Debian Unstable..."
 sudo rm -rf /etc/apt/sources.list
 sudo touch /etc/apt/sources.list
