@@ -41,3 +41,11 @@ sudo apt update -y
 echo "Note: Please check if apt is removing any necessary packages."
 sudo apt full-upgrade --autoremove
 sudo touch /etc/paxxer-successful
+echo "PLEASE READ below:"
+echo "Install harleen theme with omf install harleen."
+echo "Press any key to install oh-my-fish..."
+read -s -n 1
+echo ""
+echo "Pressed a key, installing oh-my-fish..."
+cd ~
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
