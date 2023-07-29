@@ -68,7 +68,7 @@ cd /home/aneesh/paxxer
 wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
 cd ~
 echo "PLEASE READ below:"
-echo "Install harleen theme with omf install harleen. After installing harleen fish theme."
+echo "Install harleen theme with omf install harleen."
 echo "After that, reboot and run third.sh in /home/aneesh/paxxer"
 echo "Press any key to install oh-my-fish..."
 read -s -n 1
