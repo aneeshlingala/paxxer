@@ -63,9 +63,13 @@ wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bas
 sudo rm -rf /home/aneesh/paxxer
 cd ~
 sudo touch /etc/paxxer-successful
+sudo mkdir /home/aneesh/paxxer
+cd /home/aneesh/paxxer
+wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
+cd ~
 echo "PLEASE READ below:"
-echo "Install harleen theme with omf install harleen. After installing harleen fish theme, rebooting is required."
-echo ""
+echo "Install harleen theme with omf install harleen. After installing harleen fish theme."
+echo "After that, reboot and run third.sh in /home/aneesh/paxxer"
 echo "Press any key to install oh-my-fish..."
 read -s -n 1
 echo ""
