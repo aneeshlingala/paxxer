@@ -67,12 +67,5 @@ sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
 cd ~
-echo "PLEASE READ below:"
-echo "Install harleen theme with omf install harleen."
-echo "After that, reboot and run third.sh in /home/aneesh/paxxer"
-echo "Press any key to install oh-my-fish..."
-read -s -n 1
-echo ""
-echo "Pressed a key, installing oh-my-fish..."
-cd ~
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+echo "After rebooting, run third.sh in /home/aneesh/paxxer."
+systemctl reboot
