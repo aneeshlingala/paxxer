@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$(whoami)" != "aneesh" ]; then
         echo "Error: Please reboot and run the script as user aneesh."
         echo "Not rebooting but instead logging out and logging in as aneesh will cause the script to break."
