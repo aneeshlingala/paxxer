@@ -62,7 +62,7 @@ echo "Installing Pi-Apps..."
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 sudo rm -rf /home/aneesh/paxxer
 cd ~
-sudo touch /etc/paxxer-successful
+sudo touch /etc/paxxer-second
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
