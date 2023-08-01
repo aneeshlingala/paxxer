@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.07.28"
+echo "Version: 2023.08.01"
 
 echo "Extending rootfs to max..."
 sudo bash /scripts/extend-rootfs.sh
@@ -120,7 +120,7 @@ echo "draw-user-backgrounds=true" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "onscreen-keyboard=false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "theme-name=Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "icon-theme-name=Fluent" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "Installing Wallpapers..."
+echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
