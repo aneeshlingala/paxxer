@@ -113,6 +113,12 @@ sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=slick-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
+sudo rm -rf /etc/lightdm/slick-greeter.conf
+sudo touch /etc/lightdm/slick-greeter.conf
+echo "background=#008080" | sudo tee -a /etc/lightdm/slick-greeter.conf 
+echo "background-color=#008080" | sudo tee -a /etc/lightdm/slick-greeter.conf 
+echo "draw-user-backgrounds=true" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "onscreen-keyboard=false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "Installing Wallpapers..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
