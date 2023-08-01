@@ -69,4 +69,10 @@ sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
 sudo chmod +x third.sh
 cd ~
 echo "After rebooting, run third.sh in /home/aneesh/paxxer."
-systemctl reboot
+echo "" 
+echo "Press any key to reboot..." 
+read -s -n 1 
+echo "" 
+echo "Pressed a key, rebooting..." 
+systemctl reboot
+
