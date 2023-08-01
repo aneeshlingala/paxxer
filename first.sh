@@ -108,11 +108,11 @@ sudo apt install totem eog mousepad file-roller atril gnome-disk-utility gnome-s
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing LightDM and setting it up..."
-sudo apt install arctica-greeter-theme-debian-softwaves artica-greeter --no-install-recommends -y
+sudo apt install slick-greeter --no-install-recommends -y
 sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
-echo "greeter-session=artica-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
+echo "greeter-session=slick-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "Installing Wallpapers..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
