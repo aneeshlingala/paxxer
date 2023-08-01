@@ -41,7 +41,9 @@ sudo touch /etc/apt/sources.list
 echo "deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list
 sudo apt update -y
 echo "Note: Please check if apt is removing any necessary packages."
+sleep 7
 sudo apt full-upgrade --autoremove
+sleep 11
 sudo touch /etc/paxxer-successful
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen."
