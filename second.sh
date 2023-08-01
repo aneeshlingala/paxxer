@@ -58,9 +58,8 @@ cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
-echo "Installing App Store..."
-sudo apt install gnome-software -y
-sudo rm -rf /home/aneesh/paxxer
+echo "Setting up lock screen..."
+echo -e '[Desktop Entry]\nName=Screensaver\nType=Applicaton\nExec=xscreensaver -nosplash' > ~/.config/autostart/xcreensaver.desktop
 cd ~
 sudo touch /etc/paxxer-second
 sudo mkdir /home/aneesh/paxxer
