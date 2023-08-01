@@ -66,6 +66,7 @@ sudo touch /etc/paxxer-second
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
+sudo chmod +x third.sh
 cd ~
 echo "After rebooting, run third.sh in /home/aneesh/paxxer."
 systemctl reboot
