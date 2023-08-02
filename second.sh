@@ -40,7 +40,7 @@ echo "Deleting user linux..."
 sudo userdel linux
 sudo rm -rf /home/linux
 echo "Upgrading System..."
-sudo apt upgrade -y
+sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
