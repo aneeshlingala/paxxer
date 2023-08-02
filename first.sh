@@ -115,7 +115,7 @@ echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=slick-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 sudo rm -rf /etc/lightdm/slick-greeter.conf
 sudo touch /etc/lightdm/slick-greeter.conf
-echo "background=/usr/share/wallpapers/SpaceFun/contents/images/1920x1080.svg" | sudo tee -a /etc/lightdm/slick-greeter.conf 
+echo "background=/etc/lightdm/space.svg" | sudo tee -a /etc/lightdm/slick-greeter.conf 
 echo "draw-user-backgrounds=false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "onscreen-keyboard=false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "theme-name=Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
@@ -125,6 +125,7 @@ echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
+sudo ln -s /usr/share/wallpapers/SpaceFun/contents/images/1920x1080.svg /etc/lightdm/space.svg
 cd ~
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
