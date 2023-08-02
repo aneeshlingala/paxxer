@@ -60,6 +60,7 @@ rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
 cd ~
 sudo touch /etc/paxxer-second
+sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
