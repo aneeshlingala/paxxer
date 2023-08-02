@@ -79,6 +79,7 @@ echo "Press any key to reboot..."
 read -s -n 1 
 echo "" 
 echo "Pressed a key, rebooting..." 
-systemctl reboot
+cd ~
+/usr/bin/systemctl reboot
 
 
