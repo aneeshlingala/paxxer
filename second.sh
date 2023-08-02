@@ -58,6 +58,7 @@ cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0 ~/.config/gtk-4.0
+echo "GTK_THEME=Juno" | sudo tee -a /etc/environment
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
