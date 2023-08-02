@@ -75,7 +75,10 @@ sudo chmod +x third.sh
 cd ~
 echo "After rebooting, run third.sh in /home/aneesh/paxxer."
 echo ""
-echo "Press any key to reboot."
-read -s -n 1
+echo "Press any key to reboot..." 
+read -s -n 1 
+echo "" 
+echo "Pressed a key, rebooting..." 
 systemctl reboot
+
 
