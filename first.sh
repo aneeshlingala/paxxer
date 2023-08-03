@@ -50,11 +50,11 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.01"
+echo "Version: 2023.08.02"
 
 echo "Extending rootfs to max and increasing swapfile..."
 sudo bash /scripts/extend-rootfs.sh
-suso bash /scripts/recreate-swapfile.sh 2G
+sudo bash /scripts/recreate-swapfile.sh 2G
 sudo rm -rf /scripts
 echo "Fixing permissions, this may take a while..."
 sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chmod g-w {} \;
