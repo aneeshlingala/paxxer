@@ -43,6 +43,7 @@ sudo apt update -y
 echo "Note: Please check if apt is removing any necessary packages."
 sleep 7
 sudo apt full-upgrade --autoremove
+sudo apt clean
 sleep 11
 sudo touch /etc/paxxer-successful
 echo "PLEASE READ below:"
