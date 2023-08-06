@@ -96,7 +96,7 @@ sudo bash install.sh -r
 cd ~
 sudo rm -rf Fluent-icon-theme
 sudo git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
-cd Afterglow-Cursors-Recolored/colors/catppuccin/teal
+cd Afterglow-Cursors-Recolored/colors/Catppuccin/Teal-v2
 sudo bash install.sh
 cd ~
 sudo rm -rf Afterglow-Cursors-Recolored
