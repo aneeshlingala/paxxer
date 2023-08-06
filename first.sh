@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.02"
+echo "Version: 2023.08.06"
 
 echo "Extending rootfs to max and increasing swapfile..."
 sudo bash /scripts/extend-rootfs.sh
@@ -78,7 +78,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
-sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
+sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Vivaldi Browser..."
@@ -122,7 +122,9 @@ echo "draw-user-backgrounds = false" | sudo tee -a /etc/lightdm/slick-greeter.co
 echo "onscreen-keyboard = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "theme-name = Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "icon-theme-name = Fluent" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "draw-user-backgrounds = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "show-hostname = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "show-clock = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "show-power = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "Installing Wallpaper..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
