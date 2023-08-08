@@ -60,6 +60,7 @@ rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
 rm -rf ~/.config/assets
+mkdir ~/.config/gtk-4.0
 ln -s /usr/share/themes/Juno/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
 ln -s /usr/share/themes/Juno/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
 ln -s /usr/share/themes/Juno/gtk-4.0/assets ~/.config/gtk-4.0/assets
