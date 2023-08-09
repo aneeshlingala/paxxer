@@ -35,7 +35,7 @@ fi
 
 echo "Upgrading to Debian Unstable..."
 sudo apt purge unattended-upgrades --autoremove -y
-sudo apt install apt-listbugs apt-listchanges -y
+sudo apt install apt-listbugs apt-listchanges ffmpeg -y
 sudo rm -rf /etc/apt/sources.list
 sudo touch /etc/apt/sources.list
 echo "deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list
