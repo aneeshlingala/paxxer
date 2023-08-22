@@ -122,7 +122,7 @@ echo "[Greeter]" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "background = /etc/lightdm/space.svg" | sudo tee -a /etc/lightdm/slick-greeter.conf 
 echo "draw-user-backgrounds = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "onscreen-keyboard = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "theme-name = Graphite-teal-Dark-nord" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "theme-name = Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "icon-theme-name = Fluent" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "show-hostname = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "show-clock = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
