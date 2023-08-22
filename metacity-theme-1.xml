@@ -12,8 +12,8 @@
 
 <constant name="C_titlebar_focused" value="#2d2d2d"/>
 <constant name="C_titlebar_unfocused" value="#242424"/>
-<constant name="C_highlight_focused" value="#ffffff"/>
-<constant name="C_highlight_unfocused" value="#ffffff"/>
+<constant name="C_highlight_focused" value="blend/#2d2d2d/#ffffff/0.1"/>
+<constant name="C_highlight_unfocused" value="blend/#242424/#ffffff/0.1"/>
 <constant name="C_title_focused" value="#ffffff"/>
 <constant name="C_title_unfocused" value="#ffffff"/>
 
