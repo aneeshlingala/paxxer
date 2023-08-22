@@ -92,7 +92,6 @@ cd Graphite-gtk-theme
 sudo bash install.sh -c dark -t teal --tweaks nord
 cd ~
 sudo rm -rf Graphite-gtk-theme
-sudo mv $PAXXERDIR/metacity-theme-2.xml /usr/share/themes/Graphite-teal-Dark-nord/metacity-1/metacity-theme-2.xml
 sudo git clone https://github.com/vinceliuice/Fluent-icon-theme
 cd Fluent-icon-theme
 sudo bash install.sh -r
