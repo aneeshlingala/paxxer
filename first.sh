@@ -77,7 +77,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Graphite GTK Theme"
+echo "Installing Fluent Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -97,11 +97,11 @@ cd Fluent-icon-theme
 sudo bash install.sh -r
 cd ~
 sudo rm -rf Fluent-icon-theme
-sudo git clone https://github.com/TeddyBearKilla/Afterglow-Cursors-Recolored
-cd Afterglow-Cursors-Recolored/colors/Catppuccin/Teal-v2
+sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
+cd Afterglow-Cursors
 sudo bash install.sh
 cd ~
-sudo rm -rf Afterglow-Cursors-Recolored
+sudo rm -rf Afterglow-Cursors
 echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
