@@ -77,7 +77,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
+echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Graphite GTK Theme"
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -91,6 +91,7 @@ sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
 sudo bash install.sh -c dark -t teal --tweaks nord
 cd ~
+sudo rm -rf Graphite-gtk-theme
 sudo git clone https://github.com/vinceliuice/Fluent-icon-theme
 cd Fluent-icon-theme
 sudo bash install.sh -r
