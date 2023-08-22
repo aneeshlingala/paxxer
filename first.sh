@@ -78,7 +78,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Graphite GTK Theme"
-sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
+sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
