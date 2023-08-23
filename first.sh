@@ -77,7 +77,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing Fluent Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
+echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 echo "Installing Fluent Icon Theme, Afterglow Cursors Teal, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
@@ -91,12 +91,8 @@ sudo apt install brave-browser -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
-cd ~
-sudo git clone https://github.com/vinceliuice/Fluent-icon-theme
-cd Fluent-icon-theme
-sudo bash install.sh -r
-cd ~
-sudo rm -rf Fluent-icon-theme
+cd /usr/share/icons
+sudo gzip -d $PAXXERDIR/BeautySolar.tar.gz 
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo bash install.sh
@@ -123,7 +119,7 @@ echo "background = /etc/lightdm/space.svg" | sudo tee -a /etc/lightdm/slick-gree
 echo "draw-user-backgrounds = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "onscreen-keyboard = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "theme-name = Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "icon-theme-name = Fluent" | sudo tee -a /etc/lightdm/slick-greeter.conf
+echo "icon-theme-name = BeautySolar" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "show-hostname = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "show-clock = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
 echo "show-power = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
