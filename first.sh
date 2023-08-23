@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.22"
+echo "Version: 2023.08.23"
 
 echo "Extending rootfs to max and increasing swapfile..."
 sudo bash /scripts/extend-rootfs.sh
