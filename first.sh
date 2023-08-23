@@ -50,7 +50,7 @@ else
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.22"
+echo "Version: 2023.08.08"
 
 echo "Extending rootfs to max and increasing swapfile..."
 sudo bash /scripts/extend-rootfs.sh
@@ -95,9 +95,8 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update -y
 sudo apt install brave-browser -y
 cd ~
-sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
-cd Graphite-gtk-theme
-sudo bash install.sh -c dark -t teal --tweaks nord
+cd /usr/share/themes
+sudo git clone https://github.com/eliverlara/Juno
 cd ~
 sudo git clone https://github.com/vinceliuice/Fluent-icon-theme
 cd Fluent-icon-theme
