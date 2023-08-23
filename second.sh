@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [[ $EUID -eq 0 ]]; then
   echo "This script should not be run as root" 1>&2
   echo "Solution: Run this script as a normal user without sudo." 1>&2
@@ -24,6 +25,8 @@ if [ "$(whoami)" != "aneesh" ]; then
         echo "Not rebooting but instead logging out and logging in as aneesh will cause the script to break."
         exit
 fi
+
+sudo killall light-locker
 
 if [[ -f "/etc/paxxer-first-done" ]]; then
     echo "First.sh has been run, good."
