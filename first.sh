@@ -90,7 +90,7 @@ cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
 cd /usr/share/icons
-sudo gzip -d $PAXXERDIR/BeautySolar.tar.gz 
+sudo tar -xf $PAXXERDIR/BeautySolar.tar.gz
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo bash install.sh
@@ -104,24 +104,17 @@ echo "Replacing Xfce Desktop with MATE"
 sudo apt install totem eog mousepad file-roller atril gnome-disk-utility gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak light-locker --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
-echo "Installing LightDM and setting it up..."
-sudo apt install slick-greeter --no-install-recommends -y
-sudo rm -rf /etc/lightdm/lightdm.conf
-sudo touch /etc/lightdm/lightdm.conf
-echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
-echo "greeter-session=slick-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
-sudo rm -rf /etc/lightdm/slick-greeter.conf
-sudo touch /etc/lightdm/slick-greeter.conf
-echo "[Greeter]" | sudo tee -a /etc/lightdm/slick-greeter.conf 
-echo "background = /etc/lightdm/space.svg" | sudo tee -a /etc/lightdm/slick-greeter.conf 
-echo "draw-user-backgrounds = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "onscreen-keyboard = false" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "theme-name = Juno" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "icon-theme-name = BeautySolar" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "show-hostname = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "show-clock = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "show-power = true" | sudo tee -a /etc/lightdm/slick-greeter.conf
-echo "Installing Wallpaper..."
+echo "Installing SDDM and setting it up..."
+sudo apt install sddm qml-module-qtgraphicaleffects --no-install-recommends -y
+sudo /usr/share/sddm/themes
+sudo git clone https://github.com/EricKotato/sddm-slice slice
+sudo touch /etc/sddm.conf
+echo "[Theme]" | sudo tee -a /etc/sddm.conf
+echo "Current=slice" | sudo tee -a /etc/sddm.conf
+echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+sudo systemctl disable lightdm.service
+sudo systemctl enable sddm.service
+sudo apt purge lightdm-settings --autoremove
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
