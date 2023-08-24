@@ -20,8 +20,6 @@ if [[ $EUID -eq 0 ]]; then
   exit
 fi
 
-sudo killall light-locker
-
 if ping -q -c 1 -W 1 google.com >/dev/null; then
   echo "You are online, continuing..."
   echo ""
