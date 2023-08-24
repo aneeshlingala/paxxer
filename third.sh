@@ -46,6 +46,8 @@ sudo apt full-upgrade --autoremove
 sudo apt clean
 sleep 11
 sudo touch /etc/paxxer-successful
+cd ~
+sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
 echo "Install harleen theme with omf install harleen."
 echo "Press any key to install oh-my-fish..."
