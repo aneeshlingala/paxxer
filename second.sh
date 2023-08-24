@@ -26,8 +26,6 @@ if [ "$(whoami)" != "aneesh" ]; then
         exit
 fi
 
-sudo killall light-locker
-
 if [[ -f "/etc/paxxer-first-done" ]]; then
     echo "First.sh has been run, good."
     sudo rm -rf /etc/paxxer-first-done
