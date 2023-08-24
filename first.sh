@@ -52,7 +52,7 @@ fi
 if [ "$KERNEL" = "5.19.1-stb-mt8+" ]
 then
     echo "Please run Paxxer on Debian Bookworm."
-    echo "Debian Bullseye is not supported anymore."
+    echo "Debian Bullseye or older is not supported anymore."
     exit
 fi
 
