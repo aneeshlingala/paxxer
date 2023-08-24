@@ -106,7 +106,8 @@ sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils x
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing SDDM and setting it up..."
 sudo apt install sddm qml-module-qtgraphicaleffects --no-install-recommends -y
-sudo /usr/share/sddm/themes
+sudo mkdir /usr/share/sddm/themes
+cd /usr/share/sddm/themes
 sudo git clone https://github.com/EricKotato/sddm-slice slice
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
