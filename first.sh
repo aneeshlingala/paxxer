@@ -77,7 +77,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
+echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
