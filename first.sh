@@ -104,18 +104,10 @@ echo "Replacing Xfce Desktop with MATE"
 sudo apt install totem eog mousepad file-roller atril gnome-disk-utility gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak light-locker --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
-echo "Installing SDDM and setting it up..."
-sudo apt install sddm qml-module-qtgraphicaleffects --no-install-recommends -y
-sudo mkdir /usr/share/sddm/themes
-cd /usr/share/sddm/themes
-sudo git clone https://github.com/EricKotato/sddm-slice slice
-sudo touch /etc/sddm.conf
-echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=slice" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+echo "Installing LXDM and setting it up..."
+sudo apt install lxdm --no-install-recommends -y
 sudo systemctl disable lightdm.service
-sudo systemctl enable sddm.service
-sudo apt purge lightdm-settings --autoremove
+sudo systemctl enable lxdm.service
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
