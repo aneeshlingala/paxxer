@@ -64,10 +64,13 @@ fi
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.08.25"
 
-echo "Extending rootfs to max and increasing swapfile..."
-sudo bash /scripts/extend-rootfs.sh
-sudo bash /scripts/recreate-swapfile.sh 2G
-sudo rm -rf /scripts
+if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Extending rootfs to max and increasing              swapfile..."
+    sudo bash /scripts/extend-rootfs.sh
+    sudo bash /scripts/recreate-swapfile.sh 2G
+    sudo rm -rf /scripts
+fi
+
 echo "Fixing permissions, this may take a while..."
 sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chmod g-w {} \;
 sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chown root:root {} \;
