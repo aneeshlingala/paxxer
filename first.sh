@@ -127,7 +127,7 @@ sudo ln -s /usr/share/wallpapers/SpaceFun/contents/images/1920x1080.svg /etc/lig
 cd ~
 
 if [[ "$ARCH" == "x86_64" ]]; then
-    echo "Installing Xanmod Kernel..."
+    echo "Installing Xanmod Kernel & Zoom..."
     DEBIAN_FRONTEND=noninteractive 
     sudo apt purge --autoremove --assume-yes linux-image-$(uname --kernel-release) -y
     DEBIAN_FRONTEND=""
@@ -136,6 +136,9 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt update 
     sudo apt install linux-xanmod-x64v3 -y
     sudo update-grub
+    sudo mkdir -p /etc/apt/keyrings && wget -qO- https://mirror.mwt.me/my/gpgkey | sudo tee /etc/apt/keyrings/mwt.asc > /dev/null
+    echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/mwt.asc by-hash=force] https://mirror.mwt.me/my/deb any zoom" | sudo tee /etc/apt/sources.list.d/mwt.list
+    sudo apt install zoom
 fi
 
 echo "Setting default shell as fish..."
