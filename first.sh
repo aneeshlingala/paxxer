@@ -44,10 +44,15 @@ fi
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Architecture is aarch64, continuing..."
+fi
+
+if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Architecture is x64, continuing..."
 else
-    echo "Error: Please run this on an arm64 system."
+    echo "Error: Paxxer does not work on the $(echo $ARCH) architecture."
     exit
 fi
+
 
 if [ "$KERNEL" = "5.19.1-stb-mt8+" ]
 then
@@ -57,7 +62,7 @@ then
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.24"
+echo "Version: 2023.08.25"
 
 echo "Extending rootfs to max and increasing swapfile..."
 sudo bash /scripts/extend-rootfs.sh
