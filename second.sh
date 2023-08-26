@@ -87,7 +87,7 @@ sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
-echo $(uname -r) | sudo tee -a /etc/paxxer-kernel
+uname -r | sudo tee -a /etc/paxxer-kernel
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
 sudo chmod +x third.sh
 cd ~
