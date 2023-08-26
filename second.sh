@@ -50,12 +50,14 @@ sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 cd ~
 echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Setting up Conky..."
-sudo apt install conky -y
-mkdir /home/aneesh/.config
-mkdir /home/aneesh/.config/autostart
-cp /home/aneesh/paxxer/.conkyrc ~
-cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
+if [[ "$ARCH" == "aarch64" ]]; then
+   echo "Setting up Conky..."
+   sudo apt install conky -y
+   mkdir /home/aneesh/.config
+   mkdir /home/aneesh/.config/autostart
+   cp /home/aneesh/paxxer/.conkyrc ~
+   cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
+fi
 echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
