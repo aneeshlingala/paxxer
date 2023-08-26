@@ -12,6 +12,6 @@ In very slow internet speeds, it may take even longer than the estimated time.
 
 ## For x64 Users
 
-Install Debian with XFCE Desktop, or the script will break.
+Install Debian with XFCE Desktop and make sure your user has sudo permissions, or the script will break
 
 # Made with ♥ by Aneesh Lingala 👨‍💻 ‖ [My Website 🌐](https://aneeshlingala.github.io)
