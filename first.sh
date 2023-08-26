@@ -54,7 +54,6 @@ else
     exit
 fi
 
-
 if [ "$KERNEL" = "5.19.1-stb-mt8+" ]
 then
     echo "Please run Paxxer on Debian Bookworm."
