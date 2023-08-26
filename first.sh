@@ -149,6 +149,11 @@ sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
 sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
+
+if [[ "$ARCH" == "x86_64" ]]; then
+    echo $USER | sudo tee -a /etc/paxxer-user
+fi
+
 echo $USER | sudo tee -a /etc/paxxer-user
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
