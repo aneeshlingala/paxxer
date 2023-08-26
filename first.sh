@@ -63,7 +63,7 @@ then
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.25"
+echo "Version: 2023.08.26"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -93,7 +93,7 @@ sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
-sudo apt purge gimp xterm --autoremove -y
+sudo apt purge gimp xterm hv3 --autoremove -y
 echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
