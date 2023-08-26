@@ -66,7 +66,7 @@ echo "Paxxer, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.08.25"
 
 if [[ "$ARCH" == "aarch64" ]]; then
-    echo "Extending rootfs to max and increasing              swapfile..."
+    echo "Extending rootfs to max and increasing swapfile..."
     sudo bash /scripts/extend-rootfs.sh
     sudo bash /scripts/recreate-swapfile.sh 2G
     sudo rm -rf /scripts
