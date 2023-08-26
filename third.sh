@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ARCH=$(uname -m)
+
 if [ "$(whoami)" != "aneesh" ]; then
         echo "Error: Please reboot and run the script as user aneesh."
         echo "Not rebooting but instead logging out and logging in as aneesh will cause the script to break."
@@ -44,6 +46,11 @@ echo "Note: Please check if apt is removing any necessary packages."
 sleep 7
 sudo apt full-upgrade --autoremove
 sudo apt clean
+
+if [[ "$ARCH" == "x86_64" ]]; then
+   sudo update-grub
+fi
+
 sleep 11
 sudo touch /etc/paxxer-successful
 cd ~
