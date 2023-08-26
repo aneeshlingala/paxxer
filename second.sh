@@ -38,9 +38,18 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-echo "Deleting user linux..."
-sudo userdel linux
-sudo rm -rf /home/linux
+
+if [[ "$ARCH" == "x86_64" ]]; then
+    sudo userdel $(cat /etc/paxxer-user)
+    sudo rm -rf /home/$(cat /etc/paxxer-user)
+    sudo rm -rf /etc/paxxer-user
+fi
+
+if [[ "$ARCH" == "aarch64" ]]; then
+    sudo userdel linux
+    sudo rm -rf /home/linux
+fi
+
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
