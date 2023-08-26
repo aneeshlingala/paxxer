@@ -46,6 +46,9 @@ echo "Note: Please check if apt is removing any necessary packages."
 sleep 7
 sudo apt full-upgrade --autoremove
 sudo apt clean
+DEBIAN_FRONTEND=noninteractive 
+sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
+DEBIAN_FRONTEND=""
 
 if [[ "$ARCH" == "x86_64" ]]; then
    sudo update-grub
