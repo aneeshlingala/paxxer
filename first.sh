@@ -48,6 +48,7 @@ fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
     echo "Architecture is x64, continuing..."
+    NEW_HOSTNAME=terra
 else
     echo "Error: Paxxer does not work on the $(echo $ARCH) architecture."
     exit
@@ -135,7 +136,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo mkdir -p /etc/apt/keyrings && wget -qO- https://mirror.mwt.me/my/gpgkey | sudo tee /etc/apt/keyrings/mwt.asc > /dev/null
     echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/mwt.asc by-hash=force] https://mirror.mwt.me/my/deb any zoom" | sudo tee /etc/apt/sources.list.d/mwt.list
     sudo apt update
-    sudo apt install zoom
+    sudo apt install zoom -y
     sudo usermod -aG sudo aneesh
 fi
 
