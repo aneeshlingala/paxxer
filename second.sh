@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ARCH=$(uname -m)
 
 if [[ $EUID -eq 0 ]]; then
   echo "This script should not be run as root" 1>&2
