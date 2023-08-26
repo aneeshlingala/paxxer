@@ -50,4 +50,5 @@ cpu7 ${alignr}${cpu cpu7}%
 cpu8 ${alignr}${cpu cpu8}%
 ram ${alignr}${mem} / ${memmax}
 system  ${alignr}${fs_used_perc /}% / ${fs_size /}
+${execi 5 echo "battery: $(cat /sys/class/power_supply/sbs-12-000b/capacity)%"}
 ]];
