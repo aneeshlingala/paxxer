@@ -48,7 +48,6 @@ fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
     echo "Architecture is x64, continuing..."
-    NEW_HOSTNAME=terra
 else
     echo "Error: Paxxer does not work on the $(echo $ARCH) architecture."
     exit
@@ -151,9 +150,9 @@ sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
     echo $USER | sudo tee -a /etc/paxxer-user
+    sudo hostnamectl set-hostname terra
 fi
 
-echo $USER | sudo tee -a /etc/paxxer-user
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
