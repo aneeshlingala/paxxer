@@ -35,17 +35,18 @@ else
     exit
 fi
 
-
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 
 if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Deleting user $(cat /etc/paxxer-user)..."
     sudo userdel $(cat /etc/paxxer-user)
     sudo rm -rf /home/$(cat /etc/paxxer-user)
     sudo rm -rf /etc/paxxer-user
 fi
 
 if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Deleting user linux..."
     sudo userdel linux
     sudo rm -rf /home/linux
 fi
