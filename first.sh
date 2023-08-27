@@ -61,7 +61,7 @@ then
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.26"
+echo "Version: 2023.08.27"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
