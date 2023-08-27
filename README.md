@@ -1,5 +1,8 @@
 ![paxxer - 3D logo](https://github.com/aneeshlingala/paxxer/assets/87113916/ff90e289-eb0f-4afe-8687-090930078b10)
 
+## Dependencies
+Git, sudo, and wget, that's it. The script will install the other dependencies automatically.
+
 ## How to use
 Clone this repository with Git and run first.sh
 
