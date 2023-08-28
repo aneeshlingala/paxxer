@@ -3,7 +3,6 @@
 echo "Setting variables..."
 PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
-NEW_HOSTNAME=kappa
 KERNEL=$(uname -r)
 ARCH=$(uname -m)
 
@@ -61,7 +60,7 @@ then
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.27"
+echo "Version: 2023.08.28"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -81,11 +80,15 @@ sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
 echo "Setting root password..."
 sudo passwd
-echo "Setting Hostname..."
-sudo hostnamectl set-hostname $NEW_HOSTNAME
-sudo hostname $NEW_HOSTNAME
-sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
-sudo sed -i "s/$CUR_HOSTNAME/$NEW_HOSTNAME/g" /etc/hostname
+
+if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Setting Hostname..."
+    sudo hostnamectl set-hostname kappa
+    sudo hostname kappa
+    sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hosts
+    sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hostname
+fi
+
 echo "Installing Deepin Sound Theme"
 sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
@@ -150,7 +153,11 @@ sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
     echo $USER | sudo tee -a /etc/paxxer-user
+    echo "Setting Hostname..."
     sudo hostnamectl set-hostname terra
+    sudo hostname terra
+    sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
+    sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
 fi
 
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
