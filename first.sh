@@ -67,9 +67,6 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo bash /scripts/extend-rootfs.sh
     sudo bash /scripts/recreate-swapfile.sh 2G
     sudo rm -rf /scripts
-fi
-
-if [[ "$ARCH" == "aarch64" ]]; then
     echo "Fixing Permissions..."
     sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chmod g-w {} \;
     sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chown root:root {} \;
