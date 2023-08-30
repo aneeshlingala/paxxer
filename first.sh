@@ -60,13 +60,16 @@ then
 fi
 
 echo "Paxxer, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.08.28"
+echo "Version: 2023.08.30"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
     sudo bash /scripts/extend-rootfs.sh
     sudo bash /scripts/recreate-swapfile.sh 2G
     sudo rm -rf /scripts
+fi
+
+if [[ "$USER" == "linux" ]]; then
     echo "Fixing Permissions..."
     sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chmod g-w {} \;
     sudo find /bin /boot /etc /lib /opt /root /sbin /usr -user linux -exec sudo chown root:root {} \;
@@ -74,6 +77,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo chmod g-w /
     sudo chown root:root /
 fi
+
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
