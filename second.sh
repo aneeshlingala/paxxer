@@ -24,6 +24,9 @@ fi
 if [ "$(whoami)" != "aneesh" ]; then
         echo "Error: Please reboot and run the script as user aneesh."
         echo "Not rebooting but instead logging out and logging in as aneesh will cause the script to break."
+        echo "Rebooting in 5 seconds..."
+        sleep 5
+        systemctl reboot
         exit
 fi
 
@@ -59,7 +62,7 @@ sudo apt clean
 sudo apt remove onboard --autoremove -y
 sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 cd ~
-echo "echo Welcome to Debian! It is currently $(date)." > ~/.config/fish/config.fish
+echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
 
 if [[ "$ARCH" == "aarch64" ]]; then
