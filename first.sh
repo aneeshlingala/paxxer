@@ -165,6 +165,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo mount /boot/efi
     sudo rm -rf efi/EFI/debian
     curl -sL https://git.io/refind-theme-nord | bash
+    sudo efibootmgr
+    sleep 6
+    read -p "Enter the last number of the boot entry (eg. 1, 2, 3, etc.) labeled Debian: " entry
+    sudo efibootmgr -b $(echo $entry) -B
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
     sudo hostnamectl set-hostname terra
