@@ -48,11 +48,13 @@ sudo apt full-upgrade --autoremove
 sudo apt clean
 
 if [[ "$ARCH" == "x86_64" ]]; then
-   sudo update-grub
-   echo "Select yes in the next prompt, or the script will break."
    sleep 7
-   DEBIAN_FRONTEND=noninteractive 
+   DEBIAN_FRONTEND=noninteractive
+   sudo mv /usr/bin/linux-check-removal /usr/bin/linux-check-removal.orig
+   echo -e '#!/bin/sh\necho "Overriding default linux-check-removal script!"\nexit 0' | sudo tee /usr/bin/linux-check-removal
+   sudo chmod +x /usr/bin/linux-check-removal
    sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
+   sudo mv /usr/bin/linux-check-removal.orig /usr/bin/linux-check-removal
    DEBIAN_FRONTEND=""
 fi
 
