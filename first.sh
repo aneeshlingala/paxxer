@@ -78,7 +78,6 @@ if [[ "$USER" == "linux" ]]; then
     sudo chown root:root /
 fi
 
-
 echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo usermod -a -G sudo aneesh
@@ -156,6 +155,16 @@ sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Installing rEFInd and removing Grub..."
+    echo "Select yes in the next prompt, or the script will break."
+    sleep 7
+    sudo apt install refind -y
+    sudo apt purge grub* --autoremove -y
+    sudo rm -rf /boot/grub
+    cd /boot
+    sudo mount /boot/efi
+    sudo rm -rf efi/EFI/debian
+    curl -sL https://git.io/refind-theme-nord | bash
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
     sudo hostnamectl set-hostname terra
