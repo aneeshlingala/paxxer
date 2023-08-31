@@ -49,7 +49,7 @@ sudo apt clean
 
 if [[ "$ARCH" == "x86_64" ]]; then
    sudo update-grub
-   echo "Please select yes in then next prompt."
+   echo "Select yes in the next prompt, or the script will break."
    sleep 7
    DEBIAN_FRONTEND=noninteractive 
    sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
