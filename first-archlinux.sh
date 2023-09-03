@@ -75,7 +75,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
 fi
 
 echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
-sudo pacman -S git wget curl sassc alsa-utils fish w3m noto-fonts-emoji xdotool rhythmbox -y
+sudo pacman -S git wget curl sassc alsa-utils fish w3m noto-fonts-emoji xdotool rhythmbox
 sudo pacman -Rcns firefox-esr vim vim-tiny plymouth
 echo "Installing Brave Browser..."
 
