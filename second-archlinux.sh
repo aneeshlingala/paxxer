@@ -55,7 +55,7 @@ fish -c "set -U fish_greeting "🐟" "
 
 if [[ "$ARCH" == "aarch64" ]]; then
    echo "Setting up Conky..."
-   sudo apt install conky -y
+   sudo pacman -S conky
    mkdir /home/aneesh/.config
    mkdir /home/aneesh/.config/autostart
    cp /home/aneesh/paxxer/.conkyrc ~
