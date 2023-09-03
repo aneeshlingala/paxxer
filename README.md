@@ -4,7 +4,7 @@
 The dependencies are Git and Sudo. The script will install the other dependencies automatically.
 
 ## How to use
-Clone this repository with Git and run first.sh
+Clone this repository with Git and run paxxer.sh
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
 
