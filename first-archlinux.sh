@@ -126,7 +126,7 @@ sudo systemctl disable lightdm.service
 sudo systemctl enable lxdm.service
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/archlinux
-sudo cp $PAXXERDIR/archlinux.png /usr/share/backgrounds/archlinux/
+sudo cp $PAXXERDIR/archlinux.jpg /usr/share/backgrounds/archlinux/
 cd ~
 
 if [[ "$ARCH" == "x86_64" ]]; then
