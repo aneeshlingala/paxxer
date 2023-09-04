@@ -87,6 +87,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo "[chaotic-aur]" | sudo tee -a /etc/pacman.conf
     echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
     sudo pacman -Sy
+    sudo pacman -S brave
 fi
 
 if [[ "$ARCH" == "aarch64" ]]; then
