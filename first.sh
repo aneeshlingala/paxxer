@@ -98,7 +98,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
-echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
+echo "Installing Kora Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -110,8 +110,12 @@ sudo apt install brave-browser -y
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
-cd /usr/share/icons
-sudo tar -xf $PAXXERDIR/BeautySolar.tar.gz
+cd ~
+sudo git clone https://github.com/bikass/kora
+cd kora
+sudo cp -r kora-* /usr/share/icons
+cd ..
+sudo rm -rf kora
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo bash install.sh
