@@ -59,7 +59,7 @@ then
     exit
 fi
 
-echo "Paxxer, a setup tool to setup my Debian system, to my liking."
+echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2023.09.03"
 
 if [[ "$ARCH" == "aarch64" ]]; then
