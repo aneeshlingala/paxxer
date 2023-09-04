@@ -115,7 +115,7 @@ touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with MATE"
 sudo pacman -S totem eog mousepad file-roller atril gnome-disk-utility gnome-system-monitor mate-applets network-manager-applet system-config-printer cups telegram-desktop mate mate-applet-dock mate-calc
-sudo pacman –Rsu xfce4 xfce4-goodies
+sudo pacman –Rsu xfce4
 
 if pacman -Qi xfce4-goodies &> /dev/null; then
   sudo pacman -Rcns xfce4-goodies
