@@ -74,7 +74,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo pamcan -S deepin-sound-theme
 fi
 
-echo "Installing BeautySolar Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
+echo "Installing Kora Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
 sudo pacman -S git wget curl sassc alsa-utils fish w3m noto-fonts-emoji xdotool rhythmbox
 sudo pacman -Rcns firefox-esr vim vim-tiny plymouth
 echo "Installing Brave Browser..."
@@ -102,8 +102,12 @@ fi
 cd ~
 cd /usr/share/themes
 sudo git clone https://github.com/eliverlara/Juno
-cd /usr/share/icons
-sudo tar -xf $PAXXERDIR/BeautySolar.tar.gz
+cd ~
+sudo git clone https://github.com/bikass/kora
+cd kora
+sudo cp -r kora-* /usr/share/icons
+cd ..
+sudo rm -rf kora
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo bash install.sh
