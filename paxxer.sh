@@ -6,7 +6,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Debian")
-            echo "Starting Paxxer Debian"
+            echo "Starting PaxxerDeb"
             bash first.sh
             ;;
         "Arch Linux")
