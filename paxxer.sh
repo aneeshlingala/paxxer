@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PS3='Please select what distro you are using: '
+PS3='Please select the distro you are using: '
 options=("Debian" "Arch Linux" "Quit")
 select opt in "${options[@]}"
 do
