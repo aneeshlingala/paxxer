@@ -56,7 +56,7 @@ echo "Version: 2023.09.09"
 
 echo "Adding user Aneesh..."
 sudo useradd aneesh
-sudo usermod -a -G sudo aneesh
+sudo usermod -a -G wheel aneesh
 echo "Setting root password..."
 sudo passwd
 
