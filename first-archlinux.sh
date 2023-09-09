@@ -52,7 +52,7 @@ else
 fi
 
 echo "PaxxerAL, a setup tool to setup my Arch Linux system, to my liking."
-echo "Version: 2023.09.04"
+echo "Version: 2023.09.09"
 
 echo "Adding user Aneesh..."
 sudo useradd aneesh
@@ -76,7 +76,7 @@ fi
 
 echo "Installing Kora Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
 sudo pacman -S git wget curl sassc alsa-utils fish w3m noto-fonts-emoji xdotool rhythmbox
-sudo pacman -Rcns firefox-esr vim vim-tiny plymouth
+sudo pacman -Rcns firefox vim vim-tiny plymouth
 echo "Installing Brave Browser..."
 
 if [[ "$ARCH" == "x86_64" ]]; then
