@@ -154,6 +154,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo "Select yes in the next prompt, or the script will break."
     sleep 7
     sudo pacman -S refind
+    sudo refind-install
     sudo pacman -Rcns grub
     sudo rm -rf /boot/grub
     cd /boot
