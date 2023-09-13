@@ -107,6 +107,7 @@ cd ~
 sudo git clone https://github.com/bikass/kora
 cd kora
 sudo cp -r kora-* /usr/share/icons
+sudo cp -r kora /usr/share/icons
 cd ..
 sudo rm -rf kora
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
