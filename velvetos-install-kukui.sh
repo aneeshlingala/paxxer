@@ -9,7 +9,7 @@ sudo wget https://github.com/hexdump0815/imagebuilder/releases/download/230218-0
 sudo gzip -d chromebook_kukui-aarch64-bookworm.img.gz
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
-echo "Installing VelvetOS to $(echo $disk)."
+echo "Installing VelvetOS to /dev/$(echo $disk)."
 sudo dd if=chromebook_kukui-aarch64-bookworm.img of=/dev/$disk bs=1M status=progress
 echo "VelvetOS has been sucessfully installed!"
 echo "Login with username: linux"
