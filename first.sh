@@ -41,10 +41,6 @@ else
     echo "Paxxer has not run before, continuing..."
 fi
 
-if [[ "$ARCH" == "aarch64" ]]; then
-    echo "Architecture is aarch64, continuing..."
-fi
-
 if [[ "$ARCH" == "x86_64" ]]; then
     echo "Architecture is x64, continuing..."
 else
@@ -52,6 +48,7 @@ else
         echo "Architecture is aarch64, continuing..."
     else
         echo "Error: Paxxer does not work on $(echo $ARCH) architecture."
+    fi
 fi
 
 if [ "$KERNEL" = "5.19.1-stb-mt8+" ]
