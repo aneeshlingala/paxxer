@@ -52,7 +52,7 @@ else
 fi
 
 echo "PaxxerAL, a setup tool to setup my Arch Linux system, to my liking."
-echo "Version: 2023.09.13"
+echo "Version: 2023.09.14"
 
 echo "Adding user Aneesh..."
 sudo useradd aneesh
