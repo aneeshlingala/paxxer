@@ -91,7 +91,7 @@ sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 uname -r | sudo tee -a /etc/paxxer-kernel
-sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/main/third.sh
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third.sh
 sudo chmod +x third.sh
 cd ~
 echo "After rebooting, run third.sh in /home/aneesh/paxxer"
