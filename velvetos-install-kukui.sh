@@ -43,6 +43,8 @@ read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
 sudo dd if=chromebook_kukui-aarch64-bookworm.img of=/dev/$disk bs=1M status=progress
 end=`date +%s`
+echo "Cleaning up..."
+sudo rm -rf chromebook_kukui-aarch64-bookworm.img
 echo "VelvetOS has been installed in `expr $end - $start` seconds."
 echo ""
 echo "Login with username: linux"
