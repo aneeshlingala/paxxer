@@ -91,20 +91,6 @@ gsettings set org.gnome.desktop.interface gtk-theme "Juno"
 gsettings set org.gnome.desktop.interface icon-theme "kora"
 gsettings set org.gnome.desktop.sound theme-name "deepin"
 cd ~
-echo "Installing Waydroid..."
-sudo modprobe binder
-sudo touch /etc/modules-load.d/binder.conf
-echo "binder" | sudo tee -a /etc/modules-load.d/binder.conf
-sudo apt install curl ca-certificates -y
-curl https://repo.waydro.id | sudo bash
-sudo apt install waydroid -y
-sudo systemctl enable waydroid-container
-sudo systemctl start waydroid-container
-sudo waydroid init
-sudo systemctl restart waydroid-container
-sudo wget https://auroraoss.com/AuroraStore/Stable/AuroraStore_4.3.2.apk
-waydroid app install AuroraStore_4.3.2.apk
-waydroid prop set persist.waydroid.multi_windows true
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
