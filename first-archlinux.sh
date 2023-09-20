@@ -120,7 +120,9 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with GNOME"
-sudo pacman -S gnome gnome-disk-utility gnome-system-monitor network-manager-applet cups telegram-desktop
+sudo pacman -S gnome gdm gnome-disk-utility gnome-system-monitor network-manager-applet cups telegram-desktop
+sudo systemctl disable lightdm
+sudo systemctl enable gdm
 sudo pacman –Rsu xfce4
 
 if pacman -Qi xfce4-goodies &> /dev/null; then
