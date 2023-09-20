@@ -119,18 +119,14 @@ echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Replacing Xfce Desktop with MATE"
-sudo pacman -S totem eog mousepad file-roller atril gnome-disk-utility gnome-system-monitor mate-applets network-manager-applet system-config-printer cups telegram-desktop mate mate-applet-dock mate-calc
+echo "Replacing Xfce Desktop with GNOME"
+sudo pacman -S gnome gnome-disk-utility gnome-system-monitor network-manager-applet cups telegram-desktop
 sudo pacman –Rsu xfce4
 
 if pacman -Qi xfce4-goodies &> /dev/null; then
   sudo pacman -Rcns xfce4-goodies
 fi
 
-echo "Installing LXDM and setting it up..."
-sudo pacman -S lxdm-gtk3
-sudo systemctl disable lightdm.service
-sudo systemctl enable lxdm.service
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/archlinux
 sudo cp $PAXXERDIR/archlinux.jpg /usr/share/backgrounds/archlinux/
