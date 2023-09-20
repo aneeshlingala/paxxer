@@ -91,6 +91,8 @@ gsettings set org.gnome.desktop.interface gtk-theme "Juno"
 gsettings set org.gnome.desktop.interface icon-theme "kora"
 gsettings set org.gnome.desktop.sound theme-name "deepin"
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/debian-lights/lights.png
+gsettings set org.gnome.desktop.interface cursor-theme Afterglow-cursors
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
