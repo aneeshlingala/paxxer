@@ -92,6 +92,9 @@ gsettings set org.gnome.desktop.interface icon-theme "kora"
 gsettings set org.gnome.desktop.sound theme-name "deepin"
 cd ~
 echo "Installing Waydroid..."
+sudo modprobe binder
+sudo touch /etc/modules-load.d/binder.conf
+echo "binder" | sudo tee -a /etc/modules-load.d/binder.conf
 sudo apt install curl ca-certificates -y
 curl https://repo.waydro.id | sudo bash
 sudo apt install waydroid -y
