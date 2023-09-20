@@ -74,7 +74,8 @@ if [[ "$ARCH" == "aarch64" ]]; then
    cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
 fi
 
-echo "Theming MATE..."
+echo "Theming GNOME..."
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
@@ -85,6 +86,10 @@ ln -s /usr/share/themes/Juno/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
 ln -s /usr/share/themes/Juno/gtk-4.0/assets ~/.config/gtk-4.0/assets
 ln -s /usr/share/themes/Juno/assets ~/.config/assets
 echo "GTK_THEME=Juno" | sudo tee -a /etc/environment
+gsettings set org.gnome.desktop.interface gtk-theme "Juno"
+gsettings set org.gnome.desktop.interface gtk-theme "Juno"
+gsettings set org.gnome.desktop.interface icon-theme "kora"
+gsettings set org.gnome.desktop.sound theme-name "deepin"
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
