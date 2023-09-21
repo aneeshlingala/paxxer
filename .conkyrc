@@ -1,3 +1,5 @@
+# Last Updated 2023.09.20
+
 conky.config = {
 	alignment = 'top_right',
 	background = false,
@@ -11,7 +13,7 @@ conky.config = {
 	draw_shades = false,
 	gap_x = 25,
 	gap_y = 25,
-	maximum_width = 395,
+	maximum_width = 495,
 	double_buffer = true,
 	override_utf8_locale = true,
     own_window = true,
