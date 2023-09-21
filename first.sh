@@ -136,7 +136,7 @@ sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with GNOME"
-sudo apt install eog mousepad file-roller atril gnome-disk-utility gnome-system-monitor cups gnome-core telegram-desktop network-manager-gnome gnome-tweaks --no-install-recommends -y
+sudo apt install eog mousepad file-roller gnome-disk-utility gnome-system-monitor cups gnome-core telegram-desktop network-manager-gnome gnome-tweaks --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 sudo mkdir /usr/share/backgrounds
