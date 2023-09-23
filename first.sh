@@ -169,6 +169,14 @@ sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Setting up boot screen (plymouth)..."
+    echo ""
+    echo "NOTE: This assumes you have installed Debian from the live edition,"
+    echo "which has plymouth preinstalled."
+    sudo apt install plymouth -y
+    cd /usr/share/plymouth/themes
+    sudo git clone https://github.com/R0b1ns/brogit-plymouth-theme
+    sudo plymouth-set-default-theme brogit-plymouth-theme -R
     echo "Installing rEFInd and removing Grub..."
     echo "Select yes in the next prompt, or the script will break."
     sleep 7
