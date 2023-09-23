@@ -8,6 +8,12 @@ Clone this repository with Git and run paxxer.sh
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
 
+## Tested Scripts
+
+| Architecture | Debian  | Arch Linux |
+| ------- | --- | --- |
+| Arm64 | ☑️ | 🚫 |
+| x64 | ☑️ | 🚫 |
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
 
@@ -20,3 +26,4 @@ Install Debian/Arch Linux with XFCE Desktop and make sure your user has sudo per
 > Note: This script will delete the current user and its data and replace it with user "aneesh". Proceed with caution.
 
 # Made with ♥ by Aneesh Lingala 👨‍💻 ‖ [My Website 🌐](https://aneeshlingala.github.io)
+
