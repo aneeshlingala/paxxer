@@ -172,7 +172,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo ""
     echo "NOTE: This assumes you have installed Debian from the live edition,"
     echo "which has plymouth preinstalled."
-    sudo apt install plymouth -y
+    sudo apt install plymouth plymouth-themes -y
     cd /usr/share/plymouth/themes
     sudo git clone https://github.com/R0b1ns/brogit-plymouth-theme
     sudo plymouth-set-default-theme brogit-plymouth-theme -R
