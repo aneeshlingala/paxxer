@@ -10,7 +10,7 @@ Clone this repository with Git and run paxxer.sh
 
 ## Tested Scripts
 
-| Architecture | Debian  | Arch Linux |
+| Distros | Debian  | Arch Linux |
 | ------- | --- | --- |
 | Arm64 | Works ☑️ | Untested 🚫 |
 | x64 | Works ☑️ | Untested 🚫 |
