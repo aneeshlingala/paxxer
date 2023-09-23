@@ -12,8 +12,8 @@ Clone this repository with Git and run paxxer.sh
 
 | Architecture | Debian  | Arch Linux |
 | ------- | --- | --- |
-| Arm64 | ☑️ | 🚫 |
-| x64 | ☑️ | 🚫 |
+| Arm64 | Works ☑️ | Untested 🚫 |
+| x64 | Works ☑️ | Untested 🚫 |
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
 
