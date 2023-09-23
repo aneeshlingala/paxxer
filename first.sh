@@ -59,7 +59,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.09.17"
+echo "Version: 2023.09.20"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -138,16 +138,14 @@ sudo timedatectl set-timezone America/Los_Angeles
 echo "Replacing Xfce Desktop with MATE"
 sudo apt install totem eog mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
-sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 su -c "apt install sudo -y"
+sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing LXDM and setting it up..."
 sudo apt install lxdm --no-install-recommends -y
-sudo systemctl disable lightdm.service
 sudo systemctl enable lxdm.service
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
-sudo ln -s /usr/share/wallpapers/SpaceFun/contents/images/1920x1080.svg /etc/lightdm/space.svg
 cd ~
 
 if [[ "$ARCH" == "x86_64" ]]; then
