@@ -191,7 +191,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     curl -sL https://git.io/refind-theme-nord | bash
     sudo efibootmgr
     sleep 6
-    read -p "Enter the last number of the boot entry labeled Debian: " entry
+    read -p "Enter the last number of the boot entry (eg. 1, 2, 3, etc.) labeled Debian: " entry
     sudo efibootmgr -b $(echo $entry) -B
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
@@ -209,5 +209,5 @@ echo ""
 echo "Press any key to reboot..."
 read -s -n 1
 echo ""
-echo "Pressed a key, rebooting...''
+echo "Pressed a key, rebooting..."
 systemctl reboot
