@@ -171,7 +171,7 @@ sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
-    echo "Setting up boot screen (plymouth)..."
+    echo "Setting up boot screen..."
     echo ""
     echo "NOTE: This assumes you have installed Debian from the live edition,"
     echo "which has plymouth preinstalled."
