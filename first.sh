@@ -140,9 +140,19 @@ sudo apt install totem eog mousepad file-roller atril gnome-disk-utility mate-me
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 su -c "apt install sudo -y"
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
-echo "Installing LXDM and setting it up..."
-sudo apt install lxdm --no-install-recommends -y
-echo "Select lxdm in the next prompt."
+echo "Installing SDDM and setting it up..."
+sudo apt install sddm --no-install-recommends -y
+cd ~
+sudo git clone https://github.com/stepanzubkov/sddm-zust
+cd sddm-zust
+sudo cp -r zust /usr/share/sddm/themes/
+sudo touch /etc/sddm.conf
+echo "[Theme]" | sudo tee -a /etc/sddm.conf
+echo "Current=zust" | sudo tee -a /etc/sddm.conf
+echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+cd ~
+sudo rm -rf sddm-zust
+echo "Select SDDM in the next prompt."
 sleep 7
 sudo apt install lightdm -y
 sudo mkdir /usr/share/backgrounds
