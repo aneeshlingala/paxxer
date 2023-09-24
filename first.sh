@@ -59,7 +59,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.09.20"
+echo "Version: 2023.09.23"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -176,20 +176,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd /usr/share/plymouth/themes
     sudo git clone https://github.com/R0b1ns/brogit-plymouth-theme
     sudo plymouth-set-default-theme brogit-plymouth-theme -R
-    echo "Installing rEFInd and removing Grub..."
-    echo "Select yes in the next prompt, or the script will break."
-    sleep 7
-    sudo apt install refind -y
-    sudo apt purge grub* --autoremove -y
-    sudo rm -rf /boot/grub
-    cd /boot
-    sudo mount /boot/efi
-    sudo rm -rf efi/EFI/debian
-    curl -sL https://git.io/refind-theme-nord | bash
-    sudo efibootmgr
-    sleep 6
-    read -p "Enter the last number of the boot entry (eg. 1, 2, 3, etc.) labeled Debian: " entry
-    sudo efibootmgr -b $(echo $entry) -B
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
     sudo hostnamectl set-hostname terra
