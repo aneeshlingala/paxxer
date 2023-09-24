@@ -182,7 +182,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo hostname terra
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
-    echo "After rebooting, make sure to boot into the rEFInd Boot Manager entry, not the Debian entry."
     sleep 7
 fi
 
