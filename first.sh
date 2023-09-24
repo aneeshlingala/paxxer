@@ -59,7 +59,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.09.23"
+echo "Version: 2023.09.24"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -151,6 +151,7 @@ sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
+sudo apt purge mlterm mlterm-tiny xiterm+thai --autoremove
 
 if [[ "$ARCH" == "x86_64" ]]; then
     echo "Installing Zoom..."
