@@ -140,21 +140,12 @@ sudo apt install totem eog mousepad file-roller atril gnome-disk-utility mate-me
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
 su -c "apt install sudo -y"
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
-echo "Installing SDDM and setting it up..."
-sudo apt install sddm --no-install-recommends -y
-cd ~
-sudo git clone https://github.com/stepanzubkov/sddm-zust
-cd sddm-zust
-sudo cp -r zust /usr/share/sddm/themes/
-sudo touch /etc/sddm.conf
-echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=zust" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
-cd ~
-sudo rm -rf sddm-zust
-echo "Select SDDM in the next prompt."
-sleep 7
-sudo apt install lightdm -y
+echo "Installing LightDM and setting it up..."
+sudo apt install ukui-greeter -y
+sudo rm -rf /etc/lightdm/lightdm.conf
+sudo touch /etc/lightdm/lightdm.conf
+echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
+echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
