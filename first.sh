@@ -142,7 +142,9 @@ su -c "apt install sudo -y"
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing LXDM and setting it up..."
 sudo apt install lxdm --no-install-recommends -y
-sudo systemctl enable lxdm.service
+echo "Select lxdm in the next prompt."
+sleep 7
+sudo apt install lightdm -y
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
