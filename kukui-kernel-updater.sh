@@ -25,19 +25,24 @@ fi
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Architecture is aarch64, continuing..."
 else
-    echo "The kernel updater installer only works on the aarch64 architecture"
+    echo "The kernel updater only works on the aarch64 architecture"
     exit
 fi
 
 echo "Kukui Chromebook Kernel Updater"
-echo "Version 2023.11.01"
-echo "Updating kernel from $(echo $KERNEL) to 6.5.5-stb-mt8+"
+echo "Version 2023.11.04"
+echo "NOTE: Make sure to also enter the p (eg. mmcblk0p, nvme0n1p, etc.)"
+echo "Where should the new kernel be installed (eg. sda, mmcblk0p, nvme0n1p, etc.): "  
+read disk
+echo "Updating kernel from $(uname -r) to 6.5.5-stb-mt8+"
 sudo rm -rf /boot/*
 sudo rm -rf /lib/modules/*
 cd ~
 sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.5.5-stb-mt8%2B/6.5.5-stb-mt8+.tar.gz"
 cd /
+disk1 = disk += "1"
+disk2 = disk += "2"
 sudo tar -xzvf ~/6.5.5-stb-mt8+.tar.gz
 sudo rm -rf 6.5.5-stb-mt8+.tar.gz
-sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/mmcblk0p1 bs=1M status=progress
-sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/mmcblk0p2 bs=1M status=progress
+sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/$disk1 bs=1M status=progress
+sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/$disk2 bs=1M status=progress
