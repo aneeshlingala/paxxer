@@ -5,7 +5,7 @@ options=("Install VelvetOS" "Setup Debian" "Setup Arch Linux" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Install VelvetOS")
+        "Install VelvetOS (Debian)")
             echo "Starting Installer..."
             bash velvetos-install-kukui.sh
             ;;
