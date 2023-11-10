@@ -5,9 +5,6 @@ options=("Install VelvetOS" "Setup Debian" "Setup Arch Linux" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Install VelvetOS (Debian)")
-            echo "Starting Installer..."
-            bash velvetos-install-kukui.sh
             ;;
         "Setup Debian")
             echo "Starting PaxxerDeb"
@@ -21,6 +18,9 @@ do
             echo "Quitting..."
             exit
             ;;
+        "Install VelvetOS (Debian)")
+            echo "Starting Installer..."
+            bash velvetos-install-kukui.sh
         *) echo "Invalid option $REPLY";;
     esac
 done
