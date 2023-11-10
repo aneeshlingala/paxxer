@@ -30,7 +30,7 @@ else
 fi
 
 echo "VelvetOS Installer"
-echo "Version 2023.11.01"
+echo "Version 2023.11.10"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
 echo "Press CTRL + C to exit"
 sleep 7
