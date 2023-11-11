@@ -108,7 +108,7 @@ echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
 echo "Installing Kora Icon Theme, Afterglow Cursors, extra tools, and Juno GTK Theme"
-sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec rhythmbox -y
+sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
 echo "Installing Brave Browser..."
@@ -142,7 +142,7 @@ echo "Please enter in the root password..."
 su -c "apt install sudo -y"
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
 echo "Installing LightDM and setting it up..."
-sudo apt install ukui-greeter lightdm
+sudo apt install ukui-greeter lightdm -y
 sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
