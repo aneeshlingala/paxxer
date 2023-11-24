@@ -80,11 +80,11 @@ rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
 rm -rf ~/.config/assets
 mkdir ~/.config/gtk-4.0
-ln -s /usr/share/themes/Juno/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
-ln -s /usr/share/themes/Juno/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
-ln -s /usr/share/themes/Juno/gtk-4.0/assets ~/.config/gtk-4.0/assets
-ln -s /usr/share/themes/Juno/assets ~/.config/assets
-echo "GTK_THEME=Juno" | sudo tee -a /etc/environment
+ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
+ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
+ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/assets ~/.config/gtk-4.0/assets
+ln -s /usr/share/themes/Graphite-teal-Dark-nord/assets ~/.config/assets
+echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer
