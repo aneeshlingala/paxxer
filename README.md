@@ -14,7 +14,7 @@ Clone this repository with Git and run paxxer.sh
 | ------- | --- | --- |
 | Paxxer Arm64 | Works ☑️ | Untested 🚫 |
 | Paxxer x64 | Works ☑️ | Untested 🚫 |
-| VelvetOS Kukui Installer| Works ☑️ | Works ☑️ |
+| VelvetOS Kukui Installer | Works ☑️ | Works ☑️ |
 
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
@@ -27,5 +27,7 @@ Install Debian/Arch Linux with XFCE Desktop and make sure your user has sudo per
 
 > Note: This script will delete the current user and its data and replace it with user "aneesh". Proceed with caution.
 
-# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ [My Website 🌐](https://aneeshlingala.github.io)
+## License
+Paxxer is licensed Under GPLv3. Check the LICENSE file for a copy of the GPLv3 license.
 
+# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ [My Website 🌐](https://aneeshlingala.github.io)
