@@ -37,7 +37,6 @@ echo "If you have not, the script will run it for you, if it exists"
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
     sudo bash /scripts/extend-rootfs.sh
-    exit
 else
     echo "The script extend-rootfs.sh does not exist, continuing..."
 fi
