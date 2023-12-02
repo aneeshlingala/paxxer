@@ -45,14 +45,14 @@ sleep 7
 start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
-sudo wget https://matix.li/37c33cbbec8f
+sudo wget -O kukui.img https://matix.li/37c33cbbec8f
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
-sudo dd if=chromebook_kukui-aarch64-bookworm.img of=/dev/$disk bs=1M status=progress
-end=`date +%s`
+sudo dd if=kukui.img of=/dev/$disk bs=1M status=progress
 echo "Cleaning up..."
 sudo rm -rf chromebook_kukui-aarch64-bookworm.img
+end=`date +%s`
 echo "VelvetOS has been installed in `expr $end - $start` seconds."
 echo ""
 echo "Login with username: linux"
