@@ -30,14 +30,23 @@ else
 fi
 
 echo "VelvetOS Installer"
-echo "Version 2023.11.10"
+echo "Version 2023.12.02"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
-echo "Press CTRL + C to exit"
+echo "If you have not, the script will run it for you, if it exists"
+
+if [[ -f "/scripts/extend-rootfs.sh" ]]; then
+    echo "The script extend-rootfs.sh exists, running it..."
+    sudo bash /scripts/extend-rootfs.sh
+    exit
+else
+    echo "The script extend-rootfs.sh does not exist, continuing..."
+fi
+
 sleep 7
 start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
-sudo wget https://github.com/hexdump0815/imagebuilder/releases/download/230218-01/chromebook_kukui-aarch64-bookworm.img.gz
+sudo wget https://github.com/hexdump0815/imagebuilder/releases/download/230917-01/chromebook_kukui-aarch64-bookworm.img.gz
 echo "Extracting installer image, this may take a while..."
 sudo gzip -d chromebook_kukui-aarch64-bookworm.img.gz
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
