@@ -10,10 +10,12 @@ Clone this repository with Git and run paxxer.sh
 
 ## Tested Scripts
 
-| Distros | Debian  | Arch Linux |
+| Script | Debian  | Arch Linux |
 | ------- | --- | --- |
-| Arm64 | Works ☑️ | Untested 🚫 |
-| x64 | Works ☑️ | Untested 🚫 |
+| Paxxer Arm64 | Works ☑️ | Untested 🚫 |
+| Paxxer x64 | Works ☑️ | Untested 🚫 |
+| VelvetOS Kukui Installer| Works ☑️ | Works ☑️ |
+
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
 
