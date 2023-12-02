@@ -45,9 +45,7 @@ sleep 7
 start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
-sudo wget https://github.com/hexdump0815/imagebuilder/releases/download/230917-01/chromebook_kukui-aarch64-bookworm.img.gz
-echo "Extracting installer image, this may take a while..."
-sudo gzip -d chromebook_kukui-aarch64-bookworm.img.gz
+sudo wget https://matix.li/37c33cbbec8f
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
