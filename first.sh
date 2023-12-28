@@ -59,7 +59,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.12.27"
+echo "Version: 2023.12.28"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -137,9 +137,9 @@ touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
 echo "Setting up Flatpak, installing Whatsie (Whatsapp Client for Linux), and GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4)."
 sudo apt install flatpak -y
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.ktechpit.whatsie
-flatpak install flathub so.libdb.gtkcord4
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.ktechpit.whatsie -y
+flatpak install flathub so.libdb.gtkcord4 -y
 echo "Replacing Xfce Desktop with MATE"
 sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
