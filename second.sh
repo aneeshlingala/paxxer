@@ -61,6 +61,7 @@ sudo apt autoremove -y
 sudo apt clean
 sudo apt remove onboard --autoremove -y
 sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
+echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
@@ -95,7 +96,6 @@ sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third.sh
 sudo chmod +x third.sh
 cd ~
 echo "After rebooting, run third.sh in /home/aneesh/paxxer"
+echo "Rebooting in ten seconds, press CTRL+C to cancel..."
 sleep 10
 systemctl reboot
-
-
