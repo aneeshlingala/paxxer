@@ -30,7 +30,7 @@ else
 fi
 
 echo "VelvetOS Installer"
-echo "Version 2023.12.02"
+echo "Version 2023.12.28"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
 echo "If you have not, the script will run it for you, if it exists"
 
@@ -45,7 +45,15 @@ sleep 7
 start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
+# Downloading image from different source since GitHub keeps rejecting downloads lately, for some reason.
 sudo wget -O kukui.img https://matix.li/37c33cbbec8f
+echo "The installer will present a list of disks in ten seconds. Find the disk you would like to install VelvetOS on."
+clear
+echo "Loading disk list..."
+echo ""
+sleep 2
+sudo fdisk -l
+echo ""
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
