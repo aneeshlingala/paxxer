@@ -116,7 +116,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
-echo "Installing Kora Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
+echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -129,12 +129,9 @@ cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
 sudo bash install.sh -t teal -c dark --tweaks nord 
-sudo git clone https://github.com/bikass/kora
-cd kora
-sudo cp -r kora-* /usr/share/icons
-sudo cp -r kora /usr/share/icons
-cd ..
-sudo rm -rf kora
+cd /usr/share/icons
+sudo git clone https://github.com/EliverLara/candy-icons
+cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo bash install.sh
