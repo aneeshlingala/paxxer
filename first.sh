@@ -6,6 +6,15 @@ CUR_HOSTNAME=$(cat /etc/hostname)
 KERNEL=$(uname -r)
 ARCH=$(uname -m)
 
+clear
+echo ""
+echo "Announcements from Paxxer Developers:"
+echo ""
+curl -s https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/announcements | cat
+echo ""
+echo "Exiting in 15 seconds..."
+sleep 15
+
 echo "Running a few checks..."
 
 if [[ $EUID -eq 0 ]]; then
@@ -59,7 +68,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2023.12.28"
+echo "Version: 2023.12.31"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -135,10 +144,11 @@ echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4)."
+echo "Setting up Flatpak, installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), and ZapZap (Whatsapp Web client for ARM64)."
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
+flatpak install flathub com.rtosta.zapzap -y
 echo "Replacing Xfce Desktop with MATE"
 sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
