@@ -135,7 +135,7 @@ sudo git clone https://github.com/vinceliuice/vimix-gtk-themes
 cd vimix-gtk-themes
 sudo bash install.sh -c dark
 cd /usr/share/icons
-sudo git clone https://github.com/EliverLara/candy-icons
+sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
