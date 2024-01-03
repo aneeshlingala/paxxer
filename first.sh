@@ -12,8 +12,8 @@ echo "Announcements from Paxxer Developers:"
 echo ""
 curl -s https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/announcements | cat
 echo ""
-echo "Press the spacebar to exit announcements..."
-read -r -s -d ' '
+echo "Exiting in 15 seconds..."
+sleep 15
 
 echo "Running a few checks..."
 
@@ -121,7 +121,7 @@ sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
-echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Vimix GTK Theme"
+echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite GTK Theme"
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
@@ -131,9 +131,9 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update -y
 sudo apt install brave-browser -y
 cd ~
-sudo git clone https://github.com/vinceliuice/vimix-gtk-themes
-cd vimix-gtk-themes
-sudo bash install.sh -c dark
+sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
+cd Graphite-gtk-theme
+sudo bash install.sh -t teal -c dark --tweaks nord 
 cd /usr/share/icons
 sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
 cd ~
