@@ -134,8 +134,10 @@ cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
 sudo bash install.sh -t teal -c dark --tweaks nord 
-cd /usr/share/icons
-sudo git clone https://gitlab.com/garuda-linux/themes-and-settings/artwork/beautyline
+cd ~
+sudo git clone https://github.com/SylEleuth/gruvbox-plus-icon-pack
+cd gruvbox-plus-icon-pack
+sudo cp -r Gruvbox-Plus-Dark /usr/share/icons/
 cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
