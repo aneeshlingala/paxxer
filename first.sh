@@ -119,6 +119,7 @@ cd ~
 sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.3.6-linux3/GitHubDesktop-linux-arm64-3.3.6-linux3.deb
 sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb
 sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+sudo mkdir /home/aneesh/GitHub
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
