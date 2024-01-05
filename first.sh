@@ -128,8 +128,6 @@ echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite 
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
-echo "Installing KDE Connect..."
-sudo apt install kdeconnect -y
 echo "Installing Brave Browser..."
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
