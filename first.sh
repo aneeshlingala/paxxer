@@ -14,6 +14,7 @@ curl -s https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/announceme
 echo ""
 echo "Press the spacebar to exit announcements..."
 read -r -s -d ' '
+echo ""
 
 echo "Running a few checks..."
 
