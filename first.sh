@@ -12,8 +12,8 @@ echo "Announcements from Paxxer Developers:"
 echo ""
 curl -s https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/announcements | cat
 echo ""
-echo "Exiting in 15 seconds..."
-sleep 15
+echo "Press the spacebar to exit announcements..."
+read -r -s -d ' '
 
 echo "Running a few checks..."
 
