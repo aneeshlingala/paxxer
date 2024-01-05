@@ -1,9 +1,13 @@
-Happy new year 2024! Wishing you a happy and prosperous new year!
-
-Paxxer has been updated to version: 2023.12.31. 
+Paxxer has been updated to version: 2024.01.04.
 
 List of new features:
 
-New announcements when starting Paxxer
+New icon theme: Gruvbox Icon Theme
+New feature: Press spacebar to exit announcements instead of a 15 second timer
 
-New Flatpak app: ZapZap (Whatsapp Web client for ARM64)
+The VelvetOS Installer has been updated to version: 2021.01.04
+
+List of new features:
+
+Add scrolling list to the disk list by piping fdisk -l with less
+
