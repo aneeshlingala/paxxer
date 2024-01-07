@@ -56,6 +56,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
    sudo mv /usr/bin/linux-check-removal.orig /usr/bin/linux-check-removal
    DEBIAN_FRONTEND=""
+   sudo rm -rf ~/GitHub
 fi
 
 sleep 11
