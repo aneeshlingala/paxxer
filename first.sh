@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.01.04"
+echo "Version: 2024.01.06"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -165,7 +165,7 @@ echo "Installing Visual Studio Code..."
 sudo apt-get install wget gpg
 sudo wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=arm64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo sh -c 'echo "deb [arch=arm64,amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo rm -rf packages.microsoft.gpg
 sudo apt update
 sudo apt install code -y
