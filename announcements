@@ -1,14 +1,12 @@
-Paxxer has been updated to version: 2024.01.04. This marks the first Paxxer release of 2024!
+Paxxer has been updated to version: 2024.01.06
 
-List of new features:
+Changelog:
 
-New icon theme: Gruvbox Icon Theme
-New feature: Press spacebar to exit announcements instead of a 15 second timer
-Automatically create a folder for GitHub Desktop stuff
+Fix bug making vs code unable to be installed on amd64
 
-The VelvetOS Installer has been updated to version: 2021.01.04
+The VelvetOS Installer has been updated to version: 2024.01.04
 
-List of new features:
+Changelog:
 
 Add scrolling list to the disk list by piping fdisk -l with less
 
