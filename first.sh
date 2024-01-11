@@ -71,12 +71,10 @@ fi
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2024.01.10"
 
-if [[ "$ARCH" == "aarch64" ]]; then
-    echo "Extending rootfs to max and increasing swapfile..."
-    sudo bash /scripts/extend-rootfs.sh
-    sudo bash /scripts/recreate-swapfile.sh 2G
-    sudo rm -rf /scripts
-fi
+echo "Extending rootfs to max and increasing swapfile... (VelvetOS only) "
+sudo bash /scripts/extend-rootfs.sh
+sudo bash /scripts/recreate-swapfile.sh 2G
+sudo rm -rf /scripts
 
 if [[ "$USER" == "linux" ]]; then
     echo "Fixing Permissions..."
