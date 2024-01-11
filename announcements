@@ -1,8 +1,8 @@
-Paxxer has been updated to version: 2024.01.06
+Paxxer has been updated to version: 2024.01.10
 
 Changelog:
 
-Fix bug making vs code unable to be installed on amd64
+Fix bug where Plymouth is broken by removing it - not really needed
 
 The VelvetOS Installer has been updated to version: 2024.01.04
 
