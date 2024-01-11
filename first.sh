@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.01.06"
+echo "Version: 2024.01.10"
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Extending rootfs to max and increasing swapfile..."
@@ -204,14 +204,6 @@ sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
-    echo "Setting up boot screen (plymouth)..."
-    echo ""
-    echo "NOTE: This assumes you have installed Debian from the live edition,"
-    echo "which has plymouth preinstalled."
-    sudo apt install plymouth plymouth-themes -y
-    cd /usr/share/plymouth/themes
-    sudo git clone https://github.com/R0b1ns/brogit-plymouth-theme
-    sudo plymouth-set-default-theme brogit-plymouth-theme -R
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
     sudo hostnamectl set-hostname terra
