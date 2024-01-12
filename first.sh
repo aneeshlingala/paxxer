@@ -71,10 +71,12 @@ fi
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2024.01.10"
 
-echo "Extending rootfs to max and increasing swapfile... (VelvetOS only) "
-sudo bash /scripts/extend-rootfs.sh
-sudo bash /scripts/recreate-swapfile.sh 2G
-sudo rm -rf /scripts
+if [[ -f "/scripts/extend-rootfs.sh" ]]; then
+    echo "The script extend-rootfs.sh exists, running it..."
+    sudo bash /scripts/extend-rootfs.sh
+else
+    echo "The script extend-rootfs.sh does not exist, continuing..."
+fi
 
 if [[ "$USER" == "linux" ]]; then
     echo "Fixing Permissions..."
