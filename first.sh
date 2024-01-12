@@ -211,6 +211,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
     sleep 7
+    sudo apt install cpupower cpupower-gui -y
 fi
 
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
