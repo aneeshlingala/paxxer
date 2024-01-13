@@ -211,14 +211,11 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
     sleep 7
-    echo "Setting up cpupower..."
-    sudo apt install cpupower cpupower-gui -y
+    echo "Setting up cpupower..." 
     sudo cp -r $PAXXERDIR/rc-local.service /etc/systemd/system
     sudo chmod +x /etc/systemd/system/rc-local.service
     sudo systemctl enable rc-local.service
     echo "" | sudo tee -a /etc/rc.local
-    echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local
-    
 fi
 
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
