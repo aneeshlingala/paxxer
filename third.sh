@@ -58,7 +58,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
    DEBIAN_FRONTEND=""
    sudo rm -rf ~/GitHub
    echo "Setting up cpupower..."
-   sudo apt install cpupower cpupower-gui
+   sudo apt install linux-cpupower cpupower-gui
    echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local  
 fi
 
