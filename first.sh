@@ -216,6 +216,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo chmod +x /etc/systemd/system/rc-local.service
     sudo systemctl enable rc-local.service
     echo "" | sudo tee -a /etc/rc.local
+    echo "Installing rEFInd..."
+    sudo apt install refind -y
+    sudo refind-install
+    curl -sL https://git.io/refind-theme-nord | bash
 fi
 
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
