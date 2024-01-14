@@ -221,8 +221,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo refind-install
     curl -sL https://git.io/refind-theme-nord | bash
     sudo apt purge grub* --autoremove -y
-    sudo rm -rf /boot/efi/EFI/debian/*
-    sudo rm -rf /boot/efi/EFI/BOOT/*
+    sudo rm -rf /boot/efi/EFI/debian
+    sudo rm -rf /boot/efi/EFI/BOOT
     sudo rm -rf /boot/grub
     sudo refind-mkdefault
 fi
