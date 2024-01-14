@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.01.12"
+echo "Version: 2024.01.13"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -220,6 +220,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt install refind -y
     sudo refind-install
     curl -sL https://git.io/refind-theme-nord | bash
+    sudo apt purge grub* --autoremove -y
+    sudo rm -rf /boot/efi/EFI/debian/*
 fi
 
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
