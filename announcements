@@ -1,8 +1,8 @@
-Paxxer has been updated to version: 2024.01.10
+Paxxer has been updated to version: 2024.01.13
 
 Changelog:
 
-Fix bug where Plymouth is broken by removing it - not really needed
+Add rEFInd and remove GRUB
 
 The VelvetOS Installer has been updated to version: 2024.01.04
 
