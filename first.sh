@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.01.13"
+echo "Version: 2024.01.18"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -99,16 +99,16 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo hostname kappa
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hostname
-    echo "Updating kernel from $(echo $KERNEL) to 6.5.5-stb-mt8+"
+    echo "Updating kernel from $(echo $KERNEL) to 6.6.9-stb-mt8+"
     sudo rm -rf /boot/*
     sudo rm -rf /lib/modules/*
     cd ~
-    sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.5.5-stb-mt8%2B/6.5.5-stb-mt8+.tar.gz"
+    sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.6.9-stb-mt8%2B/6.6.9-stb-mt8+.tar.gz"
     cd /
-    sudo tar -xzvf ~/6.5.5-stb-mt8+.tar.gz
-    sudo rm -rf 6.5.5-stb-mt8+.tar.gz
-    sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/mmcblk0p1 bs=1M status=progress
-    sudo dd if=/boot/vmlinux.kpart-6.5.5-stb-mt8+ of=/dev/mmcblk0p2 bs=1M status=progress
+    sudo tar -xzvf ~/6.6.9-stb-mt8+.tar.gz
+    sudo rm -rf 6.6.9-stb-mt8+.tar.gz
+    sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p1 bs=1M status=progress
+    sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p2 bs=1M status=progress
 fi
 
 echo "Installing Deepin Sound Theme"
