@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.01.21"
+echo "Version: 2024.02.18"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -215,7 +215,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo cp -r $PAXXERDIR/rc-local.service /etc/systemd/system
     sudo chmod +x /etc/systemd/system/rc-local.service
     sudo systemctl enable rc-local.service
-    echo "" | sudo tee -a /etc/rc.local
+    echo "sudo cpupower frequency-set -g performance -d 2.48Ghz -u 2.48Ghz" | sudo tee -a /etc/rc.local
     echo "Installing rEFInd..."
     sudo apt install refind -y
     sudo refind-install
