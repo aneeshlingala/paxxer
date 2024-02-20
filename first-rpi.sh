@@ -57,16 +57,17 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.02.19"
+echo "Version: 2024.02.20"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
     echo "Adding user Aneesh..."
     sudo adduser aneesh
     sudo usermod -a -G sudo aneesh
-    echo "Setting root password..."
-    sudo passwd
 fi
+
+echo "Setting root password..."
+sudo passwd
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Setting Hostname..."
@@ -122,7 +123,7 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 flatpak install flathub so.libdb.gtkcord4 -y
 echo "Replacing LXDE Desktop with MATE"
 sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
-sudo apt purge xserver* lightdm* raspberrypi-ui-mods vlc* lxde* chromium* desktop* gnome* gstreamer* gtk* hicolor-icon-theme* lx*
+sudo apt purge lxde* --autoremove
 echo "Please enter in the root password..."
 su -c "apt install sudo -y"
 sudo apt remove synaptic lightdm-settings --autoremove -y
@@ -157,6 +158,7 @@ sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second-rpi.sh
 sudo touch /etc/paxxer-first-done
 echo $USER | sudo tee -a /etc/paxxer-user
+sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
 echo "After rebooting, run the second-rpi.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
@@ -164,4 +166,5 @@ echo "Press any key to reboot..."
 read -s -n 1
 echo ""
 echo "Pressed a key, rebooting..."
+sudo rm -rf ~/paxxer
 systemctl reboot
