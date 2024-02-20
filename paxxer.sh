@@ -9,7 +9,7 @@ do
             echo "Starting PaxxerDeb - ARM Chromebook Edition..."
             bash first.sh
             ;;
-        "Setup Debian (Raspberry Pi ONLY)")
+        "Setup Debian (Raspberry Pi OS Lite ONLY)")
             echo "Starting PaxxerDeb - Raspberry Pi Edition..."
             bash first-rpi.sh
             ;;
