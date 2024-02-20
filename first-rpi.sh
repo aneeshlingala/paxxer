@@ -158,7 +158,7 @@ sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second-rpi.sh
 sudo touch /etc/paxxer-first-done
 echo $USER | sudo tee -a /etc/paxxer-user
-sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
+sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme ~/Bookshelf
 echo "After rebooting, run the second-rpi.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
