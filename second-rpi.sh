@@ -41,27 +41,22 @@ fi
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 
+echo "Deleting user $(cat /etc/paxxer-user)..."
+sudo userdel $(cat /etc/paxxer-user)
+sudo rm -rf /home/$(cat /etc/paxxer-user)
+sudo rm -rf /etc/paxxer-user
+
+
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
-sudo apt remove onboard --autoremove -y
 sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-
-if [[ "$ARCH" == "aarch64" ]]; then
-   echo "Setting up Conky..."
-   sudo apt install conky -y
-   mkdir /home/aneesh/.config
-   mkdir /home/aneesh/.config/autostart
-   cp /home/aneesh/paxxer/.conkyrc ~
-   cp /home/aneesh/paxxer/conky-startup.desktop ~/.config/autostart
-fi
-
 echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
@@ -79,10 +74,10 @@ sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 uname -r | sudo tee -a /etc/paxxer-kernel
-sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third.sh
-sudo chmod +x third.sh
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third-rpi.sh
+sudo chmod +x third-rpi.sh
 cd ~
-echo "After rebooting, run third.sh in /home/aneesh/paxxer"
+echo "After rebooting, run third-rpi.sh in /home/aneesh/paxxer"
 echo "Rebooting in ten seconds, press CTRL+C to cancel..."
 sleep 10
 systemctl reboot
