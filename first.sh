@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.02.18"
+echo "Version: 2024.02.19"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -87,11 +87,13 @@ if [[ "$USER" == "linux" ]]; then
     sudo chown root:root /
 fi
 
-echo "Adding user Aneesh..."
-sudo adduser aneesh
-sudo usermod -a -G sudo aneesh
-echo "Setting root password..."
-sudo passwd
+if ! id -u aneesh > /dev/null 2>&1; then
+    echo "Adding user Aneesh..."
+    sudo adduser aneesh
+    sudo usermod -a -G sudo aneesh
+    echo "Setting root password..."
+    sudo passwd
+fi
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Setting Hostname..."
