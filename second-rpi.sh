@@ -69,15 +69,14 @@ ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/assets ~/.config/gtk-4.0
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/assets ~/.config/assets
 echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
 cd ~
-sudo touch /etc/paxxer-second
-sudo rm -rf /home/aneesh/paxxer
-sudo mkdir /home/aneesh/paxxer
-cd /home/aneesh/paxxer
-uname -r | sudo tee -a /etc/paxxer-kernel
-sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third-rpi.sh
-sudo chmod +x third-rpi.sh
+sudo touch /etc/paxxer-successful
 cd ~
-echo "After rebooting, run third-rpi.sh in /home/aneesh/paxxer"
-echo "Rebooting in ten seconds, press CTRL+C to cancel..."
-sleep 10
-systemctl reboot
+sudo rm -rf /home/aneesh/paxxer
+echo "PLEASE READ below:"
+echo "Install harleen theme with omf install harleen."
+echo "Press any key to install oh-my-fish..."
+read -s -n 1
+echo ""
+echo "Pressed a key, installing oh-my-fish..."
+cd ~
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
