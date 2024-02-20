@@ -69,7 +69,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.02.19"
+echo "Version: 2024.02.20"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -229,6 +229,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo refind-mkdefault
 fi
 
+sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
