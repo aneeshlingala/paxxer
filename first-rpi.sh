@@ -121,9 +121,8 @@ echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supp
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
-echo "Replacing LXDE Desktop with MATE"
+echo "Installing MATE Desktop"
 sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
-sudo apt purge lxde* --autoremove
 echo "Please enter in the root password..."
 su -c "apt install sudo -y"
 sudo apt remove synaptic lightdm-settings --autoremove -y
