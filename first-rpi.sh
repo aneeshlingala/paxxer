@@ -64,6 +64,7 @@ if ! id -u aneesh > /dev/null 2>&1; then
     echo "Adding user Aneesh..."
     sudo adduser aneesh
     sudo usermod -a -G sudo aneesh
+    echo $USER | sudo tee -a /etc/paxxer-user
 fi
 
 echo "Setting root password..."
@@ -156,7 +157,6 @@ sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
 sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second-rpi.sh
 sudo touch /etc/paxxer-first-done
-echo $USER | sudo tee -a /etc/paxxer-user
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme ~/Bookshelf
 sudo systemctl enable lightdm
 sudo apt purge zutty --autoremove -y
