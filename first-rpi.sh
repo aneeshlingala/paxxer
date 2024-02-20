@@ -142,6 +142,7 @@ sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
+sudo systemctl set-default graphical.target
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
