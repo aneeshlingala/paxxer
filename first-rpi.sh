@@ -159,7 +159,7 @@ sudo touch /etc/paxxer-first-done
 echo $USER | sudo tee -a /etc/paxxer-user
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme ~/Bookshelf
 sudo systemctl enable lightdm
-sudo apt purge zutty --autoremove
+sudo apt purge zutty --autoremove -y
 echo "After rebooting, run the second-rpi.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
