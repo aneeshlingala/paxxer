@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='What would you like to do?: '
-options=("Setup Debian (ARM Chromebook ONLY)" "Setup Debian (Raspberry Pi ONLY)" "Setup Arch Linux" "Install VelvetOS (Debian)" "Quit")
+options=("Setup Debian (ARM Chromebook ONLY)" "Setup Debian (Raspberry Pi OS Lite ONLY)" "Setup Arch Linux" "Install VelvetOS (Debian)" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
