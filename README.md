@@ -8,14 +8,6 @@ Clone this repository with Git and run paxxer.sh
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
 
-## Tested Scripts
-
-| Script | Debian  | Arch Linux |
-| ------- | --- | --- |
-| Paxxer Arm64 | Works ☑️ | Untested 🚫 |
-| Paxxer x64 | Works ☑️ | Untested 🚫 |
-| VelvetOS Kukui Installer | Works ☑️ | Works ☑️ |
-
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
 
