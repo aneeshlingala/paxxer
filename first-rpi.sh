@@ -83,7 +83,7 @@ sudo apt install gnome-session-canberra sox deepin-sound-theme -y
 echo "Installing GitHub Desktop..."
 cd ~
 sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.3.6-linux3/GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb -y
 sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
 sudo mkdir /home/aneesh/GitHub
 sudo chown aneesh:aneesh /home/aneesh/GitHub
