@@ -57,7 +57,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.02.20"
+echo "Version: 2024.02.21"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -149,6 +149,11 @@ sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
+echo "Enabling overclock..."
+echo "" | sudo tee -a /boot/firmware/config.txt
+echo "over_voltage=6" | sudo tee -a /boot/firmware/config.txt
+echo "arm_freq=2147" | sudo tee -a /boot/firmware/config.txt
+echo "gpu_freq=750" | sudo tee -a /boot/firmware/config.txt
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
 echo "Copying files for second-rpi.sh..."
