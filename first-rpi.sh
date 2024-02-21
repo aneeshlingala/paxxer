@@ -65,6 +65,7 @@ if ! id -u aneesh > /dev/null 2>&1; then
     sudo adduser aneesh
     sudo usermod -a -G sudo aneesh
     echo $USER | sudo tee -a /etc/paxxer-user
+    sudo passwd aneesh
 fi
 
 echo "Setting root password..."
