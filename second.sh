@@ -68,6 +68,9 @@ ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/gtk-dark.css ~/.config/g
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/assets ~/.config/gtk-4.0/assets
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/assets ~/.config/assets
 echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
+sudo cp -r /usr/share/themes/Graphite-teal-Dark-nord ~/.themes/
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer

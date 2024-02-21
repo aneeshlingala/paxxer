@@ -1,12 +1,10 @@
-Paxxer has been updated to version: 2024.01.13
+Paxxer has been updated to version: 2024.02.21
 
 Changelog:
 
-Add rEFInd and remove GRUB
+New Device Support: Raspberry Pi 4 (Raspberry Pi OS Lite ONLY)
+New user adding system
 
-The VelvetOS Installer has been updated to version: 2024.01.04
+As of now, the VelvetOS Kukui Installer hasn't been updated yet.
 
-Changelog:
-
-Add scrolling list to the disk list by piping fdisk -l with less
 
