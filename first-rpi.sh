@@ -96,11 +96,8 @@ echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite 
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
-echo "Installing Brave Browser..."
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update -y
-sudo apt install brave-browser firmware-intel-sound -y
+echo "Installing Chromium (optimized for Raspberry Pi)..."
+sudo apt install chromium
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
@@ -152,7 +149,7 @@ cd ~
 echo "Enabling overclock..."
 echo "" | sudo tee -a /boot/firmware/config.txt
 echo "over_voltage=6" | sudo tee -a /boot/firmware/config.txt
-echo "arm_freq=2147" | sudo tee -a /boot/firmware/config.txt
+echo "arm_freq=2000" | sudo tee -a /boot/firmware/config.txt
 echo "gpu_freq=750" | sudo tee -a /boot/firmware/config.txt
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
