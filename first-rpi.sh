@@ -120,9 +120,14 @@ echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supp
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
-echo "Installing MATE Desktop"
-sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
-echo "Please enter in the root password..."
+echo "Installing KDE..."
+sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril paritionmanager plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
+echo "Installing KDE Themes..."
+cd ~
+sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
+cd Graphite-kde-theme
+sudo bash install.sh
+cd ~
 su -c "apt install sudo -y"
 sudo apt remove synaptic lightdm-settings --autoremove -y
 echo "Installing Visual Studio Code..."
@@ -144,6 +149,8 @@ echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
 sudo systemctl set-default graphical.target
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
+sudo systemctl disable sddm
+sudo systemctl enable lightdm
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
 cd ~
 echo "Enabling overclock..."

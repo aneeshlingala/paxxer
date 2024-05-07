@@ -51,12 +51,11 @@ sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
-sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Theming MATE..."
+echo "Theming GTK-4, KDE, and Flatpak Applications..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
@@ -70,6 +69,7 @@ echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
 sudo cp -r /usr/share/themes/Graphite-teal-Dark-nord ~/.themes/
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
+lookandfeeltool -a Graphite-nord-dark
 cd ~
 sudo touch /etc/paxxer-second
 sudo rm -rf /home/aneesh/paxxer

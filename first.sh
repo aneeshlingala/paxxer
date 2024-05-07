@@ -157,9 +157,15 @@ echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supp
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
-echo "Replacing Xfce Desktop with MATE"
-sudo apt install vlc eog simplescreenrecorder mousepad file-roller atril gnome-disk-utility mate-media-common mate-media mate-power-manager gnome-system-monitor mate-applets system-config-printer cups mate-desktop-environment-core telegram-desktop network-manager-gnome mate-calc mate-applet-brisk-menu mate-tweak --no-install-recommends -y
+echo "Replacing Xfce Desktop with KDE..."
+sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril paritionmanager plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* --autoremove -y
+echo "Installing KDE Themes..."
+cd ~
+sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
+cd Graphite-kde-theme
+sudo bash install.sh
+cd ~
 echo "Please enter in the root password..."
 su -c "apt install sudo -y"
 sudo apt remove xterm exfalso synaptic lightdm-settings imagemagick --autoremove -y
@@ -179,6 +185,7 @@ sudo rm -rf /etc/lightdm/lightdm.conf
 sudo touch /etc/lightdm/lightdm.conf
 echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
 echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
+sudo systemctl disable sddm
 sudo systemctl enable lightdm
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
