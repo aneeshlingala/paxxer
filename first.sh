@@ -158,6 +158,7 @@ sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 echo "Replacing Xfce Desktop with KDE..."
+cd ~
 sudo apt download network-manager -y
 sudo apt purge network-manager
 sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril paritionmanager plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
