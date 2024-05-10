@@ -57,7 +57,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.02.21"
+echo "Version: 2024.05.09"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
