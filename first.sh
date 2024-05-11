@@ -160,8 +160,8 @@ flatpak install flathub so.libdb.gtkcord4 -y
 echo "Replacing Xfce Desktop with KDE..."
 cd ~
 sudo apt download network-manager -y
-sudo apt purge network-manager
-sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril paritionmanager plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
+sudo apt purge network-manager -y
+sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril gparted plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* -y
 sudo dpkg -i ~/network* 
 sudo apt autoremove -y
