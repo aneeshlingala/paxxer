@@ -57,7 +57,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.05.09"
+echo "Version: 2024.05.12"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -121,7 +121,7 @@ sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 echo "Installing KDE..."
-sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril paritionmanager plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc --no-install-recommends -y
+sudo apt install gwenview vlc simplescreenrecorder kate file-roller atril gparted plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
