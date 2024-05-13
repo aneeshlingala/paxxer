@@ -146,6 +146,7 @@ sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
 sudo systemctl enable sddm
 sudo apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo apt-get install plasma-nm unzip -y
 sudo mkdir /usr/share/sddm/themes/
 sudo wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-frappe.zip
 sudo unzip catppuccin-frappe.zip -d /usr/share/sddm/themes 
