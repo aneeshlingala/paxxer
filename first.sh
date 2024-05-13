@@ -161,6 +161,7 @@ echo "Replacing Xfce Desktop with KDE..."
 cd ~
 sudo apt download network-manager -y
 sudo apt install kde-plasma-desktop gwenview vlc simplescreenrecorder kate file-roller atril gparted plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc -y
+sudo apt install task-kde-desktop --no-install-recommends
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* -y
 sudo apt purge network-manager -y
 sudo dpkg -i ~/network* 
@@ -185,14 +186,19 @@ sudo apt update
 sudo apt install code -y
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
-echo "Installing LightDM and setting it up..."
-sudo apt install ukui-greeter lightdm -y
-sudo rm -rf /etc/lightdm/lightdm.conf
-sudo touch /etc/lightdm/lightdm.conf
-echo "[SeatDefaults]" | sudo tee -a /etc/lightdm/lightdm.conf
-echo "greeter-session=ukui-greeter" | sudo tee -a /etc/lightdm/lightdm.conf
-sudo systemctl disable sddm
-sudo systemctl enable lightdm
+echo "Installing SDDM and setting it up..."
+sudo systemctl disable lightdm
+sudo apt purge lightdm -y --autoremove
+sudo systemctl enable sddm
+sudo apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo mkdir /usr/share/sddm/themes/
+sudo wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-frappe.zip
+sudo unzip catppuccin-frappe.zip -d /usr/share/sddm/themes 
+sudo touch /etc/sddm.conf
+echo "[Theme]" | sudo tee -a /etc/sddm.conf
+echo "Current=catppuccin-frappe" | sudo tee -a /etc/sddm.conf
+echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+echo "Adding Debian Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
 sudo cp $PAXXERDIR/lights.png /usr/share/backgrounds/debian-lights/
