@@ -154,6 +154,7 @@ sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
 echo "Current=catppuccin-frappe" | sudo tee -a /etc/sddm.conf
 echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+sudo sed -i 's/FontSize=9/FontSize=10/g' /usr/share/sddm/themes/catppuccin-frappe/theme.conf
 echo "Adding Debian Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
