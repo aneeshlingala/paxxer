@@ -2,7 +2,8 @@ Paxxer has been updated to version: 2024.05.09
 
 Changelog:
 
-KDE has replaced MATE desktop.
+Fixes for KDE installation.
+Migration from LightDM to SDDM, with the Catppuccin SDDM Theme.
 
 As of now, the VelvetOS Kukui Installer hasn't been updated yet.
 
