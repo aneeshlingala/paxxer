@@ -45,6 +45,7 @@ sudo apt update -y
 echo "Note: Please check if apt is removing any necessary packages."
 sleep 7
 sudo apt full-upgrade --autoremove
+sudo apt reinstall telegram-desktop -y
 sudo apt clean
 
 if [[ "$ARCH" == "x86_64" ]]; then
