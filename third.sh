@@ -35,19 +35,6 @@ else
   nmtui
 fi
 
-echo "Upgrading to Debian Unstable..."
-sudo apt purge unattended-upgrades --autoremove -y
-sudo apt install apt-listbugs apt-listchanges ffmpeg -y
-sudo rm -rf /etc/apt/sources.list
-sudo touch /etc/apt/sources.list
-echo "deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list
-sudo apt update -y
-echo "Note: Please check if apt is removing any necessary packages."
-sleep 7
-sudo apt full-upgrade --autoremove
-sudo apt reinstall telegram-desktop -y
-sudo apt clean
-
 if [[ "$ARCH" == "x86_64" ]]; then
    sleep 7
    DEBIAN_FRONTEND=noninteractive
