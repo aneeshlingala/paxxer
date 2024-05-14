@@ -64,6 +64,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
 fi
 
 echo "Setting up Conky..."
+sudo apt install conky-all -y
 cd /home/aneesh/paxxer
 cp -r .conkyrc ~
 mkdir ~/.config
