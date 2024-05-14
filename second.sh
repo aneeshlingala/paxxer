@@ -76,7 +76,9 @@ sudo rm -rf /home/aneesh/paxxer
 sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 uname -r | sudo tee -a /etc/paxxer-kernel
-sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third-rpi.sh
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third.sh
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/.conkyrc
+sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/conky-startup.desktop
 sudo chmod +x third-rpi.sh
 cd ~
 echo "After rebooting, run third-rpi.sh in /home/aneesh/paxxer"

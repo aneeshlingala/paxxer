@@ -161,7 +161,7 @@ echo "Replacing Xfce Desktop with KDE..."
 cd ~
 sudo apt download network-manager -y
 sudo apt install kde-plasma-desktop gwenview simplescreenrecorder kate file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc -y
-sudo apt install task-kde-desktop --no-install-recommends
+sudo apt install task-kde-desktop --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* -y
 sudo apt purge network-manager -y
 sudo dpkg -i ~/network* 
@@ -221,8 +221,6 @@ sudo chsh --shell /usr/bin/fish aneesh
 echo "Copying files for second.sh..."
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
-sudo cp $PAXXERDIR/.conkyrc /home/aneesh/paxxer
-sudo cp $PAXXERDIR/conky-startup.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 

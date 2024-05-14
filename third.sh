@@ -62,12 +62,20 @@ if [[ "$ARCH" == "x86_64" ]]; then
    echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local  
 fi
 
+echo "Setting up Conky..."
+cd /home/aneesh/paxxer
+cp -r .conkyrc ~
+mkdir ~/.config
+mkdir ~/.config/autostart
+cp -r conky-startup.desktop ~/.config/autostart/
+
 sleep 11
 sudo touch /etc/paxxer-successful
 cd ~
 sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
-echo "Install harleen theme with omf install harleen."
+echo "Install harleen oh-my-fish theme after installation with omf install harleen."
+echo "Then, reboot the computer with the command systemctl reboot."
 echo "Press any key to install oh-my-fish..."
 read -s -n 1
 echo ""
