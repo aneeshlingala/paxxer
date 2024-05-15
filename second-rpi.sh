@@ -41,23 +41,18 @@ fi
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 
-echo "Deleting user $(cat /etc/paxxer-user)..."
-sudo userdel $(cat /etc/paxxer-user)
-sudo rm -rf /home/$(cat /etc/paxxer-user)
-sudo rm -rf /etc/paxxer-user
-
-
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
 sudo apt autoremove -y
 sudo apt clean
+sudo apt remove onboard --autoremove -y
 sudo apt install gsettings-desktop-schemas libglib2.0-bin dconf-editor -y
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Theming GTK-4, KDE, and Flatpak Applications..."
+echo "Theming MATE..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
@@ -68,19 +63,6 @@ ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/gtk-dark.css ~/.config/g
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/assets ~/.config/gtk-4.0/assets
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/assets ~/.config/assets
 echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
-sudo cp -r /usr/share/themes/Graphite-teal-Dark-nord ~/.themes/
-sudo flatpak override --filesystem=$HOME/.themes
-sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
-lookandfeeltool -a Graphite-nord-dark
 cd ~
 sudo touch /etc/paxxer-successful
-cd ~
 sudo rm -rf /home/aneesh/paxxer
-echo "PLEASE READ below:"
-echo "Install harleen theme with omf install harleen."
-echo "Press any key to install oh-my-fish..."
-read -s -n 1
-echo ""
-echo "Pressed a key, installing oh-my-fish..."
-cd ~
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
