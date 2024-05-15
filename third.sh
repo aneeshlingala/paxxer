@@ -36,21 +36,13 @@ else
 fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
-   sleep 7
-   DEBIAN_FRONTEND=noninteractive
-   sudo mv /usr/bin/linux-check-removal /usr/bin/linux-check-removal.orig
-   echo -e '#!/bin/sh\necho "Overriding default linux-check-removal script!"\nexit 0' | sudo tee /usr/bin/linux-check-removal
-   sudo chmod +x /usr/bin/linux-check-removal
-   sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
-   sudo mv /usr/bin/linux-check-removal.orig /usr/bin/linux-check-removal
-   DEBIAN_FRONTEND=""
-   sudo rm -rf ~/GitHub
    echo "Setting up cpupower..."
    sudo apt install linux-cpupower
    echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local  
 fi
 
 if [[ "$ARCH" == "aarch64" ]]; then
+   sudo rm -rf ~/GitHub
    echo "Setting up Conky..."
    sudo apt install conky-all -y
    cd /home/aneesh/paxxer
