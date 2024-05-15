@@ -6,6 +6,7 @@ CUR_HOSTNAME=$(cat /etc/hostname)
 KERNEL=$(uname -r)
 ARCH=$(uname -m)
 
+sudo apt install curl -y
 clear
 echo ""
 echo "Announcements from Paxxer Developers:"
@@ -69,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.05.12"
+echo "Version: 2024.05.15"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."

@@ -5,6 +5,7 @@ PAXXERDIR=$PWD
 CUR_HOSTNAME=$(cat /etc/hostname)
 ARCH=$(uname -m)
 
+sudo apt install curl -y
 clear
 echo ""
 echo "Announcements from Paxxer Developers:"
@@ -57,7 +58,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.05.13"
+echo "Version: 2024.05.15"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then

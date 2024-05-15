@@ -50,13 +50,15 @@ if [[ "$ARCH" == "x86_64" ]]; then
    echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local  
 fi
 
-echo "Setting up Conky..."
-sudo apt install conky-all -y
-cd /home/aneesh/paxxer
-cp -r .conkyrc ~
-mkdir ~/.config
-mkdir ~/.config/autostart
-cp -r conky-startup.desktop ~/.config/autostart/
+if [[ "$ARCH" == "aarch64" ]]; then
+   echo "Setting up Conky..."
+   sudo apt install conky-all -y
+   cd /home/aneesh/paxxer
+   cp -r .conkyrc ~
+   mkdir ~/.config
+   mkdir ~/.config/autostart
+   cp -r conky-startup.desktop ~/.config/autostart/
+fi
 
 sleep 11
 sudo touch /etc/paxxer-successful
