@@ -35,12 +35,6 @@ else
   nmtui
 fi
 
-if [[ "$ARCH" == "x86_64" ]]; then
-   echo "Setting up cpupower..."
-   sudo apt install linux-cpupower
-   echo "cpupower frequency-set -d 2.48Ghz -u 2.48Ghz -g performance" | sudo tee -a /etc/rc.local  
-fi
-
 if [[ "$ARCH" == "aarch64" ]]; then
    sudo rm -rf ~/GitHub
    echo "Setting up Conky..."
