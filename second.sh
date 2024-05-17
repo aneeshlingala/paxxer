@@ -81,7 +81,7 @@ sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/.conkyrc
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/conky-startup.desktop
 sudo chmod +x third.sh
 cd ~
-echo "After rebooting, run third-rpi.sh in /home/aneesh/paxxer"
+echo "After rebooting, run third.sh in /home/aneesh/paxxer"
 echo "Rebooting in ten seconds, press CTRL+C to cancel..."
 sleep 10
 systemctl reboot
