@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.05.15"
+echo "Version: 2024.05.25"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -233,11 +233,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
     sleep 7
-    echo "Setting up cpupower..." 
-    sudo cp -r $PAXXERDIR/rc-local.service /etc/systemd/system
-    sudo chmod +x /etc/systemd/system/rc-local.service
-    sudo systemctl enable rc-local.service
-    echo "sudo cpupower frequency-set -g performance -d 2.48Ghz -u 2.48Ghz" | sudo tee -a /etc/rc.local
     echo "Installing rEFInd..."
     sudo apt install refind -y
     sudo refind-install
