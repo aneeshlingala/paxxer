@@ -4,9 +4,17 @@
 The dependencies are Git and Sudo. The script will install the other dependencies automatically.
 
 ## How to use
-Clone this repository with Git and run paxxer.sh
+Clone this repository with Git (``git clone https://github.com/aneeshlingala/paxxer``) and run paxxer.sh
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
+
+## Tested Scripts
+
+| Script | Debian Chromebook/Raspberry Pi | Arch Linux |
+| ------- | --- | --- |
+| Paxxer Arm64 | Works ☑️ | Untested 🚫 |
+| Paxxer x64 | Works ☑️ | Untested 🚫 |
+| VelvetOS Kukui Installer | Works ☑️ | Works ☑️ |
 
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
