@@ -44,13 +44,6 @@ cd /home/aneesh/paxxer
 echo "Deleting user linux..."
 sudo userdel linux
 sudo rm -rf /home/linux
-
-
-echo "Upgrading System..."
-sudo apt upgrade --autoremove -y
-echo "Cleaning up..."
-sudo apt autoremove -y
-sudo apt clean
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
@@ -71,17 +64,36 @@ sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 lookandfeeltool -a Graphite-nord-dark
 cd ~
-sudo touch /etc/paxxer-second
-sudo rm -rf /home/aneesh/paxxer
-sudo mkdir /home/aneesh/paxxer
 cd /home/aneesh/paxxer
 uname -r | sudo tee -a /etc/paxxer-kernel
-sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/third.sh
+echo "Downloading extra needed files..."
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/.conkyrc
 sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/conky-startup.desktop
-sudo chmod +x third.sh
 cd ~
-echo "After rebooting, run third.sh in /home/aneesh/paxxer"
-echo "Rebooting in ten seconds, press CTRL+C to cancel..."
-sleep 10
-systemctl reboot
+
+if [[ "$ARCH" == "aarch64" ]]; then
+   sudo rm -rf ~/GitHub
+   echo "Setting up Conky..."
+   sudo apt install conky-all -y
+   cd /home/aneesh/paxxer
+   cp -r .conkyrc ~
+   mkdir ~/.config
+   mkdir ~/.config/autostart
+   cp -r conky-startup.desktop ~/.config/autostart/
+fi
+
+sleep 11
+do touch /etc/paxxer-successful
+cd ~
+sudo rm -rf /home/aneesh/paxxer
+echo "PLEASE READ below:"
+echo "Install harleen oh-my-fish theme after installation with omf install harleen."
+echo "Then, reboot the computer with the command systemctl reboot."
+echo "Press any key to install oh-my-fish..."
+read -s -n 1
+echo ""
+echo "Pressed a key, installing oh-my-fish..."
+cd ~
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+

@@ -158,6 +158,11 @@ echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supp
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
+echo "Upgrading System..."
+sudo apt upgrade --autoremove -y
+echo "Cleaning up..."
+sudo apt autoremove -y
+sudo apt clean
 echo "Replacing Xfce Desktop with KDE..."
 cd ~
 sudo apt download network-manager -y
