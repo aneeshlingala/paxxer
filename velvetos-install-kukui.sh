@@ -46,7 +46,7 @@ start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
 # Downloading image from different source since GitHub keeps rejecting downloads lately, for some reason.
-sudo wget -O kukui.img https://cdn.matix-media.net/dd/c6705f3f
+sudo wget -O kukui.img https://matix.li/bcb948b5241f
 echo "The installer will present a list of disks in ten seconds. Find the disk you would like to install VelvetOS on."
 clear
 echo "Loading disk list... (NOTE: Press the q key to quit.)"
