@@ -10,11 +10,11 @@ Clone this repository with Git (``git clone https://github.com/aneeshlingala/pax
 
 ## Tested Scripts
 
-| Script | Debian Chromebook/Raspberry Pi | Arch Linux |
+| Script | Debian Chromebook | Raspberry Pi OS Lite | Arch Linux |
 | ------- | --- | --- |
-| Paxxer Arm64 | Works ☑️ | Untested 🚫 |
-| Paxxer x64 | Works ☑️ | Untested 🚫 |
-| VelvetOS Kukui Installer | Works ☑️ | Works ☑️ |
+| Paxxer Arm64 | Works ☑️ | Works ☑️ | Untested 🚫 |
+| Paxxer x64 | Works ☑️ | Does not work (x64 not supported) 🚫 | Untested 🚫 |
+| VelvetOS Kukui Installer | Works ☑️ | Works ☑️ | Works ☑️ |
 
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
