@@ -8,7 +8,7 @@ Clone this repository with Git (``git clone https://github.com/aneeshlingala/pax
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
 
-## Note for PaxxerAL
+## Notes for PaxxerAL
 PaxxerAL has been untested and will most likely not be tested in the future. If you are able to test and report, that would be great! Also, PaxxerAL has not been synced with the PaxxerDEB which means it still uses the old desktop environment and themes/icons.
 
 ## Run time
