@@ -72,7 +72,6 @@ sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/paxxer/conky-st
 cd ~
 
 if [[ "$ARCH" == "aarch64" ]]; then
-   sudo rm -rf ~/GitHub
    echo "Setting up Conky..."
    sudo apt install conky-all -y
    cd /home/aneesh/paxxer
@@ -83,7 +82,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
 fi
 
 sleep 11
-do touch /etc/paxxer-successful
+touch /etc/paxxer-successful
 cd ~
 sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
@@ -95,5 +94,3 @@ echo ""
 echo "Pressed a key, installing oh-my-fish..."
 cd ~
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-
-
