@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=conky
-Exec=conky -p 5 & 
+Exec=conky -p 7 & 
 StartupNotify=false
 Terminal=false
 Icon=conky-logomark-violet
