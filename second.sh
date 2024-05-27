@@ -82,7 +82,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
 fi
 
 sleep 11
-touch /etc/paxxer-successful
+sudo touch /etc/paxxer-successful
 cd ~
 sudo rm -rf /home/aneesh/paxxer
 echo "PLEASE READ below:"
