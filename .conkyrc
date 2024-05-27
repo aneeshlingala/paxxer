@@ -54,16 +54,16 @@ conky.config = {
 }
 
 conky.text = [[
-${color2}${font Font Awesome 5 Free:style=Solid}${font} SYSTEM ${hr 2}${color1}
+${color2}${font Font Awesome 5 Free:style=Solid}${font} SYSTEM ${hr 2}${color1}
 Distro: $alignr Debian ${execi 86400 lsb_release -sr}
 Kernel: $alignr $kernel
 
-${color2}${font Font Awesome 5 Free:style=Solid}${font} DISK USAGE ${hr 2}${color1}
+${color2}${font Font Awesome 5 Free:style=Solid}${font} DISK USAGE ${hr 2}${color1}
 / $alignr ${fs_used /} / ${fs_size /} $alignr (${fs_used_perc /}%)
-${color2}${font Font Awesome 5 Free:style=Solid}${font} CPU ${hr 2}${color1}
+${color2}${font Font Awesome 5 Free:style=Solid}${font} CPU ${hr 2}${color1}
 Load: ${cpu cpu0}% $alignr Temp: ${hwmon 4 temp 1}°C
 Processes: $processes $alignr Running: $running_processes
 
-${color2}${font Font Awesome 5 Free:style=Solid:size=10}${font} MEMORY ${hr 2}${color1}
+${color2}${font Font Awesome 5 Free:style=Solid:size=10}${font} MEMORY ${hr 2}${color1}
 RAM: $memperc% $membar
 ]];
