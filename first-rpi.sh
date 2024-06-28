@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.05.15"
+echo "Version: 2024.06.28"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -97,8 +97,8 @@ echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite 
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
-echo "Installing Chromium (optimized for Raspberry Pi)..."
-sudo apt install chromium
+echo "Installing Chromium (Optimized for Raspberry Pi)..."
+sudo apt install chromium -y
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
