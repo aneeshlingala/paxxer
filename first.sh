@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.06.28   `   "
+echo "Version: 2024.06.29"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -195,7 +195,9 @@ sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
 sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
-sudo apt install --no-install-recommends kwin-x11 qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo apt install kwin-x11 -y
+sudo apt install kwin-wayland -y
 sudo systemctl enable sddm
 sudo apt-get install plasma-nm unzip -y
 sudo mkdir /usr/share/sddm/themes/

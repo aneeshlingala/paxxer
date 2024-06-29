@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.06.28"
+echo "Version: 2024.06.29"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -146,7 +146,9 @@ sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
 sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
-sudo apt install --no-install-recommends sddm kwin-x11 qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo apt install --no-install-recommends sddm qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
+sudo apt install kwin-x11 -y
+sudo apt install kwin-wayland -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 sudo apt-get install plasma-nm unzip -y
