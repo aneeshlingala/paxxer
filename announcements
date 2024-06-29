@@ -1,12 +1,14 @@
-Paxxer has been updated to version: 2024.05.09
+Paxxer has been updated to version: 2024.06.28
 
-Changelog:
+Raspberry Pi Changelog:
 
-Fixes for KDE installation.
-Migration from LightDM to SDDM, with the Catppuccin SDDM Theme.
+Enable graphical.target by default.
 
-VelvetOS Installer:
+Paxxer Universal Changelog:
 
-New download image because it got accidentally deleted.
+Also install KDE Wayland.
+
+VelvetOS Installer has not been updated yet.
+
 
 
