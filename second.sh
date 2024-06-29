@@ -48,7 +48,7 @@ echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Theming GTK-4, KDE, and Flatpak Applications..."
+echo "Theming GTK-4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets

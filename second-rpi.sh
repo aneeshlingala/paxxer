@@ -52,7 +52,7 @@ echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Theming MATE..."
+echo "Theming GTK 4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
 rm -rf ~/.config/gtk-4.0/assets
@@ -66,3 +66,13 @@ echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
 cd ~
 sudo touch /etc/paxxer-successful
 sudo rm -rf /home/aneesh/paxxer
+echo "PLEASE READ below:"
+echo "Install harleen oh-my-fish theme after installation with omf install harleen."
+echo "Then, reboot the computer with the command systemctl reboot."
+echo "Press any key to install oh-my-fish..."
+read -s -n 1
+echo ""
+echo "Pressed a key, installing oh-my-fish..."
+cd ~
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
