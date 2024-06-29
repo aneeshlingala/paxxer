@@ -148,6 +148,7 @@ sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
 sudo apt install --no-install-recommends sddm qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
 sudo systemctl enable sddm
+sudo systemctl set-default graphical.target
 sudo apt-get install plasma-nm unzip -y
 sudo mkdir /usr/share/sddm/themes/
 sudo wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-frappe.zip
@@ -179,7 +180,6 @@ sudo touch /etc/paxxer-first-done
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme ~/Bookshelf
 sudo systemctl enable lightdm
 sudo apt purge zutty --autoremove -y
-sudo systemctl enable sddm
 echo "After rebooting, run the second-rpi.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""
