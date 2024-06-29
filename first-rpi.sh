@@ -148,7 +148,7 @@ sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
 sudo apt install --no-install-recommends sddm qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
 sudo apt install kwin-x11 -y
-sudo apt install kwin-wayland -y
+sudo apt install kwin-wayland plasma-workspace-wayland -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 sudo apt-get install plasma-nm unzip -y
