@@ -40,7 +40,8 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-
+echo "Deleting user $(cat /etc/paxxer-user)"
+sudo userdel $(cat /etc/paxxer-user)
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
@@ -52,6 +53,17 @@ echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
+echo "Adding Minecraft Pi Mods..."
+sudo mkdir /home/aneesh/.minecraft-pi/
+sudo mkdir /home/aneesh/.minecraft-pi/mods
+sudo chown -R aneesh:aneesh /home/aneesh/.minecraft-pi
+cd /home/aneesh/.minecraft-pi/mods
+wget "https://cdn.discordapp.com/attachments/740287938453045401/1078558046613143562/libcake.so"
+wget "https://github.com/Bigjango13/MCPI-Mods/releases/download/v1.0.2/libexpanded-creative.so"
+wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331796/libNoReactorMessage.so"
+wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
+wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
+wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
 echo "Theming GTK 4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
