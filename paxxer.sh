@@ -1,30 +1,55 @@
-#!/bin/bash
+#!/bin/sh
 
-PS3='What would you like to do?: '
-options=("Setup Debian (ARM Chromebook/Generic x64 ONLY)" "Setup Debian (Raspberry Pi OS Lite ONLY)" "Setup Arch Linux (UNSUPPORTED)" "Install VelvetOS (Debian)" "Quit")
-select opt in "${options[@]}"
+if [ -f "$PWD/second.sh" ]; then
+    echo "Script is running from the root directory of the repository, continuing..."
+else
+    echo "Error: Please run this script from the Paxxer repository."
+    exit 1
+fi
+
+echo "What would you like to do?: "
+echo "1) Setup Debian (ARM Chromebook ONLY)"
+echo "2) Setup Debian (Raspberry Pi ONLY)"
+echo "3) Setup Arch Linux"
+echo "4) Install VelvetOS (Debian)"
+echo "5) Setup PostmarketOS (User must be named linux and must have the console desktop!)"
+echo "6) Quit"
+
+while :
 do
-    case $opt in
-        "Setup Debian (ARM Chromebook/Generic x64 ONLY)")
+    read choice
+    case $choice in
+        1)
             echo "Starting PaxxerDeb - ARM Chromebook Edition..."
             bash first.sh
+            break
             ;;
-        "Setup Debian (Raspberry Pi OS Lite ONLY)")
+        2)
             echo "Starting PaxxerDeb - Raspberry Pi Edition..."
             bash first-rpi.sh
+            break
             ;;
-        "Setup Arch Linux (UNSUPPORTED)")
+        3)
             echo "Starting PaxxerAL..."
             bash first-archlinux.sh
+            break
             ;;
-        "Install VelvetOS (Debian)")
+        4)
             echo "Starting Installer..."
             bash velvetos-install-kukui.sh
+            break
             ;;
-        "Quit")
+        5)
+            echo "Starting PaxxerPmOS..."
+            bash first-pmos.sh
+            break
+            ;;
+        6)
             echo "Quitting..."
-            exit
+            exit 0
             ;;
-        *) echo "Invalid option $REPLY";;
+        *)
+            echo "Invalid option. Please enter a number from 1 to 6."
+            ;;
     esac
 done
