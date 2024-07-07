@@ -41,6 +41,7 @@ do
             ;;
         5)
             echo "Starting PaxxerPmOS..."
+            echo y | sudo apk add bash
             bash first-pmos.sh
             break
             ;;
