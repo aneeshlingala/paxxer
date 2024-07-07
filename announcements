@@ -1,14 +1,9 @@
-Paxxer has been updated to version: 2024.06.28
+Paxxer has been updated to version: 2024.07.06!
 
-Raspberry Pi Changelog:
+Changelog:
 
-Enable graphical.target by default.
+Support for PostmarketOS has been released!
 
-Paxxer Universal Changelog:
-
-Also install KDE Wayland.
-
-VelvetOS Installer has not been updated yet.
-
+The VelvetOS Kukui installer has not been updated as of now.
 
 
