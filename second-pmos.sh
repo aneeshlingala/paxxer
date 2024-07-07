@@ -53,7 +53,7 @@ sudo mkdir /home/aneesh/.minecraft-pi/
 sudo mkdir /home/aneesh/.minecraft-pi/mods
 sudo chown -R aneesh:aneesh /home/aneesh/.minecraft-pi
 cd /home/aneesh/.minecraft-pi/mods
-sudo apk add wget
+echo y | sudo apk add wget
 wget "https://cdn.discordapp.com/attachments/740287938453045401/1078558046613143562/libcake.so"
 wget "https://github.com/Bigjango13/MCPI-Mods/releases/download/v1.0.2/libexpanded-creative.so"
 wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331796/libNoReactorMessage.so"
@@ -86,7 +86,7 @@ cd ~
 
 if [[ "$ARCH" == "aarch64" ]]; then
    echo "Setting up Conky..."
-   sudo apk add conky
+   echo y | sudo apk add conky
    cd /home/aneesh/paxxer
    cp -r .conkyrc ~
    mkdir ~/.config

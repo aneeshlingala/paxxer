@@ -6,7 +6,7 @@ CUR_HOSTNAME=$(cat /etc/hostname)
 KERNEL=$(uname -r)
 ARCH=$(uname -m)
 
-sudo apk add curl bash alpine-conf git
+echo y | sudo apk add curl bash alpine-conf git
 clear
 echo ""
 echo "Announcements from Paxxer Developers:"
@@ -83,7 +83,7 @@ fi
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
-sudo apk add sassc
+echo y | sudo apk add sassc
 sudo bash install.sh -t teal -c dark --tweaks nord 
 cd ~
 sudo git clone https://github.com/SylEleuth/gruvbox-plus-icon-pack
@@ -99,18 +99,18 @@ sudo rm -rf Afterglow-Cursors
 echo "Setting timezone to America/Los_Angeles"
 sudo setup-timezone -z America/Los_Angeles
 echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), Brave Browser, and Minecraft Pi..."
-sudo apk add flatpak
+echo y | sudo apk add flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 flatpak install flathub com.thebrokenrail.MCPIReborn
 echo "Upgrading System..."
-sudo apk update
-sudo apk upgrade
+echo y | sudo apk update
+echo y | sudo apk upgrade
 echo "Cleaning up..."
 sudo rm -rf /var/cache/apk/*
 echo "Installing KDE Desktop..."
 cd ~
-sudo apk add postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc -y
+echo y | sudo apk add postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc -y
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
@@ -118,13 +118,13 @@ cd Graphite-kde-theme
 sudo bash install.sh
 cd ~
 echo "Installing Visual Studio Code..."
-sudo apk add code-oss
+echo y | sudo apk add code-oss
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
-sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects
+echo y | sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects
 sudo rc-update add sddm
-sudo apk add plasma-nm
+echo y | sudo apk add plasma-nm
 sudo mkdir /usr/share/sddm/themes/
 cd /usr/share/sddm/themes/
 sudo git clone https://github.com/erickotato/sddm-slice slice
