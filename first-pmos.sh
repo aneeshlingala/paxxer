@@ -93,6 +93,7 @@ cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
 sudo mkdir /usr/share/icons
+echo "Copying icons, this may take a while..."
 sudo cp -r dist /usr/share/icons/Afterglow-cursors
 cd ~
 sudo rm -rf Afterglow-Cursors
