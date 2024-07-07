@@ -60,7 +60,12 @@ wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331
 wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
 wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
-
+echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), LibreWolf Browser, and Minecraft Pi..."
+echo y | sudo apk add flatpak fuse
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub so.libdb.gtkcord4 -y
+flatpak install --user flathub com.thebrokenrail.MCPIReborn
+flatpak install --user flathub io.gitlab.librewolf-community
 echo "Theming GTK-4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
