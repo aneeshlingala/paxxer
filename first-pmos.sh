@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.07.06"
+echo "Version: 2024.07.07"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -100,7 +100,7 @@ sudo rm -rf Afterglow-Cursors
 echo "Setting timezone to America/Los_Angeles"
 sudo setup-timezone -z America/Los_Angeles
 echo "Upgrading System..."
-echo y | sudo apk update
+sudo apk update
 echo y | sudo apk upgrade
 echo "Cleaning up..."
 sudo rm -rf /var/cache/apk/*
@@ -118,7 +118,7 @@ echo y | sudo apk add code-oss
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
-echo y | sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects
+echo y | sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects sddm
 sudo rc-update add sddm
 echo y | sudo apk add plasma-nm
 sudo mkdir /usr/share/sddm/themes/
