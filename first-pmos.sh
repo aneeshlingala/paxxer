@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.07.07"
+echo "Version: 2024.07.14"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -113,10 +113,6 @@ sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
 cd Graphite-kde-theme
 sudo bash install.sh
 cd ~
-echo "Installing Visual Studio Code..."
-echo y | sudo apk add code-oss
-sudo mkdir /home/aneesh/VSCode
-sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
 echo y | sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects sddm
 sudo rc-update add sddm
