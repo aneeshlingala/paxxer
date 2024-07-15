@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.07.14"
+echo "Version: 2024.07.15"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -137,6 +137,7 @@ sudo touch /etc/paxxer-first-done
 if [[ "$ARCH" == "x86_64" ]]; then
     echo "Setting Hostname..."
     sudo setup-hostname -n terra
+    echo "b43" | sudo tee -a /etc/modules
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
