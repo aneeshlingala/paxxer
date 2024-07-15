@@ -105,7 +105,7 @@ echo "Cleaning up..."
 sudo rm -rf /var/cache/apk/*
 echo "Installing KDE Desktop..."
 cd ~
-echo y | sudo apk add postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish 
+echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish 
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
