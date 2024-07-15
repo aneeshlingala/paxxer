@@ -69,8 +69,6 @@ echo "Adding user Aneesh..."
 sudo adduser aneesh
 sudo mkdir /home/aneesh
 sudo usermod -a -G wheel aneesh
-echo "Setting password for Aneesh user account..."
-sudo passwd aneesh
 echo "Setting root password..."
 sudo passwd
 
@@ -106,7 +104,7 @@ echo "Cleaning up..."
 sudo rm -rf /var/cache/apk/*
 echo "Installing KDE Desktop..."
 cd ~
-echo y | sudo apk add postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish -y
+echo y | sudo apk add postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish 
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
