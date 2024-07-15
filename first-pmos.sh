@@ -71,6 +71,7 @@ sudo mkdir /home/aneesh
 sudo usermod -a -G wheel aneesh
 echo "Setting root password..."
 sudo passwd
+sudo usermod -aG netdev aneesh
 
 
 if [[ "$ARCH" == "aarch64" ]]; then
