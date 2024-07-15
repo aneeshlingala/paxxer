@@ -112,15 +112,9 @@ sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
 cd Graphite-kde-theme
 sudo bash install.sh
 cd ~
-echo "Installing SDDM and setting it up..."
-echo y | sudo apk add qt6-qtbase qt5-qtquickcontrols2 qt5-qtgraphicaleffects sddm
-sudo rc-update add sddm
-echo y | sudo apk add plasma-nm
-sudo mkdir /usr/share/sddm/themes/
-cd /usr/share/sddm/themes/
-sudo git clone https://github.com/erickotato/sddm-slice slice
-echo "Current=slice" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+echo "Installing LXDM..."
+echo y | sudo apk add lxdm
+sudo rc-update add lxdm
 echo y | sudo apk del maliit-keyboard
 echo "Adding Alpine Linux Backgrounds..."
 sudo mkdir /usr/share/backgrounds
