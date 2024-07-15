@@ -121,6 +121,7 @@ cd /usr/share/sddm/themes/
 sudo git clone https://github.com/erickotato/sddm-slice slice
 echo "Current=slice" | sudo tee -a /etc/sddm.conf
 echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
+echo y | sudo apk del maliit-keyboard
 echo "Adding Alpine Linux Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/bg
