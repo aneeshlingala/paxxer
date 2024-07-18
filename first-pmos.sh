@@ -115,6 +115,7 @@ cd ~
 echo "Installing LightDM..."
 echo y | sudo apk add lightdm slick-greeter
 sudo rc-update add lightdm
+sudo rc-update del sddm
 echo y | sudo apk del maliit-keyboard
 echo "Adding Alpine Linux Backgrounds..."
 sudo mkdir /usr/share/backgrounds
