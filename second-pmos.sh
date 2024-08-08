@@ -64,10 +64,10 @@ echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supp
 sudo apk add flatpak
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub so.libdb.gtkcord4 -y
-flatpak install --user flathub com.thebrokenrail.MCPIReborn
-flatpak install --user flathub io.gitlab.librewolf-community
-flatpak install --user flathub com.visualstudio.code
-flatpak install --user flathub org.prismlauncher.PrismLauncher
+flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
+flatpak install --user flathub io.gitlab.librewolf-community -y
+flatpak install --user flathub com.visualstudio.code -y
+flatpak install --user flathub org.prismlauncher.PrismLauncher -y
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Theming GTK-4 and Flatpak Apps..."
