@@ -61,7 +61,7 @@ wget "https://cdn.discordapp.com/attachments/1034896064240689192/105389216228416
 wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
 echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), VSCode LibreWolf Browser, and Minecraft Pi..."
-sudo apk add flatpak
+echo y | sudo apk add flatpak pam-rundir linux-pam
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub so.libdb.gtkcord4 -y
 flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
