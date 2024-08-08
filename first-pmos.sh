@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.07.18"
+echo "Version: 2024.08.07"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
