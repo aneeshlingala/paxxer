@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.07.11"
+echo "Version: 2024.08.07"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -152,9 +152,10 @@ sudo timedatectl set-timezone America/Los_Angeles
 echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), LibreWolf Browser, and Minecraft Pi..."
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub so.libdb.gtkcord4 -y
+flatpak install flathub so.libdb.gtkcord4
 flatpak install flathub com.thebrokenrail.MCPIReborn
 flatpak install flathub io.gitlab.librewolf-community
+flatpak install flathub org.prismlauncher.PrismLauncher
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
