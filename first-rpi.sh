@@ -125,6 +125,7 @@ sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 flatpak install flathub com.thebrokenrail.MCPIReborn
+flatpak install flathub org.prismlauncher.PrismLauncher
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y
