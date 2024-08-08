@@ -67,6 +67,7 @@ flatpak install --user flathub so.libdb.gtkcord4 -y
 flatpak install --user flathub com.thebrokenrail.MCPIReborn
 flatpak install --user flathub io.gitlab.librewolf-community
 flatpak install --user flathub com.visualstudio.code
+flatpak install --user flathub org.prismlauncher.PrismLauncher
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Theming GTK-4 and Flatpak Apps..."
