@@ -55,7 +55,7 @@ conky.config = {
 
 conky.text = [[
 ${color2}${font Font Awesome 5 Free:style=Solid}${font} SYSTEM ${hr 2}${color1}
-Distro: $alignr Debian ${execi 86400 lsb_release -sr}
+Distro: $alignr Linux ${execi 86400 uname -r}
 Kernel: $alignr $kernel
 
 ${color2}${font Font Awesome 5 Free:style=Solid}${font} DISK USAGE ${hr 2}${color1}
