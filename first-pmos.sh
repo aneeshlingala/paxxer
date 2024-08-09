@@ -87,7 +87,8 @@ sudo bash install.sh -t teal -c dark --tweaks nord
 cd ~
 sudo git clone https://github.com/SylEleuth/gruvbox-plus-icon-pack
 cd gruvbox-plus-icon-pack
-sudo cp -r Gruvbox* /usr/share/icons/
+sudo mkdir /usr/share/icons/Gruvbox
+sudo cp -r Gruvbox* /usr/share/icons/Gruvbox
 cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
