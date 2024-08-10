@@ -57,8 +57,8 @@ else
     echo "Error: Paxxer does not work on $(echo $ARCH) architecture."
 fi
 
-echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.08.07"
+echo "PaxxerRPI, a setup tool to setup my Raspberry Pi, to my liking."
+echo "Version: 2024.08.10"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -122,7 +122,12 @@ sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 flatpak install flathub com.thebrokenrail.MCPIReborn
-flatpak install flathub org.prismlauncher.PrismLauncher
+echo "Installing GDLauncher..."
+echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
+cd ~
+wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
+sudo apt install mesa-utils -y
+sudo apt install ./GDLauncher-linux-arm64-1.1.30-setup.deb
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y

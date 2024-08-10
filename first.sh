@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.08.07"
+echo "Version: 2024.08.10"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -155,7 +155,12 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 flatpak install flathub so.libdb.gtkcord4
 flatpak install flathub com.thebrokenrail.MCPIReborn
 flatpak install flathub io.gitlab.librewolf-community
-flatpak install flathub org.prismlauncher.PrismLauncher
+echo "Installing GDLauncher..."
+echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
+cd ~
+wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
+sudo apt install mesa-utils -y
+sudo apt install ./GDLauncher-linux-arm64-1.1.30-setup.deb
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
