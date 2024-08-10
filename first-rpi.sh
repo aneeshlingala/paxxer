@@ -128,8 +128,8 @@ cd ~
 wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
 sudo apt install mesa-utils -y
 sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
-wget http://ports.ubuntu.com/pool/main/o/openjdk-21/openjdk-21-jdk_21.0.3+9-1ubuntu1_arm64.deb
-sudo apt install ./openjdk-21-jdk_21.0.3+9-1ubuntu1_arm64.deb
+wget https://download.bell-sw.com/java/21.0.4+9/bellsoft-jdk21.0.4+9-linux-aarch64.deb
+sudo apt install ./bellsoft-jdk21.0.4+9-linux-aarch64.deb
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y
