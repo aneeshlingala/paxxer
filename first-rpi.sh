@@ -97,11 +97,8 @@ echo "Installing Candy Icon Theme, Afterglow Cursors, extra tools, and Graphite 
 sudo apt install git wget curl sassc alsa-utils fish w3m fonts-noto-color-emoji xdotool ntpsec -y
 sudo apt purge firefox-esr vim vim-tiny plymouth --autoremove -y
 sudo apt remove xarchiver --autoremove -y
-echo "Installing Vivaldi (Optimized for Raspberry Pi)..."
-wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/vivaldi-browser.gpg
-echo "deb [signed-by=/usr/share/keyrings/vivaldi-browser.gpg arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/archive/deb/ stable main" | sudo dd of=/etc/apt/sources.list.d/vivaldi-archive.list
-sudo apt update 
-sudo apt install vivaldi-stable -y
+echo "Installing Chromium (Optimized for Raspberry Pi)..."
+sudo apt install chromium -y
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-gtk-theme
 cd Graphite-gtk-theme
