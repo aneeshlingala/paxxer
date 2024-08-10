@@ -161,6 +161,8 @@ cd ~
 wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
 sudo apt install mesa-utils -y
 sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
+wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+sudo dpkg -i jdk-21_linux-x64_bin.deb
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
