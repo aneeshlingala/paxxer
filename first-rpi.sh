@@ -127,7 +127,7 @@ echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
 cd ~
 wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
 sudo apt install mesa-utils -y
-sudo apt install ./GDLauncher-linux-arm64-1.1.30-setup.deb
+sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y
