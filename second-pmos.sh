@@ -67,12 +67,6 @@ flatpak install --user flathub so.libdb.gtkcord4 -y
 flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
 flatpak install --user flathub io.gitlab.librewolf-community -y
 flatpak install --user flathub com.visualstudio.code -y
-echo "Installing GDLauncher..."
-echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
-cd ~
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
-sudo apt install mesa-utils -y
-sudo apt install ./GDLauncher-linux-arm64-1.1.30-setup.deb
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Theming GTK-4 and Flatpak Apps..."
