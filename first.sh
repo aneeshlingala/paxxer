@@ -155,14 +155,27 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 flatpak install flathub so.libdb.gtkcord4
 flatpak install flathub com.thebrokenrail.MCPIReborn
 flatpak install flathub io.gitlab.librewolf-community
-echo "Installing GDLauncher..."
-echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
-cd ~
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
-sudo apt install mesa-utils -y
-sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
-wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
-sudo dpkg -i jdk-21_linux-x64_bin.deb
+
+if [[ "$ARCH" == "aarch64" ]]; then
+    echo "Installing GDLauncher..."
+    echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
+    cd ~
+    wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
+    sudo apt install mesa-utils -y
+    sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
+    wget https://download.bell-sw.com/java/21.0.4+9/bellsoft-jdk21.0.4+9-linux-aarch64.deb
+    sudo apt install ./bellsoft-jdk21.0.4+9-linux-aarch64.deb
+fi
+
+if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Installing GDLauncher..."
+    echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
+    cd ~
+    wget https://github.com/gorilla-devs/GDLauncher/releases/download/v1.1.30/GDLauncher-linux-setup.deb
+    sudo dpkg -i ./GDLauncher-linux-setup.deb
+    wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+    sudo dpkg -i jdk-21_linux-x64_bin.deb
+fi
 echo "Upgrading System..."
 sudo apt upgrade --autoremove -y
 echo "Cleaning up..."
