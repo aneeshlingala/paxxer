@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerRPI, a setup tool to setup my Raspberry Pi, to my liking."
-echo "Version: 2024.08.10"
+echo "Version: 2024.08.11"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -122,14 +122,6 @@ sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub so.libdb.gtkcord4 -y
 flatpak install flathub com.thebrokenrail.MCPIReborn
-echo "Installing GDLauncher..."
-echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
-cd ~
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GDLauncher-linux-arm64-1.1.30-setup.deb
-sudo apt install mesa-utils -y
-sudo dpkg -i ./GDLauncher-linux-arm64-1.1.30-setup.deb
-wget https://download.bell-sw.com/java/21.0.4+9/bellsoft-jdk21.0.4+9-linux-aarch64.deb
-sudo apt install ./bellsoft-jdk21.0.4+9-linux-aarch64.deb
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y
