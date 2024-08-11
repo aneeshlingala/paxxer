@@ -8,9 +8,9 @@ else
 fi
 
 echo "What would you like to do?: "
-echo "1) Setup Debian (ARM Chromebook ONLY)"
+echo "1) Setup Debian (ARM Chromebook/Generic x64 ONLY)"
 echo "2) Setup Debian (Raspberry Pi ONLY)"
-echo "3) Setup Arch Linux"
+echo "3) Setup Arch Linux (UNTESTED!)"
 echo "4) Install VelvetOS (Debian)"
 echo "5) Setup PostmarketOS (User must be named linux and must have the console desktop!)"
 echo "6) Quit"
@@ -20,7 +20,7 @@ do
     read choice
     case $choice in
         1)
-            echo "Starting PaxxerDeb - ARM Chromebook Edition..."
+            echo "Starting PaxxerDeb - ARM Chromebook/Generic x64 Edition..."
             bash first.sh
             break
             ;;
@@ -30,7 +30,7 @@ do
             break
             ;;
         3)
-            echo "Starting PaxxerAL..."
+            echo "Starting PaxxerAL (UNTESTED!)..."
             bash first-archlinux.sh
             break
             ;;
