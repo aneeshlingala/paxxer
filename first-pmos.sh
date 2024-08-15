@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.08.10"
+echo "Version: 2024.08.15"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -104,6 +104,8 @@ sudo apk update
 echo y | sudo apk upgrade
 echo "Cleaning up..."
 sudo rm -rf /var/cache/apk/*
+echo "Installing Prism Launcher..."
+echo y | sudo apk add prismlauncher openjdk17-jdk openjdk21-jdk
 echo "Installing KDE Desktop..."
 cd ~
 echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish vlc
