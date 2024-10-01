@@ -41,9 +41,9 @@ fi
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
 
-echo "Deleting user linux..."
-sudo userdel linux
-sudo rm -rf /home/linux
+echo "Deleting user..."
+sudo userdel user
+sudo rm -rf /home/user
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to PostmarketOS!" > ~/.config/fish/config.fish
