@@ -12,7 +12,7 @@ echo "1) Setup Debian (ARM Chromebook/Generic x64 ONLY)"
 echo "2) Setup Debian (Raspberry Pi ONLY)"
 echo "3) Setup Arch Linux (UNTESTED!)"
 echo "4) Install VelvetOS (Debian)"
-echo "5) Setup PostmarketOS (Use the installation image with sconsole desktop!)"
+echo "5) Setup PostmarketOS (Use the installation image with console desktop!)"
 echo "6) Quit"
 
 while :
