@@ -59,7 +59,7 @@ echo ""
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
-sudo dd if=chromebook_kukui-aarch64-bookworm.img of=/dev/$disk bs=1M status=progress
+sudo dd if=kukui.img of=/dev/$disk bs=1M status=progress
 echo "Cleaning up..."
 sudo rm -rf chromebook_kukui-aarch64-bookworm.img
 end=`date +%s`
