@@ -126,6 +126,7 @@ sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/bg
 sudo cp $PAXXERDIR/bg.jpg /usr/share/backgrounds/bg/
 cd ~
+echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
 
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
