@@ -46,7 +46,9 @@ start=`date +%s`
 cd ~
 echo "Downloading installer image, this may take a while..."
 # Downloading image from different source since GitHub keeps rejecting downloads lately, for some reason.
-sudo wget -O kukui.img "https://dl.dropboxusercontent.com/scl/fi/k77x9zn00anj8n64k3oip/chromebook_kukui-aarch64-bookworm.img?rlkey=wfu8vx61jcc28iovnkgv253yx&st=vf7gfo3g&dl=0"
+sudo wget -O kukui.img.gz "https://github.com/hexdump0815/imagebuilder/releases/download/230917-01/chromebook_kukui-aarch64-bookworm.img.gz"
+echo "Extracting image..."
+sudo gzip -d kukui.img.gz
 echo "The installer will present a list of disks in ten seconds. Find the disk you would like to install VelvetOS on."
 clear
 echo "Loading disk list... (NOTE: Press the q key to quit.)"
@@ -57,7 +59,7 @@ echo ""
 echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
 read disk
 echo "Installing VelvetOS to /dev/$(echo $disk)."
-sudo dd if=kukui.img of=/dev/$disk bs=1M status=progress
+sudo dd if=chromebook_kukui-aarch64-bookworm.img of=/dev/$disk bs=1M status=progress
 echo "Cleaning up..."
 sudo rm -rf chromebook_kukui-aarch64-bookworm.img
 end=`date +%s`
