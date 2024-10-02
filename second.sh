@@ -93,6 +93,30 @@ if [[ "$ARCH" == "aarch64" ]]; then
    cp -r conky-startup.desktop ~/.config/autostart/
 fi
 
+echo "Upgrading to Debian Unstable..."
+sudo apt purge unattended-upgrades --autoremove -y
+sudo apt install apt-listbugs apt-listchanges ffmpeg -y
+sudo rm -rf /etc/apt/sources.list
+sudo touch /etc/apt/sources.list
+echo "deb http://deb.debian.org/debian/ sid main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list
+sudo apt update -y
+echo "Note: Please check if apt is removing any necessary packages."
+sleep 7
+sudo apt full-upgrade --autoremove
+sudo apt clean
+
+if [[ "$ARCH" == "x86_64" ]]; then
+   sleep 7
+   DEBIAN_FRONTEND=noninteractive
+   sudo mv /usr/bin/linux-check-removal /usr/bin/linux-check-removal.orig
+   echo -e '#!/bin/sh\necho "Overriding default linux-check-removal script!"\nexit 0' | sudo tee /usr/bin/linux-check-removal
+   sudo chmod +x /usr/bin/linux-check-removal
+   sudo apt purge --autoremove --assume-yes linux-image-$(cat /etc/paxxer-kernel) -y
+   sudo mv /usr/bin/linux-check-removal.orig /usr/bin/linux-check-removal
+   DEBIAN_FRONTEND=""
+   sudo rm -rf ~/GitHub
+fi
+
 sleep 11
 sudo touch /etc/paxxer-successful
 cd ~
