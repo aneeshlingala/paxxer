@@ -88,7 +88,7 @@ cd ~
 sudo git clone https://github.com/SylEleuth/gruvbox-plus-icon-pack
 cd gruvbox-plus-icon-pack
 sudo mkdir /usr/share/icons/Gruvbox
-sudo cp -r Gruvbox* /usr/share/icons/Gruvbox
+sudo cp -r Gruvbox-Plus-Dark /usr/share/icons/
 cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
@@ -108,7 +108,7 @@ echo "Installing Prism Launcher..."
 echo y | sudo apk add prismlauncher openjdk17-jdk openjdk21-jdk
 echo "Installing KDE Desktop..."
 cd ~
-echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish vlc
+echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish vlc nano
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
