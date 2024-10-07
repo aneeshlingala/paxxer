@@ -235,11 +235,6 @@ cd ~
 sudo apt purge mlterm mlterm-tiny xiterm+thai --autoremove
 
 if [[ "$ARCH" == "x86_64" ]]; then
-    echo "Installing Zoom..."
-    sudo mkdir -p /etc/apt/keyrings && wget -qO- https://mirror.mwt.me/my/gpgkey | sudo tee /etc/apt/keyrings/mwt.asc > /dev/null
-    echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/mwt.asc by-hash=force] https://mirror.mwt.me/my/deb any zoom" | sudo tee /etc/apt/sources.list.d/mwt.list
-    sudo apt update
-    sudo apt install zoom -y
     sudo usermod -aG sudo aneesh
 fi
 
@@ -263,7 +258,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt install refind -y
     sudo refind-install
     curl -sL https://git.io/refind-theme-nord | bash
-    sudo apt purge grub* --autoremove -y
     sudo rm -rf /boot/efi/EFI/debian
     sudo rm -rf /boot/efi/EFI/BOOT
     sudo rm -rf /boot/grub
