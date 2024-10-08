@@ -91,6 +91,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
    mkdir ~/.config
    mkdir ~/.config/autostart
    cp -r conky-startup.desktop ~/.config/autostart/
+   qdbus org.kde.KWin /Compositor suspend
 fi
 
 echo "Upgrading to Debian Unstable..."
