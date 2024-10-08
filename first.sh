@@ -152,9 +152,9 @@ sudo timedatectl set-timezone America/Los_Angeles
 echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), LibreWolf Browser, and Minecraft Pi..."
 sudo apt install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub so.libdb.gtkcord4
-flatpak install flathub com.thebrokenrail.MCPIReborn
-flatpak install flathub io.gitlab.librewolf-community
+flatpak install flathub so.libdb.gtkcord4 -y
+flatpak install flathub com.thebrokenrail.MCPIReborn -y
+flatpak install flathub io.gitlab.librewolf-community -y
 sudo apt install lsb-release
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
@@ -236,6 +236,8 @@ sudo apt purge mlterm mlterm-tiny xiterm+thai --autoremove
 
 if [[ "$ARCH" == "x86_64" ]]; then
     sudo usermod -aG sudo aneesh
+    echo "Installing Zoom..."
+    sudo flatpak install flathub us.zoom.Zoom -y
 fi
 
 echo "Setting default shell as fish..."
