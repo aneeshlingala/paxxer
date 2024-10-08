@@ -91,7 +91,6 @@ if [[ "$ARCH" == "aarch64" ]]; then
    mkdir ~/.config
    mkdir ~/.config/autostart
    cp -r conky-startup.desktop ~/.config/autostart/
-   qdbus org.kde.KWin /Compositor suspend
 fi
 
 echo "Upgrading to Debian Unstable..."
@@ -107,6 +106,7 @@ sudo apt full-upgrade --autoremove
 sudo apt clean
 
 if [[ "$ARCH" == "x86_64" ]]; then
+   qdbus org.kde.KWin /Compositor suspend
    sleep 7
    DEBIAN_FRONTEND=noninteractive
    sudo mv /usr/bin/linux-check-removal /usr/bin/linux-check-removal.orig
