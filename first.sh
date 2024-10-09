@@ -220,11 +220,11 @@ sudo apt install kwin-wayland plasma-workspace-wayland -y
 sudo systemctl enable sddm
 sudo apt-get install plasma-nm unzip -y
 sudo mkdir /usr/share/sddm/themes/
-sudo wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-frappe.zip
-sudo unzip catppuccin-frappe.zip -d /usr/share/sddm/themes 
+cd /usr/share/sddm/themes
+sudo git clone https://github.com/birbkeks/win7-sddm-theme win7
 sudo touch /etc/sddm.conf
 echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=catppuccin-frappe" | sudo tee -a /etc/sddm.conf
+echo "Current=win7" | sudo tee -a /etc/sddm.conf
 echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
 sudo sed -i 's/FontSize=9/FontSize=10/g' /usr/share/sddm/themes/catppuccin-frappe/theme.conf
 echo "Adding Debian Backgrounds..."
