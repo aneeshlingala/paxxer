@@ -153,14 +153,6 @@ sudo apt install kwin-wayland plasma-workspace-wayland -y
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 sudo apt-get install plasma-nm unzip -y
-sudo mkdir /usr/share/sddm/themes/
-cd /use/share/sddm/themes
-sudo git clone https://github.com/birbkeks/win7-sddm-theme win7
-sudo touch /etc/sddm.conf
-echo "[Theme]" | sudo tee -a /etc/sddm.conf
-echo "Current=win7" | sudo tee -a /etc/sddm.conf
-echo "CursorTheme=Afterglow-cursors" | sudo tee -a /etc/sddm.conf
-sudo sed -i 's/FontSize=9/FontSize=10/g' /usr/share/sddm/themes/catppuccin-frappe/theme.conf
 echo "Adding Debian Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/debian-lights
