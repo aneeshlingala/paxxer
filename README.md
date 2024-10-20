@@ -1,4 +1,4 @@
-![paxxer - 3D logo](https://github.com/aneeshlingala/paxxer/assets/87113916/ff90e289-eb0f-4afe-8687-090930078b10)
+![paxxer](https://github.com/user-attachments/assets/0cd29d84-17c9-469d-b823-7404738d5de1)
 
 ## Dependencies
 The dependencies are Git and Sudo. The script will install the other dependencies automatically.
@@ -21,6 +21,16 @@ In very slow internet speeds, it may take even longer than the estimated time.
 Install Debian/Arch Linux with XFCE Desktop and make sure your user has sudo permissions, or the script will break.
 
 > Note: This script will delete the current user and its data and replace it with user "aneesh". Proceed with caution.
+
+## For PostmarketOS Users
+
+Use an image with the 'console desktop' at https://images.postmarketos.org. The username is 'user' and the password is '147147'
+
+## For Raspberry Pi Users
+
+Use a Raspberry Pi OS Lite x64 image.
+
+> PaxxerRpi has only been tested on a Raspberry Pi 4B. Please exercise caution when using this script on another Raspberry Pi.
 
 ## License
 Paxxer is licensed Under GPLv3. Check the LICENSE file for a copy of the GPLv3 license.
