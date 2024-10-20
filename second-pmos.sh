@@ -60,10 +60,10 @@ wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331
 wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
 wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
-echo "Setting up Flatpak and installing GTKCord4 (Discord Client for Linux, supporting ARM64, built on GTK4), VSCode LibreWolf Browser, and Minecraft Pi..."
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 & x86_64), VSCode LibreWolf Browser, and Minecraft Pi..."
 echo y | sudo apk add flatpak xdg-desktop-portal-kde
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install --user flathub so.libdb.gtkcord4 -y
+flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
 flatpak install --user flathub io.gitlab.librewolf-community -y
 flatpak install --user flathub com.visualstudio.code -y

@@ -2,8 +2,9 @@ Paxxer has been updated to version: 2024.07.06!
 
 Changelog:
 
-Support for PostmarketOS has been released!
+For PaxxerPmOS, PaxxerRpi, and PaxxerDeb:
 
-The VelvetOS Kukui installer has not been updated as of now.
+GTKCord4/Dissent has been replaced with GoofCord, which has better
+support with KDE and Qt.
 
-
+GoofCord also has better features, such as Vencord support and privacy features.
