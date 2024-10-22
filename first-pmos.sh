@@ -88,7 +88,7 @@ cd ~
 sudo git clone https://github.com/SylEleuth/gruvbox-plus-icon-pack
 cd gruvbox-plus-icon-pack
 sudo mkdir /usr/share/icons/Gruvbox
-sudo cp -r Gruvbox-Plus-Dark /usr/share/icons/
+sudo cp -r Gruvbox-Plus-Dark/* /usr/share/icons/Gruvbox/
 cd ~
 sudo git clone https://github.com/yeyushengfan258/Afterglow-Cursors
 cd Afterglow-Cursors
