@@ -64,6 +64,8 @@ wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331
 wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
 wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+bash ~/pi-apps/apps/Zoom/install-64
 echo "Theming GTK 4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
