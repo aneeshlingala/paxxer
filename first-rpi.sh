@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerRPI, a setup tool to setup my Raspberry Pi, to my liking."
-echo "Version: 2024.10.20"
+echo "Version: 2024.11.04"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
