@@ -91,6 +91,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
    mkdir ~/.config
    mkdir ~/.config/autostart
    cp -r conky-startup.desktop ~/.config/autostart/
+   echo "Installing Pi-Apps..."
    wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
    bash ~/pi-apps/apps/Zoom/install-64
 fi
