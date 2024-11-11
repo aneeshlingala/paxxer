@@ -66,6 +66,13 @@ wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/l
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 bash ~/pi-apps/apps/Zoom/install-64
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), LibreWolf Browser, and Minecraft Pi..."
+sudo apt install flatpak -y
+sudo flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub io.github.milkshiift.GoofCord -y
+flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
+flatpak install --user flathub io.gitlab.librewolf-community -y
+
 echo "Theming GTK 4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css

@@ -121,6 +121,13 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo rm -rf ~/GitHub
 fi
 
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), LibreWolf Browser, and Minecraft Pi..."
+sudo apt install flatpak -y
+sudo flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub io.github.milkshiift.GoofCord -y
+flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
+flatpak install --user flathub io.gitlab.librewolf-community -y
+
 sleep 11
 sudo touch /etc/paxxer-successful
 cd ~

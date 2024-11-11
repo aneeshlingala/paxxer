@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerRPI, a setup tool to setup my Raspberry Pi, to my liking."
-echo "Version: 2024.11.04"
+echo "Version: 2024.11.11"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -117,11 +117,6 @@ echo "Setting timezone to America/Los Angeles"
 sudo rm -rf /etc/timezone
 touch /etc/timezone
 sudo timedatectl set-timezone America/Los_Angeles
-echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64) and Minecraft Pi..."
-sudo apt install flatpak -y
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub io.github.milkshiift.GoofCord -y
-flatpak install flathub com.thebrokenrail.MCPIReborn
 echo "Installing KDE..."
 sudo apt install gwenview simplescreenrecorder file-roller atril plasma-systemmonitor cups telegram-desktop network-manager-gnome kcalc kde-plasma-desktop --no-install-recommends -y
 sudo apt install task-kde-desktop --no-install-recommends -y
