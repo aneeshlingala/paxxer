@@ -93,7 +93,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
    cp -r conky-startup.desktop ~/.config/autostart/
    echo "Installing Pi-Apps..."
    wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-   bash ~/pi-apps/apps/Zoom/install-64
+   bash ~/pi-apps/manage Zoom install
 fi
 
 echo "Upgrading to Debian Unstable..."
@@ -123,7 +123,7 @@ fi
 
 echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), LibreWolf Browser, and Minecraft Pi..."
 sudo apt install flatpak -y
-sudo flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
 flatpak install --user flathub io.gitlab.librewolf-community -y
