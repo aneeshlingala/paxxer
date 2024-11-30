@@ -1,10 +1,8 @@
-Paxxer has been updated to version: 2024.07.06!
+Paxxer has been updated to version: 
+
+2024.11.29
 
 Changelog:
 
-For PaxxerPmOS, PaxxerRpi, and PaxxerDeb:
-
-GTKCord4/Dissent has been replaced with GoofCord, which has better
-support with KDE and Qt.
-
-GoofCord also has better features, such as Vencord support and privacy features.
+The script now installs Pi-Apps with Zoom.
+Make sure to ignore the warnings about Frankendebian on Arm64 Chromebook, as it is not true.
