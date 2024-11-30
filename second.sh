@@ -93,7 +93,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
    cp -r conky-startup.desktop ~/.config/autostart/
    echo "Installing Pi-Apps..."
    wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-   bash ~/pi-apps/manage Zoom install
+   bash ~/pi-apps/manage install Zoom
 fi
 
 echo "Upgrading to Debian Unstable..."
