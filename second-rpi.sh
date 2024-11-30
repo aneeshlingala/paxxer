@@ -65,7 +65,7 @@ wget "https://cdn.discordapp.com/attachments/1034896064240689192/105389216228416
 wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
 wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-bash ~/pi-apps/manage Zoom install
+bash ~/pi-apps/manage install Zoom
 echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), LibreWolf Browser, and Minecraft Pi..."
 sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
