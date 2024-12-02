@@ -58,7 +58,7 @@ else
 fi
 
 echo "PaxxerRPI, a setup tool to setup my Raspberry Pi, to my liking."
-echo "Version: 2024.11.29"
+echo "Version: 2024.12.01"
 
 
 if ! id -u aneesh > /dev/null 2>&1; then
@@ -129,6 +129,8 @@ sudo bash install.sh
 cd ~
 su -c "apt install sudo -y"
 sudo apt remove synaptic lightdm-settings --autoremove -y
+echo "Installing Chromium Browser..."
+sudo apt install chromium-browser -y
 echo "Installing Visual Studio Code..."
 sudo apt-get install wget gpg
 sudo wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
