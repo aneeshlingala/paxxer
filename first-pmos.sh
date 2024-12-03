@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.12.01"
+echo "Version: 2024.12.02"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -109,7 +109,7 @@ echo "Installing Prism Launcher..."
 echo y | sudo apk add prismlauncher openjdk17-jdk openjdk21-jdk
 echo "Installing KDE Desktop..."
 cd ~
-echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish vlc nano
+echo y | sudo apk add konsole postmarketos-ui-plasma-desktop gwenview ark atril telegram-desktop plasma-systemmonitor cups kcalc fish vlc nano dolphin
 echo "Installing KDE Themes..."
 cd ~
 sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
