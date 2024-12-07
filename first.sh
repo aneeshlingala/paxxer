@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.12.01"
+echo "Version: 2024.12.07"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -238,6 +238,7 @@ sudo chsh --shell /usr/bin/fish aneesh
 echo "Copying files for second.sh..."
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second.sh /home/aneesh/paxxer
+sudo cp $PAXXERDIR/mcpi.desktop /home/aneesh/paxxer
 sudo chmod +x /home/aneesh/paxxer/second.sh
 sudo touch /etc/paxxer-first-done
 
@@ -260,6 +261,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
+sudo cp $PAXXERDIR/mcpi.png /usr/share/pixmaps/
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
 echo "NOTE: After rebooting, login as user aneesh, or the script will break."
 echo ""

@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.12.02"
+echo "Version: 2024.12.07"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -116,6 +116,8 @@ sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
 cd Graphite-kde-theme
 sudo bash install.sh
 cd ~
+echo "Installing Chromium..."
+sudo apk add chromium -y
 echo "Installing LightDM..."
 echo y | sudo apk add lightdm --force-overwrite
 echo y | sudo apk add lightdm-gtk-greeter

@@ -44,29 +44,18 @@ cd /home/aneesh/paxxer
 echo "Deleting user..."
 sudo userdel user
 sudo rm -rf /home/user
+echo "Making sure LightDM is the default display manager..."
+sudo rc-update add lightdm
+sudo rc-update del sddm
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to PostmarketOS!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Adding Minecraft Pi Mods..."
-sudo mkdir /home/aneesh/.minecraft-pi/
-sudo mkdir /home/aneesh/.minecraft-pi/mods
-sudo chown -R aneesh:aneesh /home/aneesh/.minecraft-pi
-cd /home/aneesh/.minecraft-pi/mods
-echo y | sudo apk add wget
-wget "https://cdn.discordapp.com/attachments/740287938453045401/1078558046613143562/libcake.so"
-wget "https://github.com/Bigjango13/MCPI-Mods/releases/download/v1.0.2/libexpanded-creative.so"
-wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331796/libNoReactorMessage.so"
-wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
-wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
-wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
-echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 & x86_64), VSCode, Brave Browser, Fedora Media Writer, and Minecraft Pi..."
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 & x86_64), VSCode, and Fedora Media Writer..."
 echo y | sudo apk add flatpak xdg-desktop-portal-kde
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
-flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
 flatpak install --user flathub com.visualstudio.code -y
-flatpak install --user flathub com.brave.Browser -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
 sudo mkdir /home/aneesh/VSCode
 sudo chown aneesh:aneesh /home/aneesh/VSCode

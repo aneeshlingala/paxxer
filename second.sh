@@ -48,18 +48,6 @@ echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
 fish -c "set -U fish_greeting "🐟" "
-echo "Adding Minecraft Pi Mods..."
-sudo mkdir /home/aneesh/.minecraft-pi/
-sudo mkdir /home/aneesh/.minecraft-pi/mods
-sudo chown -R aneesh:aneesh /home/aneesh/.minecraft-pi
-cd /home/aneesh/.minecraft-pi/mods
-wget "https://cdn.discordapp.com/attachments/740287938453045401/1078558046613143562/libcake.so"
-wget "https://github.com/Bigjango13/MCPI-Mods/releases/download/v1.0.2/libexpanded-creative.so"
-wget "https://cdn.discordapp.com/attachments/889201475362893844/1003050259712331796/libNoReactorMessage.so"
-wget "https://cdn.discordapp.com/attachments/1034896064240689192/1053892162284163273/libspawnEgg.so"
-wget "https://github.com/NikZapp/mcpi-block-shenanigans/releases/download/v1.0/libmcpiblocks.so"
-wget "https://github.com/NikZapp/mcpi-better-grass-mod/releases/download/v1.0/libniksbettergrass.so"
-
 echo "Theming GTK-4 and Flatpak Apps..."
 rm -rf ~/.config/gtk-4.0/gtk.css
 rm -rf ~/.config/gtk-4.0/gtk-dark.css
@@ -93,19 +81,26 @@ if [[ "$ARCH" == "aarch64" ]]; then
    cp -r conky-startup.desktop ~/.config/autostart/
    echo "Installing Pi-Apps..."
    wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+   echo "Installing Zoom (on box64) and Minecraft Pi..."
    bash ~/pi-apps/manage install Zoom
+   bash ~/pi-apps/manage install "Minecraft Pi (Modded)"
 fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
+   echo "Installing Minecraft Pi..."
+   cd ~
+   sudo wget "https://gitea.thebrokenrail.com/minecraft-pi-reborn/minecraft-pi-reborn/releases/download/2.5.3/minecraft-pi-reborn-client-2.5.3-amd64.AppImage"
+   sudo mv minecraft-pi-reborn-client-2.5.3-amd64.AppImage /usr/bin/mcpi-amd64.appimage
+   sudo rm -rf minecraft-pi-reborn-client-2.5.3-amd64.AppImage
+   echo -e "[Desktop Entry]\n# Created by PaxxerDeb-x64\nType=Application\nVersion=1.0\nName=Minecraft: Pi Edition\nComment=Fun With Blocks!\nPath=\nExec=/usr/bin/mcpi-amd64.appimage\nTerminal=false\n" > /usr/local/share/applications/Minecraft:PiEdition.desktop
    qdbus org.kde.KWin /Compositor suspend
    sudo rm -rf ~/GitHub
 fi
 
-echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), Fedora Media Writer, and Minecraft Pi..."
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), and Fedora Media Writer..."
 sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
-flatpak install --user flathub com.thebrokenrail.MCPIReborn -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
 
 sleep 11
