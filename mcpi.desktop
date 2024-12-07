@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Minecraft: Pi Edition
+Comment=Fun With Blocks!
+Exec=./usr/bin/mcpi-amd64.appimage
+Icon=/usr/share/pixmaps/mcpi.png
+Terminal=False

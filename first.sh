@@ -258,6 +258,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo rm -rf /boot/efi/EFI/BOOT
     sudo rm -rf /boot/grub
     sudo refind-mkdefault
+    sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme

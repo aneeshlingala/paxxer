@@ -92,7 +92,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo wget "https://gitea.thebrokenrail.com/minecraft-pi-reborn/minecraft-pi-reborn/releases/download/2.5.3/minecraft-pi-reborn-client-2.5.3-amd64.AppImage"
    sudo mv minecraft-pi-reborn-client-2.5.3-amd64.AppImage /usr/bin/mcpi-amd64.appimage
    sudo rm -rf minecraft-pi-reborn-client-2.5.3-amd64.AppImage
-   echo -e "[Desktop Entry]\n# Created by PaxxerDeb-x64\nType=Application\nVersion=1.0\nName=Minecraft: Pi Edition\nComment=Fun With Blocks!\nPath=\nExec=/usr/bin/mcpi-amd64.appimage\nTerminal=false\n" > /usr/local/share/applications/Minecraft:PiEdition.desktop
    qdbus org.kde.KWin /Compositor suspend
    sudo rm -rf ~/GitHub
 fi
