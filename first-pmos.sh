@@ -122,8 +122,8 @@ echo y | sudo apk add lightdm-gtk-greeter
 sudo rc-update add lightdm
 sudo rc-update del sddm
 echo y | sudo apk del maliit-keyboard
-echo "Installing Chromium..."
-echo y | sudo apk add chromium
+echo "Installing Firefox..."
+echo y | sudo apk add firefox
 echo "Adding Alpine Linux Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/bg
