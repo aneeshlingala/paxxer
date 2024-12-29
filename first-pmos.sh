@@ -116,14 +116,14 @@ sudo git clone https://github.com/vinceliuice/Graphite-kde-theme
 cd Graphite-kde-theme
 sudo bash install.sh
 cd ~
-echo "Installing Chromium..."
-sudo apk add chromium -y
 echo "Installing LightDM..."
 echo y | sudo apk add lightdm --force-overwrite
 echo y | sudo apk add lightdm-gtk-greeter
 sudo rc-update add lightdm
 sudo rc-update del sddm
 echo y | sudo apk del maliit-keyboard
+echo "Installing Chromium..."
+echo y | sudo apk add chromium
 echo "Adding Alpine Linux Backgrounds..."
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/backgrounds/bg
