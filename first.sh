@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2024.12.07"
+echo "Version: 2025.01.02"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -95,7 +95,6 @@ if ! id -u aneesh > /dev/null 2>&1; then
     echo "Setting root password..."
     sudo passwd
 fi
-
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Setting Hostname..."
     sudo hostnamectl set-hostname kappa
@@ -103,13 +102,12 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hostname
     echo "Updating kernel from $(echo $KERNEL) to 6.6.9-stb-mt8+"
+    sudo rm -rf /boot/*
+    sudo rm -rf /lib/modules/*
     cd ~
     sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.6.9-stb-mt8%2B/6.6.9-stb-mt8+.tar.gz"
+    cd /
     sudo tar -xzvf ~/6.6.9-stb-mt8+.tar.gz
-    sudo cp -r lib/modules/* /lib/modules/
-    sudo rm -rf /boot/*
-    sudo cp -r boot/* /boot/
-    sudo cp -r 
     sudo rm -rf 6.6.9-stb-mt8+.tar.gz
     sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p1 bs=1M status=progress
     sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p2 bs=1M status=progress
