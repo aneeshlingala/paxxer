@@ -45,8 +45,8 @@ echo "Deleting user..."
 sudo userdel user
 sudo rm -rf /home/user
 echo "Making sure LightDM is the default display manager..."
-sudo systemctl enable lightdm
-sudo systemctl disable sddm
+sudo rc-update add lightdm
+sudo rc-update del sddm
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to PostmarketOS!" > ~/.config/fish/config.fish
