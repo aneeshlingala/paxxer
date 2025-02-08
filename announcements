@@ -1,5 +1,5 @@
-Hope 2025 goes as well as 2024 for Paxxer! - Aneesh Lingala, Main Dev
+2025 is going well! -Aneesh L, Main Dev
 
-Paxxer has been updated to version: 01/02/2024 
+2025.02.07 Update Log (PostmarketOS):
 
-Fixed flashing the new kernel on ARM Chromebooks
+PostmarketOS now uses systemd, script has been updated for this major change.
