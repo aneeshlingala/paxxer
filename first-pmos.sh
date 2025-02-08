@@ -63,7 +63,7 @@ else
 fi
 
 echo "PaxxerPmOS, a setup tool to setup my PostmarketOS system, to my liking."
-echo "Version: 2024.12.07"
+echo "Version: 2025.02.07"
 
 echo "Adding user Aneesh..."
 sudo adduser aneesh
@@ -119,8 +119,8 @@ cd ~
 echo "Installing LightDM..."
 echo y | sudo apk add lightdm --force-overwrite
 echo y | sudo apk add lightdm-gtk-greeter
-sudo rc-update add lightdm
-sudo rc-update del sddm
+sudo systemctl enable lightdm
+sudo systemctl disable sddm
 echo y | sudo apk del maliit-keyboard
 echo "Installing Firefox..."
 echo y | sudo apk add firefox
