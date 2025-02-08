@@ -136,7 +136,7 @@ sudo chsh --shell /usr/bin/fish aneesh
 echo "Copying files for second.sh..."
 sudo mkdir /home/aneesh/paxxer
 sudo cp $PAXXERDIR/second-pmos.sh /home/aneesh/paxxer
-sudo chmod +x /home/aneesh/paxxer/second.sh
+sudo chmod +x /home/aneesh/paxxer/second-pmos.sh
 sudo touch /etc/paxxer-first-done
 
 if [[ "$ARCH" == "x86_64" ]]; then
