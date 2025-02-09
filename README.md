@@ -30,7 +30,7 @@ Use an image with the 'console desktop' at https://images.postmarketos.org. The 
 
 Use a Raspberry Pi OS Lite x64 image.
 
-> PaxxerRpi has only been tested on a Raspberry Pi 4B. Please exercise caution when using this script on another Raspberry Pi.
+> PaxxerRpi has only been tested on a Raspberry Pi 4B. Please exercise caution when using this script on a different Raspberry Pi model.
 
 ## License
 Paxxer is licensed Under GPLv3. Check the LICENSE file for a copy of the GPLv3 license.
