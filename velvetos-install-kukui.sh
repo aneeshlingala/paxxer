@@ -30,7 +30,7 @@ else
 fi
 
 echo "VelvetOS Installer"
-echo "Version 2024.12.01"
+echo "Version 2025.02.08"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
 echo "If you have not, the script will run it for you, if it exists"
 
@@ -48,7 +48,7 @@ echo "Downloading installer image, this may take a while..."
 # Downloading image from different source since GitHub keeps rejecting downloads lately, for some reason.
 sudo wget -O kukui.img.gz "https://github.com/hexdump0815/imagebuilder/releases/download/230917-01/chromebook_kukui-aarch64-bookworm.img.gz"
 echo "Extracting image..."
-sudo tar -xvzf kukui.img.gz
+sudo gunzip kukui.img.gz 
 echo "The installer will present a list of disks in ten seconds. Find the disk you would like to install VelvetOS on."
 clear
 echo "Loading disk list... (NOTE: Press the q key to quit.)"
