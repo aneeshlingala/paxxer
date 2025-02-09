@@ -256,6 +256,11 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
 fi
 
+if [[ "$ARCH" == "x86_64" ]]; then
+    sudo vtbuild 6.12.3-stb-mt8+
+    sudo vtflash 6.12.3-stb-mt8+ /dev/mmcblk0
+fi
+
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
 sudo cp $PAXXERDIR/mcpi.png /usr/share/pixmaps/
 echo "After rebooting, run the second.sh script in /home/aneesh/paxxer."
