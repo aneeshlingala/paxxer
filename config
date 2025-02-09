@@ -18,5 +18,5 @@ test_part=auto
 #test_part=/dev/x
 
 #whether to rebuild image (and flash if enabled) after initramfs update
-init_gen_hook=y
-#init_gen_hook=n
+#init_gen_hook=y
+init_gen_hook=n
