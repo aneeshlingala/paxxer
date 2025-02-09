@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.02.08"
+echo "Version: 2025.02.09"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -104,12 +104,12 @@ if [[ "$ARCH" == "aarch64" ]]; then
     curl -sS https://repo.velvet-os.org/repo/velvet_repo.asc | sudo tee -a /etc/apt/trusted.gpg.d/velvet_repo.asc
     echo "deb [arch=arm64,all] https://repo.velvet-os.org/repo stable main" | sudo tee /etc/apt/sources.list.d/velvet_repo.list
     sudo apt update
-    sudo apt install linux-6.12.3-stb-mt8+ -y
-    sudo vtbuild 6.12.3-stb-mt8+
-    sudo vtflash 6.12.3-stb-mt8+ /dev/mmcblk0
+    sudo apt install linux-6.12.5-stb-cbm+ -y
+    sudo vtbuild 6.12.5-stb-cbm+
+    sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
     sudo rm -rf /etc/velvettools/config
     sudo cp $PAXXERDIR/config /etc/velvettools/
-    sudo update-initramfs -c -k 6.12.3-stb-mt8+
+    sudo update-initramfs -c -k 6.12.5-stb-cbm+
 fi
 
 echo "Installing Deepin Sound Theme"
@@ -258,9 +258,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
 fi
 
-if [[ "$ARCH" == "x86_64" ]]; then
-    sudo vtbuild 6.12.3-stb-mt8+
-    sudo vtflash 6.12.3-stb-mt8+ /dev/mmcblk0
+if [[ "$ARCH" == "aarch64" ]]; then
+    sudo vtbuild 6.12.5-stb-cbm+
+    sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
+    sudo update-initramfs -c -k 6.12.5-stb-cbm+
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
