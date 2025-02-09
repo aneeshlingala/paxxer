@@ -109,6 +109,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo vtflash 6.12.3-stb-mt8+ /dev/mmcblk0
     sudo rm -rf /etc/velvettools/config
     sudo cp $PAXXERDIR/config /etc/velvettools/
+    sudo update-initramfs -c -k 6.12.3-stb-mt8+
 fi
 
 echo "Installing Deepin Sound Theme"
