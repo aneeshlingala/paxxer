@@ -70,7 +70,7 @@ sudo mkfs -t btrfs -m single -L rootemmc /dev/mapper/encrypted
 sudo mount -o ssd,compress-force=zstd,noatime,nodiratime /dev/mapper/encrypted /mnt
 cd /mnt
 sudo mkdir -p /mnt/boot
-mount /dev/${part}3 /mnt/boot
+sudo mount /dev/${part}3 /mnt/boot
 sudo rsync -axADHSX --no-inc-recursive --delete /boot/ /mnt/boot
 sudo rsync -axADHSX --no-inc-recursive --delete --exclude='/swap/*' / /mnt
 sudo rm -rf /mnt/etc/fstab
