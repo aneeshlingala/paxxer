@@ -108,6 +108,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo vtbuild 6.12.5-stb-cbm+
     sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
     sudo rm -rf /etc/velvettools/config
+    sudo rm -rf /etc/crypttab
     sudo cp $PAXXERDIR/config /etc/velvettools/
     sudo update-initramfs -c -k 6.12.5-stb-cbm+
 fi
