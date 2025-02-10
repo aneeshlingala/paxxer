@@ -30,7 +30,7 @@ else
 fi
 
 echo "VelvetOS LUKS Encrypted Installer"
-echo "Version 2025.02.09"
+echo "Version 2025.02.10"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
 echo "If you have not, the script will run it for you, if it exists"
 
@@ -56,6 +56,13 @@ sudo cgpt create /dev/${disk}
 sudo partprobe /dev/${disk}
 sudo cgpt add -i 1 -t kernel -b 8192 -s 65536 -l KernelA -S 1 -T 2 -P 10 /dev/${disk}
 sudo cgpt add -i 2 -t kernel -b 73728 -s 65536 -l KernelB -S 0 -T 2 -P 5 /dev/${disk}
+sudo apt install util-linux -y
+clear
+echo "MANUAL PARTITIONING"
+echo "Make a 1GB Partition (make sure it is mmcblk0p3!)"
+echo "Make a Partition filling the rest of the disk (make sure it is mmcblk0p4!)"
+read -n 1 -s -r -p "Press any key to continue"
+sudo cfdisk /dev/mmcblk0
 sudo mkfs -t ext4 -O ^has_journal -m 0 -L bootemmc /dev/${part}3
 sudo cryptsetup luksFormat /dev/${part}4
 sudo cryptsetup open --type luks /dev/${part}4 encrypted
