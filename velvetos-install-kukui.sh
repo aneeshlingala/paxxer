@@ -29,8 +29,8 @@ else
     exit
 fi
 
-echo "VelvetOS Installer"
-echo "Version 2025.02.08"
+echo "VelvetOS LUKS Encrypted Installer"
+echo "Version 2025.02.09"
 echo "NOTE: Make sure you have run /scripts/extend-rootfs.sh for more space"
 echo "If you have not, the script will run it for you, if it exists"
 
@@ -44,32 +44,47 @@ fi
 sleep 7
 start=`date +%s`
 cd ~
-echo "Downloading installer image, this may take a while..."
-# Downloading image from different source since GitHub keeps rejecting downloads lately, for some reason.
-sudo wget -O kukui.img.gz "https://github.com/hexdump0815/imagebuilder/releases/download/230917-01/chromebook_kukui-aarch64-bookworm.img.gz"
-echo "Extracting image..."
-sudo gunzip kukui.img.gz 
-echo "The installer will present a list of disks in ten seconds. Find the disk you would like to install VelvetOS on."
-clear
-echo "Loading disk list... (NOTE: Press the q key to quit.)"
-echo ""
-sleep 2
-sudo -S fdisk -l | less
-echo ""
-echo "Where should VelvetOS be installed (eg. sda, mmcblk0, etc.): "  
-read disk
-echo "Installing VelvetOS to /dev/$(echo $disk)."
-sudo dd if=~/kukui.img of=/dev/$disk bs=1M status=progress
-echo "Cleaning up..."
-sudo rm -rf ~/kukui.img
+echo "Installing to internal disk /dev/mmcblk0!"
+export disk=mmcblk0
+export part=mmcblk0p
+sudo apt-get install cgpt -y
+sudo sgdisk -Z /dev/${disk}
+sudo partprobe /dev/${disk}
+sudo sgdisk -C -e -G /dev/${disk}
+sudo partprobe /dev/${disk}
+sudo cgpt create /dev/${disk}
+sudo partprobe /dev/${disk}
+sudo cgpt add -i 1 -t kernel -b 8192 -s 65536 -l KernelA -S 1 -T 2 -P 10 /dev/${disk}
+sudo cgpt add -i 2 -t kernel -b 73728 -s 65536 -l KernelB -S 0 -T 2 -P 5 /dev/${disk}
+sudo mkfs -t ext4 -O ^has_journal -m 0 -L bootemmc /dev/${part}3
+sudo cryptsetup luksFormat /dev/${part}4
+sudo cryptsetup open --type luks /dev/${part}4 encrypted
+sudo mkfs -t btrfs -m single -L rootemmc /dev/mapper/encrypted
+sudo mount -o ssd,compress-force=zstd,noatime,nodiratime /dev/mapper/encrypted /mnt
+cd /mnt
+sudo mkdir -p /mnt/boot
+mount /dev/${part}3 /mnt/boot
+sudo rsync -axADHSX --no-inc-recursive --delete /boot/ /mnt/boot
+sudo rsync -axADHSX --no-inc-recursive --delete --exclude='/swap/*' / /mnt
+sudo rm -rf /mnt/etc/fstab
+sudo touch /mnt/etc/fstab
+echo "LABEL=rootemmc / btrfs defaults,ssd,compress-force=zstd,noatime,nodiratime 0 1" | sudo tee -a /mnt/etc/fstab
+echo "LABEL=bootemmc /boot ext4 defaults 0 2" | sudo tee -a /mnt/etc/fstab
+export uuid=$(sudo findmnt /dev/mmcblk0p4 -o UUID -n)
+sudo touch /mnt/etc/crypttab
+echo "encrypted UUID=${uuid}" | sudo tee -a /mnt/etc/crypttab
+sudo touch /mnt/etc/initramfs-tools/conf.d/compress
+echo "COMPRESS=xz" | sudo tee -a /mnt/etc/initramfs-tools/conf.d/compress
+echo "XZ_OPT='-9 --check=crc32 –memlimit-compress=25%" | sudo tee -a /mnt/etc/initramfs-tools/conf.d/compress
+sudo chroot /mnt /bin/bash -c "mount -t proc proc /proc"
+sudo chroot /mnt /bin/bash -c "mount -t sysfs sysfs /sys"
+sudo mount --bind /dev /mnt/dev 
+sudo mount --bind /run /mnt/run
+sudo cp /etc/resolv.conf /mnt/etc/
+sudo chroot /mnt /bin/bash -c "cd /boot"
+sudo chroot /mnt /bin/bash -c "wget https://raw.githubusercontent.com/aneeshlingala/paxxer/refs/heads/paxxer/initrd.sh && sudo bash initrd.sh"
+sudo chroot /mnt /bin/bash -c "export kver=$(uname -r)"
+sudo chroot /mnt /bin/bash -c "dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}1"
+sudo chroot /mnt /bin/bash -c "dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}2"
 end=`date +%s`
-echo "VelvetOS has been installed in `expr $end - $start` seconds."
-echo ""
-echo "Login with username: linux"
-echo ""
-echo "Password: changeme"
-echo ""
-echo "TIP: Run /scripts/extend-rootfs.sh to fill up all the disk space."
-echo ""
-echo "Reboot, then remove the USB/SD Card."
-exit
+echo "VelvetOS has finished installing in 'expr $end - $start' seconds!"
