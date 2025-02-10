@@ -81,8 +81,7 @@ export uuid=$(sudo findmnt /dev/mmcblk0p4 -o UUID -n)
 sudo touch /mnt/etc/crypttab
 echo "encrypted UUID=${uuid}" | sudo tee -a /mnt/etc/crypttab
 sudo touch /mnt/etc/initramfs-tools/conf.d/compress
-echo "COMPRESS=xz" | sudo tee -a /mnt/etc/initramfs-tools/conf.d/compress
-echo "XZ_OPT='-9 --check=crc32 –memlimit-compress=25%" | sudo tee -a /mnt/etc/initramfs-tools/conf.d/compress
+sudo mount --bind /dev/pts/ /mnt/dev/pts/
 sudo chroot /mnt /bin/bash -c "mount -t proc proc /proc"
 sudo chroot /mnt /bin/bash -c "mount -t sysfs sysfs /sys"
 sudo mount --bind /dev /mnt/dev 
