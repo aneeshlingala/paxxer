@@ -82,15 +82,15 @@ sudo touch /mnt/etc/crypttab
 echo "encrypted UUID=${uuid}" | sudo tee -a /mnt/etc/crypttab
 sudo touch /mnt/etc/initramfs-tools/conf.d/compress
 sudo mount --bind /dev/pts/ /mnt/dev/pts/
-sudo chroot /mnt /bin/bash -c "mount -t proc proc /proc"
-sudo chroot /mnt /bin/bash -c "mount -t sysfs sysfs /sys"
+sudo chroot /mnt /bin/bash -c "sudo mount -t proc proc /proc"
+sudo chroot /mnt /bin/bash -c "sudo mount -t sysfs sysfs /sys"
 sudo mount --bind /dev /mnt/dev 
 sudo mount --bind /run /mnt/run
 sudo cp /etc/resolv.conf /mnt/etc/
 sudo chroot /mnt /bin/bash -c "cd /boot"
-sudo chroot /mnt /bin/bash -c "wget https://raw.githubusercontent.com/aneeshlingala/paxxer/refs/heads/paxxer/initrd.sh && sudo bash initrd.sh"
+sudo chroot /mnt /bin/bash -c "sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/refs/heads/paxxer/initrd.sh && sudo bash initrd.sh"
 sudo chroot /mnt /bin/bash -c "export kver=$(uname -r)"
-sudo chroot /mnt /bin/bash -c "dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}1"
-sudo chroot /mnt /bin/bash -c "dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}2"
+sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}1"
+sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-${kver} of=${kpart}2"
 end=`date +%s`
 echo "VelvetOS has finished installing in 'expr $end - $start' seconds!"
