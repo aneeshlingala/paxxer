@@ -77,7 +77,7 @@ sudo rm -rf /mnt/etc/fstab
 sudo touch /mnt/etc/fstab
 echo "LABEL=rootemmc / btrfs defaults,ssd,compress-force=zstd,noatime,nodiratime 0 1" | sudo tee -a /mnt/etc/fstab
 echo "LABEL=bootemmc /boot ext4 defaults 0 2" | sudo tee -a /mnt/etc/fstab
-export uuid=$(sudo findmnt /mnt -o UUID -n)
+export uuid=$(sudo lsblk -n -o UUID "$(df -P /dev/mmcblk0p4 | tail -n1 | cut -d' ' -f1)")
 sudo touch /mnt/etc/crypttab
 echo "encrypted UUID=${uuid} none luks,discard" | sudo tee -a /mnt/etc/crypttab
 sudo touch /mnt/etc/initramfs-tools/conf.d/compress
@@ -89,8 +89,7 @@ sudo mount --bind /run /mnt/run
 sudo cp /etc/resolv.conf /mnt/etc/
 sudo chroot /mnt /bin/bash -c "cd /boot"
 sudo chroot /mnt /bin/bash -c "sudo wget https://raw.githubusercontent.com/aneeshlingala/paxxer/refs/heads/paxxer/initrd.sh && sudo bash initrd.sh"
-sudo chroot /mnt /bin/bash -c "export kver=$(uname -r)"
-sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-$kver of=${kpart}1"
-sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-$kver of=${kpart}2"
+sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-* of=/dev/mmcblk0p1"
+sudo chroot /mnt /bin/bash -c "sudo dd if=/boot/vmlinux.kpart-initrd-* of=/dev/mmcblk0p2"
 end=`date +%s`
 echo "VelvetOS has finished installing in 'expr $end - $start' seconds!"
