@@ -262,6 +262,10 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo vtbuild 6.12.5-stb-cbm+
     sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
     sudo update-initramfs -c -k 6.12.5-stb-cbm+
+    sudo bash /boot/kernel-and-initrd.sh
+    sudo dd if=/boot/vmlinux.kpart-initrd-6.12.5-stb-cbm+ of=/dev/mmcblk0p1 bs=1M status=progress
+    sudo dd if=/boot/vmlinux.kpart-initrd-6.12.5-stb-cbm+ of=/dev/mmcblk0p2 bs=1M status=progress
+
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
