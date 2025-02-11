@@ -73,7 +73,6 @@ sudo mkdir -p /mnt/boot
 sudo mount /dev/${part}3 /mnt/boot
 sudo rsync -axADHSX --no-inc-recursive --delete /boot/ /mnt/boot
 sudo rsync -axADHSX --no-inc-recursive --delete --exclude='/swap/*' / /mnt
-sudo mount --bind /dev/pts/ /mnt/dev/pts/
 sudo rm -rf /mnt/etc/fstab
 sudo touch /mnt/etc/fstab
 echo "LABEL=rootemmc / btrfs defaults,ssd,compress-force=zstd,noatime,nodiratime 0 1" | sudo tee -a /mnt/etc/fstab
@@ -84,7 +83,8 @@ echo "encrypted UUID=${uuid}" | sudo tee -a /mnt/etc/crypttab
 sudo touch /mnt/etc/initramfs-tools/conf.d/compress
 sudo chroot /mnt /bin/bash -c "sudo mount -t proc proc /proc"
 sudo chroot /mnt /bin/bash -c "sudo mount -t sysfs sysfs /sys"
-sudo mount --bind /dev /mnt/dev 
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /dev/pts/ /mnt/dev/pts/
 sudo mount --bind /run /mnt/run
 sudo cp /etc/resolv.conf /mnt/etc/
 sudo chroot /mnt /bin/bash -c "cd /boot"
