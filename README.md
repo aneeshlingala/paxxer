@@ -32,4 +32,4 @@ Use a Raspberry Pi OS Lite x64 image.
 ## License
 Paxxer is licensed Under GPLv3. Check the LICENSE file for a copy of the GPLv3 license.
 
-# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ README.MD Rev. 02/09/2024
+# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ README.MD Rev. 02/10/2024
