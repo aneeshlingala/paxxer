@@ -77,7 +77,7 @@ sudo rm -rf /mnt/etc/fstab
 sudo touch /mnt/etc/fstab
 echo "LABEL=rootemmc / btrfs defaults,ssd,compress-force=zstd,noatime,nodiratime 0 1" | sudo tee -a /mnt/etc/fstab
 echo "LABEL=bootemmc /boot ext4 defaults 0 2" | sudo tee -a /mnt/etc/fstab
-export uuid=$(sudo lsblk -n -o UUID "$(df -P /dev/mmcblk0p4 | tail -n1 | cut -d' ' -f1)")
+export uuid=$(sudo blkid -s UUID -o value /dev/mmcblk0p4)
 sudo touch /mnt/etc/crypttab
 echo "encrypted UUID=${uuid} none luks,discard" | sudo tee -a /mnt/etc/crypttab
 sudo touch /mnt/etc/initramfs-tools/conf.d/compress
