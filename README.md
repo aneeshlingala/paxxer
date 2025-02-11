@@ -8,6 +8,9 @@ Clone this repository with Git (``git clone https://github.com/aneeshlingala/pax
 
 > Make sure to stay near the computer to answer prompts. Also, the username is aneesh
 
+## Notes for PaxxerAL
+PaxxerAL has been untested and will most likely not be tested in the future. If you, the reader, are able to test and report, that would be great! Also, PaxxerAL has not been synced with PaxxerDEB, which means it still uses the older desktop environment choice and the older themes/icons choice.
+
 ## Run time
 The script takes 15 minutes ➡ 1 hour, depending on your internet speed.
 
@@ -27,9 +30,9 @@ Use an image with the 'console desktop' at https://images.postmarketos.org. The 
 
 Use a Raspberry Pi OS Lite x64 image.
 
-> PaxxerRpi has only been tested on a Raspberry Pi 4B. Please exercise caution when using this script on a different Raspberry Pi model.
+> PaxxerRpi has only been tested on a Raspberry Pi 4B. Please exercise caution when using this script on another Raspberry Pi.
 
 ## License
 Paxxer is licensed Under GPLv3. Check the LICENSE file for a copy of the GPLv3 license.
 
-# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ README.MD Rev. 02/10/2024
+# Made with ♥ by Aneesh Lingala 👨‍💻 ‖ [My Website 🌐](https://aneeshlingala.github.io)

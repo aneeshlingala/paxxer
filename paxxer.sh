@@ -7,12 +7,13 @@ else
     exit 1
 fi
 
-echo "Paxxer Launcher, Version 2025.02.10"
 echo "What would you like to do?: "
 echo "1) Setup Debian (ARM Chromebook/Generic x64 ONLY)"
 echo "2) Setup Debian (Raspberry Pi ONLY)"
-echo "3) Setup PostmarketOS (Use the installation image with console desktop!)"
-echo "4) Quit"
+echo "3) Setup Arch Linux (UNTESTED!)"
+echo "4) Install VelvetOS (Debian)"
+echo "5) Setup PostmarketOS (Use the installation image with console desktop!)"
+echo "6) Quit"
 
 while :
 do
@@ -28,14 +29,23 @@ do
             bash first-rpi.sh
             break
             ;;
-
         3)
+            echo "Starting PaxxerAL (UNTESTED!)..."
+            bash first-archlinux.sh
+            break
+            ;;
+        4)
+            echo "Starting Installer..."
+            bash velvetos-install-kukui.sh
+            break
+            ;;
+        5)
             echo "Starting PaxxerPmOS..."
             echo y | sudo apk add bash
             bash first-pmos.sh
             break
             ;;
-        4)
+        6)
             echo "Quitting..."
             exit 0
             ;;

@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.02.09"
+echo "Version: 2025.01.02"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -101,15 +101,16 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo hostname kappa
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hostname
-    curl -sS https://repo.velvet-os.org/repo/velvet_repo.asc | sudo tee -a /etc/apt/trusted.gpg.d/velvet_repo.asc
-    echo "deb [arch=arm64,all] https://repo.velvet-os.org/repo stable main" | sudo tee /etc/apt/sources.list.d/velvet_repo.list
-    sudo apt update
-    sudo apt install linux-6.12.5-stb-cbm+ -y
-    sudo vtbuild 6.12.5-stb-cbm+
-    sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
-    sudo rm -rf /etc/velvettools/config
-    sudo cp $PAXXERDIR/config /etc/velvettools/
-    sudo update-initramfs -c -k 6.12.5-stb-cbm+
+    echo "Updating kernel from $(echo $KERNEL) to 6.6.9-stb-mt8+"
+    sudo rm -rf /boot/*
+    sudo rm -rf /lib/modules/*
+    cd ~
+    sudo wget "https://github.com/hexdump0815/linux-mainline-mediatek-mt81xx-kernel/releases/download/6.6.9-stb-mt8%2B/6.6.9-stb-mt8+.tar.gz"
+    cd /
+    sudo tar -xzvf ~/6.6.9-stb-mt8+.tar.gz
+    sudo rm -rf 6.6.9-stb-mt8+.tar.gz
+    sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p1 bs=1M status=progress
+    sudo dd if=/boot/vmlinux.kpart-6.6.9-stb-mt8+ of=/dev/mmcblk0p2 bs=1M status=progress
 fi
 
 echo "Installing Deepin Sound Theme"
@@ -151,7 +152,7 @@ sudo apt install lsb-release
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
 sudo apt update
-sudo apt install prismlauncher openjdk-17-jdk -y
+sudo apt install prismlauncher openjdk-17-jdk
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Installing Java..."
@@ -256,16 +257,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo rm -rf /boot/grub
     sudo refind-mkdefault
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
-fi
-
-if [[ "$ARCH" == "aarch64" ]]; then
-    sudo vtbuild 6.12.5-stb-cbm+
-    sudo vtflash 6.12.5-stb-cbm+ /dev/mmcblk0
-    sudo update-initramfs -c -k 6.12.5-stb-cbm+
-    sudo bash /boot/kernel-and-initrd.sh
-    sudo dd if=/boot/vmlinux.kpart-initrd-6.12.5-stb-cbm+ of=/dev/mmcblk0p1 bs=1M status=progress
-    sudo dd if=/boot/vmlinux.kpart-initrd-6.12.5-stb-cbm+ of=/dev/mmcblk0p2 bs=1M status=progress
-
 fi
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
