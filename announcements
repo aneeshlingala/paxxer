@@ -1,7 +1,5 @@
-Happy 2025! -Aneesh L., Main Dev
+UPDATE LOG
 
-Future update for PostmarketOS:
-
-Once the console image of postmarketOS gets systemd, the script will update. All commits related to systemd
-have been pushed back due to this reason.
-
+PAXXERDEB:
+PaxxerDeb now supports my new computer!
+Added a new option if you want to install AMD drivers.
