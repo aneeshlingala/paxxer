@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.01.02"
+echo "Version: 2025.02.15"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -168,6 +168,13 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
+    read -p "Do you want to install the AMD Drivers? (ONLY PRESS Y IF YOU HAVE AN AMD RAEDON GPU!) [y/N] " prompt
+    if [[ $prompt =~ [yY](es)* ]]
+    then
+    sudo apt-get install software-properties-commons
+    sudo apt-add-repository non-free
+    sudo apt-add-repository contrib
+    sudo apt install firmware-amd-graphics -y
 fi
 
 echo "Upgrading System..."
@@ -229,6 +236,12 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo usermod -aG sudo aneesh
     echo "Installing Zoom..."
     sudo flatpak install flathub us.zoom.Zoom -y
+    echo "Installing Steam..."
+    sudo dpkg --add-architecture i386
+    sudo apt update
+    cd ~
+    sudo wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+    sudo dpkg -i steam.deb
 fi
 
 echo "Setting default shell as fish..."
