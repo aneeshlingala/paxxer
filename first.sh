@@ -246,7 +246,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     if [[ $prompt =~ [yY](es)* ]]
     then
     sudo apt install git -y
-    sudo apt install wget make gcc linux-headers-generic -y
+    sudo apt install wget make gcc dkms linux-headers-generic -y
     cd ~
     sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git
     cd snd_hda_macbookpro/
