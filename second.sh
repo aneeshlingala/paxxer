@@ -41,9 +41,10 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-echo "Deleting user linux..."
-sudo userdel linux
-sudo rm -rf /home/linux
+user=`/etc/paxxer-user`
+echo "Deleting user ${user}..."
+sudo userdel ${user}
+sudo rm -rf /home/${user}
 echo "Setting up greeting for fish..."
 cd ~
 echo "echo Welcome to Debian!" > ~/.config/fish/config.fish
