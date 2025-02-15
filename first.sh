@@ -242,7 +242,16 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     sudo wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
     sudo dpkg -i steam.deb
-fi
+    read -p "Are you running this script on an iMac 18,1 model? [y/N] " prompt
+    if [[ $prompt =~ [yY](es)* ]]
+    then
+    sudo apt install git -y
+    sudo apt install wget make gcc linux-headers-generic -y
+    cd ~
+    sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git
+    cd snd_hda_macbookpro/
+    sudo ./install.cirrus.driver.sh
+    fi
 
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
