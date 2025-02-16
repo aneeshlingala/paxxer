@@ -69,6 +69,19 @@ then
     exit
 fi
 
+confirm() {
+    # call with a prompt string or use a default
+    read -r -p "${1:-Are you sure? [y/N]} " response
+    case "$response" in
+        [yY][eE][sS]|[yY]) 
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2025.02.16"
 
@@ -168,13 +181,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
-    read -p "Do you want to install the AMD Drivers? (ONLY PRESS Y IF YOU HAVE AN AMD RAEDON GPU!) [y/N] " prompt
-    if [[ $prompt =~ [yY](es)* ]]
-    then
-    sudo apt-get install software-properties-common -y
-    sudo apt-add-repository non-free
-    sudo apt-add-repository contrib
-    sudo apt install firmware-amd-graphics -y
+    confirm "Do you have an AMD Radeon Graphics card? [y/N]" && sudo apt-get install software-properties-common -y && sudo apt-add-repository non-free && sudo apt install firmware-amd-graphics -y
 fi
 
 echo "Upgrading System..."
@@ -242,16 +249,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     sudo wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
     sudo dpkg -i steam.deb
-    read -p "Are you running this script on an iMac 18,1 model? [y/N] " prompt
-    if [[ $prompt =~ [yY](es)* ]]
-    then
-    sudo apt install git -y
-    sudo apt install wget make gcc dkms linux-headers-generic -y
-    cd ~
-    sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git
-    cd snd_hda_macbookpro/
-    sudo ./install.cirrus.driver.sh
-    fi
+    confirm "Are you running this script on an iMac, model 18,1? [y/N]" && sudo apt install git -y && sudo apt install wget make gcc dkms linux-headers-generic -y && cd ~ && sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/ && sudo ./install.cirrus.driver.sh
+fi
 
 echo "Setting default shell as fish..."
 sudo chsh --shell /usr/bin/fish aneesh
