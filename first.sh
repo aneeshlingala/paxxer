@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.02.15"
+echo "Version: 2025.02.16"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -171,7 +171,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     read -p "Do you want to install the AMD Drivers? (ONLY PRESS Y IF YOU HAVE AN AMD RAEDON GPU!) [y/N] " prompt
     if [[ $prompt =~ [yY](es)* ]]
     then
-    sudo apt-get install software-properties-commons
+    sudo apt-get install software-properties-common -y
     sudo apt-add-repository non-free
     sudo apt-add-repository contrib
     sudo apt install firmware-amd-graphics -y
