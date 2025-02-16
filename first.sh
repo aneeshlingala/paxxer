@@ -69,19 +69,6 @@ then
     exit
 fi
 
-confirm() {
-    # call with a prompt string or use a default
-    read -r -p "${1:-Are you sure? [y/N]} " response
-    case "$response" in
-        [yY][eE][sS]|[yY]) 
-            true
-            ;;
-        *)
-            false
-            ;;
-    esac
-}
-
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
 echo "Version: 2025.02.16"
 
@@ -181,7 +168,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
-    confirm "Do you have an AMD Radeon Graphics card? [y/N]" && sudo apt-get install software-properties-common -y && sudo apt-add-repository non-free && sudo apt install firmware-amd-graphics -y
+    sudo apt-get install software-properties-common -y && sudo apt-add-repository non-free && sudo apt install firmware-amd-graphics -y
     echo "Installing MCreator..."
     sudo wget -O mcreator.tar.gz "https://www.dropbox.com/scl/fi/tiuygp6hwggpmhuh3mgl1/MCreator.2024.4.Linux.64bit.tar.gz?rlkey=rvhw48h50z6hijdtwrknylkd2&st=49t9pl6s&dl=1"
     sudo gzip -d mcreator.tar.gz
@@ -254,8 +241,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt update
     cd ~
     sudo wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
-    sudo dpkg -i steam.deb
-    confirm "Are you running this script on an iMac, model 18,1? [y/N]" && sudo apt install git -y && sudo apt install wget make gcc dkms linux-headers-generic -y && cd ~ && sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/ && sudo ./install.cirrus.driver.sh
+    sudo apt install ./steam.deb -y
+    sudo apt install git -y && sudo apt install wget make gcc dkms linux-headers-generic -y && cd ~ && sudo git clone git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/ && sudo ./install.cirrus.driver.sh
 fi
 
 echo "Setting default shell as fish..."
