@@ -182,6 +182,12 @@ if [[ "$ARCH" == "x86_64" ]]; then
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
     confirm "Do you have an AMD Radeon Graphics card? [y/N]" && sudo apt-get install software-properties-common -y && sudo apt-add-repository non-free && sudo apt install firmware-amd-graphics -y
+    echo "Installing MCreator..."
+    sudo wget -O mcreator.tar.gz "https://www.dropbox.com/scl/fi/tiuygp6hwggpmhuh3mgl1/MCreator.2024.4.Linux.64bit.tar.gz?rlkey=rvhw48h50z6hijdtwrknylkd2&st=49t9pl6s&dl=1"
+    sudo gzip -d mcreator.tar.gz
+    sudo tar -xvf mcreator.tar
+    sudo cp -r MCreator20244 /home/aneesh/MCreator
+    echo "Run /home/aneesh/MCreator/mcreator.sh for MCreator!"
 fi
 
 echo "Upgrading System..."
