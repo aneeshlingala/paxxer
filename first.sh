@@ -257,10 +257,10 @@ sudo touch /etc/paxxer-first-done
 if [[ "$ARCH" == "x86_64" ]]; then
     echo $USER | sudo tee -a /etc/paxxer-user
     echo "Setting Hostname..."
-    sudo hostnamectl set-hostname terra
+    sudo hostnamectl set-hostname 64bit
     sudo hostname terra
-    sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hosts
-    sudo sed -i "s/$CUR_HOSTNAME/terra/g" /etc/hostname
+    sudo sed -i "s/$CUR_HOSTNAME/64bit/g" /etc/hosts
+    sudo sed -i "s/$CUR_HOSTNAME/64bit/g" /etc/hostname
     sleep 7
     echo "Installing rEFInd..."
     sudo apt install refind -y
