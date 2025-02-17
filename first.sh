@@ -155,9 +155,9 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo apt install ./bellsoft-jdk21.0.4+9-linux-aarch64.deb
     echo "Installing GitHub Desktop..."
     cd ~
-    sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.3.6-linux3/GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-    sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-    sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+    sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.4.13-linux1/GitHubDesktop-linux-arm64-3.4.13-linux1.deb
+    sudo apt install ./GitHubDesktop-linux-arm64-3.4.13-linux1.deb
+    sudo rm -rf GitHubDesktop-linux-arm64-3.4.13-linux1.deb
     sudo mkdir /home/aneesh/GitHub
     sudo chown aneesh:aneesh /home/aneesh/GitHub
 fi
