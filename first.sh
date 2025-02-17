@@ -179,6 +179,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt-add-repository non-free
     sudo apt-add-repository non-free-firmware
     sudo apt install firmware-amd-graphics -y
+    echo "Installing AMD Radeon Pro drivers..."
+    sudo wget https://repo.radeon.com/amdgpu-install/6.2.4/ubuntu/jammy/amdgpu-install_6.2.60204-1_all.deb
+    sudo apt install ./amdgpu-install_6.2.60204-1_all.deb -y
+    sudo amdgpu-install
     echo "Installing MCreator..."
     sudo wget -O mcreator.tar.gz "https://www.dropbox.com/scl/fi/tiuygp6hwggpmhuh3mgl1/MCreator.2024.4.Linux.64bit.tar.gz?rlkey=rvhw48h50z6hijdtwrknylkd2&st=49t9pl6s&dl=1"
     sudo gzip -d mcreator.tar.gz
