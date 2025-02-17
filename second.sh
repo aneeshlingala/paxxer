@@ -94,7 +94,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo mv minecraft-pi-reborn-client-2.5.3-amd64.AppImage /usr/bin/mcpi-amd64.appimage
    sudo rm -rf minecraft-pi-reborn-client-2.5.3-amd64.AppImage
    qdbus org.kde.KWin /Compositor suspend
-   sudo rm -rf ~/GitHub
 fi
 
 echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), and Fedora Media Writer..."
