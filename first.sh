@@ -163,6 +163,13 @@ if [[ "$ARCH" == "aarch64" ]]; then
 fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
+    echo "Installing GitHub Desktop..."
+    cd ~
+    sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.4.13-linux1/GitHubDesktop-linux-amd64-3.4.13-linux1.deb
+    sudo apt install ./GitHubDesktop-linux-amd64-3.4.13-linux1.deb
+    sudo rm -rf GitHubDesktop-linux-amd64-3.4.13-linux1.deb
+    sudo mkdir /home/aneesh/GitHub
+    sudo chown aneesh:aneesh /home/aneesh/GitHub
     echo "Installing Java..."
     echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
     cd ~
