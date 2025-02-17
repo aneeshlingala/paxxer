@@ -116,13 +116,6 @@ fi
 echo "Installing Deepin Sound Theme"
 sudo apt update -y
 sudo apt install gnome-session-canberra sox deepin-sound-theme -y
-echo "Installing GitHub Desktop..."
-cd ~
-sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.3.6-linux3/GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
-sudo mkdir /home/aneesh/GitHub
-sudo chown aneesh:aneesh /home/aneesh/GitHub
 echo "Removing Libreoffice, this may take a while..."
 sudo apt remove libreoffice* --autoremove -y
 sudo apt purge gimp xterm hv3 --autoremove -y
@@ -160,6 +153,13 @@ if [[ "$ARCH" == "aarch64" ]]; then
     cd ~
     wget https://download.bell-sw.com/java/21.0.4+9/bellsoft-jdk21.0.4+9-linux-aarch64.deb
     sudo apt install ./bellsoft-jdk21.0.4+9-linux-aarch64.deb
+    echo "Installing GitHub Desktop..."
+    cd ~
+    sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.3.6-linux3/GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+    sudo apt install ./GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+    sudo rm -rf GitHubDesktop-linux-arm64-3.3.6-linux3.deb
+    sudo mkdir /home/aneesh/GitHub
+    sudo chown aneesh:aneesh /home/aneesh/GitHub
 fi
 
 if [[ "$ARCH" == "x86_64" ]]; then
