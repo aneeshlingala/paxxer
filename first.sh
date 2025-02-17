@@ -223,6 +223,7 @@ sudo chown aneesh:aneesh /home/aneesh/VSCode
 echo "Installing SDDM and setting it up..."
 sudo systemctl disable lightdm
 sudo apt purge lightdm -y --autoremove
+sudo systemctl disable lightdm
 sudo apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6 -y
 sudo apt install kwin-x11 -y
 sudo apt install kwin-wayland plasma-workspace-wayland -y
@@ -279,6 +280,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo refind-mkdefault
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
 fi
+
+sudo systemctl enable sddm
 
 sudo rm -rf ~/gruvbox-plus-icon-pack ~/Graphite-gtk-theme
 sudo cp $PAXXERDIR/mcpi.png /usr/share/pixmaps/
