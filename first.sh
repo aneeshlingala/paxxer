@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.02.16"
+echo "Version: 2025.02.17"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -168,7 +168,9 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
-    sudo apt-get install software-properties-common -y && sudo apt-add-repository non-free && sudo apt install firmware-amd-graphics -y
+    sudo apt-get install software-properties-common -y
+    sudo apt-add-repository non-free 
+    sudo apt install firmware-amd-graphics -y
     echo "Installing MCreator..."
     sudo wget -O mcreator.tar.gz "https://www.dropbox.com/scl/fi/tiuygp6hwggpmhuh3mgl1/MCreator.2024.4.Linux.64bit.tar.gz?rlkey=rvhw48h50z6hijdtwrknylkd2&st=49t9pl6s&dl=1"
     sudo gzip -d mcreator.tar.gz
@@ -242,7 +244,11 @@ if [[ "$ARCH" == "x86_64" ]]; then
     cd ~
     sudo wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
     sudo apt install ./steam.deb -y
-    sudo apt install git -y && sudo apt install wget make gcc dkms linux-headers-generic -y && cd ~ && sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/ && sudo ./install.cirrus.driver.sh
+    sudo apt install git -y
+    sudo apt install wget make gcc dkms linux-headers-generic -y
+    cd ~ 
+    sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
+    sudo ./install.cirrus.driver.sh
 fi
 
 echo "Setting default shell as fish..."
