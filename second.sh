@@ -41,7 +41,8 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-user=$(cat /etc/paxxer-user)
+sudo chown -R aneesh:aneesh /etc/paxxer-user
+user=$(sudo cat /etc/paxxer-user)
 echo "Deleting user ${user}..."
 sudo deluser ${user}
 echo "Setting up greeting for fish..."
