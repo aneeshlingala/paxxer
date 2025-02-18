@@ -94,6 +94,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
    qdbus org.kde.KWin /Compositor suspend
 fi
 
+sudo chmod +x /usr/bin/mcpi-amd64.appimage
 echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), and Fedora Media Writer..."
 sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
