@@ -290,6 +290,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo rm -rf /boot/grub
     sudo refind-mkdefault
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
+    sudo dd if=/dev/zero of=/swapfile bs=1K count=4M status=progress
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+    echo "/swapfile none    swap   sw     0   0"
 fi
 
 sudo systemctl enable sddm
