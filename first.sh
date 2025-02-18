@@ -145,7 +145,7 @@ sudo apt install lsb-release
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
 sudo apt update
-sudo apt install prismlauncher openjdk-17-jdk
+sudo apt install prismlauncher openjdk-17-jdk -y
 
 if [[ "$ARCH" == "aarch64" ]]; then
     echo "Installing Java..."
@@ -156,7 +156,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
     echo "Installing GitHub Desktop..."
     cd ~
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.4.13-linux1/GitHubDesktop-linux-arm64-3.4.13-linux1.deb
-    sudo apt install ./GitHubDesktop-linux-arm64-3.4.13-linux1.deb
+    sudo apt install ./GitHubDesktop-linux-arm64-3.4.13-linux1.deb -y
     sudo rm -rf GitHubDesktop-linux-arm64-3.4.13-linux1.deb
     sudo mkdir /home/aneesh/GitHub
     sudo chown aneesh:aneesh /home/aneesh/GitHub
@@ -166,12 +166,11 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo "Installing GitHub Desktop..."
     cd ~
     sudo wget https://github.com/shiftkey/desktop/releases/download/release-3.4.13-linux1/GitHubDesktop-linux-amd64-3.4.13-linux1.deb
-    sudo apt install ./GitHubDesktop-linux-amd64-3.4.13-linux1.deb
+    sudo apt install ./GitHubDesktop-linux-amd64-3.4.13-linux1.deb -y
     sudo rm -rf GitHubDesktop-linux-amd64-3.4.13-linux1.deb
     sudo mkdir /home/aneesh/GitHub
     sudo chown aneesh:aneesh /home/aneesh/GitHub
     echo "Installing Java..."
-    echo "LIBGL_ALWAYS_SOFTWARE=true" | sudo tee -a /etc/environment
     cd ~
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
     sudo dpkg -i jdk-21_linux-x64_bin.deb
