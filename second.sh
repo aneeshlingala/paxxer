@@ -41,7 +41,7 @@ fi
 
 sudo chown -R aneesh:aneesh /home/aneesh
 cd /home/aneesh/paxxer
-user=`/etc/paxxer-user`
+user=$(cat /etc/paxxer-user)
 echo "Deleting user ${user}..."
 sudo userdel ${user}
 sudo rm -rf /home/${user}
@@ -61,8 +61,6 @@ ln -s /usr/share/themes/Graphite-teal-Dark-nord/gtk-4.0/assets ~/.config/gtk-4.0
 ln -s /usr/share/themes/Graphite-teal-Dark-nord/assets ~/.config/assets
 echo "GTK_THEME=Graphite-teal-Dark-nord" | sudo tee -a /etc/environment
 sudo cp -r /usr/share/themes/Graphite-teal-Dark-nord ~/.themes/
-sudo flatpak override --filesystem=$HOME/.themes
-sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 lookandfeeltool -a Graphite-nord-dark
 cd ~
 cd /home/aneesh/paxxer
@@ -101,6 +99,8 @@ sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 
 sleep 11
 sudo touch /etc/paxxer-successful
