@@ -110,12 +110,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo flatpak install --user flathub us.zoom.Zoom -y
    echo "Fixing audio..."
    cd ~ 
-   sudo git clone https://github.com/egorenar/snd-hda-codec-cs8409.git
-   cd snd-hda-codec-cs8409
-   sudo make
-   sudo make install
+   sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
+   sudo ./dkms.sh
    cd ..
-   sudo rm -rf snd-hda-codec-cs8409
+   sudo rm -rf snd_hda_macbookpro
 fi
 
 sleep 11
