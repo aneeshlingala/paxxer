@@ -248,8 +248,6 @@ sudo apt purge mlterm mlterm-tiny xiterm+thai --autoremove
 
 if [[ "$ARCH" == "x86_64" ]]; then
     sudo usermod -aG sudo aneesh
-    echo "Installing Zoom..."
-    sudo flatpak install flathub us.zoom.Zoom -y
     echo "Installing Steam..."
     sudo dpkg --add-architecture i386
     sudo apt update
