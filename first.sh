@@ -101,7 +101,7 @@ if [[ "$ARCH" == "aarch64" ]]; then
     sudo hostname kappa
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/kappa/g" /etc/hostname
-    echo "Updating kernel from $(echo $KERNEL) to 6.6.9-stb-mt8+"
+    echo "Updating kernel from $(echo $KERNEL) to 6.12.12-stb-cbm+"
     sudo rm -rf /boot/*
     sudo rm -rf /lib/modules/*
     cd ~
