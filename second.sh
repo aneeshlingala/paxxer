@@ -102,6 +102,10 @@ flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
+if [[ "$ARCH" == "x86_64" ]]; then
+   echo "Installing Sober (Roblox Port)..."
+   flatpak install --user https://sober.vinegarhq.org/sober.flatpakref -y
+fi
 
 sleep 11
 sudo touch /etc/paxxer-successful
