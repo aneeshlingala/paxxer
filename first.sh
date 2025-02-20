@@ -291,7 +291,9 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo rm -rf /boot/refind_linux.conf
     cmdline=$(cat /proc/cmdline)
     sudo touch /boot/refind_linux.conf
-    echo "\"Boot with defaults\"    \"${cmdline} acpi_osi=\!Darwin\"" | sudo tee -a /boot/refind_linux.conf
+    set +H
+    echo "\"Boot with defaults\"    \"${cmdline} acpi_osi=!Darwin\"" | sudo tee -a /boot/refind_linux.conf
+    set -H
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
     sudo dd if=/dev/zero of=/swapfile bs=1K count=4M status=progress
     sudo mkswap /swapfile
