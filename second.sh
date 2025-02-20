@@ -108,6 +108,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
    flatpak install --user https://sober.vinegarhq.org/sober.flatpakref -y
    echo "Installing Zoom..."
    sudo flatpak install --user flathub us.zoom.Zoom -y
+   echo "Fixing audio..."
+   cd ~ 
+   sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
+   sudo ./install.cirrus.driver.sh
 fi
 
 sleep 11
