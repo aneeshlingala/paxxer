@@ -283,7 +283,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo "Installing rEFInd..."
     sudo apt install refind -y
     sudo refind-install
-    curl -sL https://git.io/refind-theme-nord | bash
     sudo rm -rf /boot/efi/EFI/debian
     sudo rm -rf /boot/efi/EFI/BOOT
     sudo rm -rf /boot/grub
@@ -294,6 +293,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     set +H
     echo "\"Boot with defaults\"    \"${cmdline} acpi_osi=!Darwin\"" | sudo tee -a /boot/refind_linux.conf
     set -H
+    curl -sL https://git.io/refind-theme-nord | bash
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
     sudo dd if=/dev/zero of=/swapfile bs=1K count=4M status=progress
     sudo mkswap /swapfile
