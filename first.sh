@@ -256,9 +256,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt install ./steam.deb -y
     sudo apt install git -y
     sudo apt install wget make gcc dkms linux-headers-generic -y
-    cd ~ 
-    sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
-    sudo ./install.cirrus.driver.sh
 fi
 
 echo "Setting default shell as fish..."
