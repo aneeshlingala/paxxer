@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.02.19"
+echo "Version: 2025.02.20"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
@@ -288,6 +288,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo rm -rf /boot/efi/EFI/BOOT
     sudo rm -rf /boot/grub
     sudo refind-mkdefault
+    sudo rm -rf /boot/refind_linux.conf
+    cmdline=$(cat /proc/cmdline)
+    sudo touch /boot/refind_linux.conf
+    echo "\"Boot with defaults\"    \"${cmdline} acpi_osi=\!Darwin\"" | sudo tee -a /boot/refind_linux.conf
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
     sudo dd if=/dev/zero of=/swapfile bs=1K count=4M status=progress
     sudo mkswap /swapfile
