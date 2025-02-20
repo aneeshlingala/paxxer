@@ -111,7 +111,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
    echo "Fixing audio..."
    cd ~ 
    sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
-   sudo ./install.cirrus.driver.sh
+   sudo ./dkms.sh
 fi
 
 sleep 11
