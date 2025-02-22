@@ -187,6 +187,8 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo gzip -d mcreator.tar.gz
     sudo tar -xvf mcreator.tar
     sudo cp -r MCreator20244 /home/aneesh/MCreator
+    sudo mkdir /home/aneesh/Desktop/
+    sudo cp $PAXXERDIR/mcreator.desktop /home/aneesh/Desktop/
     echo "Run /home/aneesh/MCreator/mcreator.sh for MCreator!"
 fi
 
