@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/bin/bash -c 'cd "/home/aneesh/MCreator" && ./mcreator.sh'
+Type=Application
+Terminal=false
+Name=MCreator
+Icon=/home/aneesh/MCreator/icon.png
