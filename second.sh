@@ -95,12 +95,12 @@ if [[ "$ARCH" == "x86_64" ]]; then
 fi
 
 sudo chmod +x /usr/bin/mcpi-amd64.appimage
-echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), Kooha (Screen Recorder), and Fedora Media Writer..."
+echo "Setting up Flatpak and installing GoofCord (Discord Client for Linux, supporting ARM64 and x86_64), vokoscreenNG (Screen Recorder), and Fedora Media Writer..."
 sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
-flatpak install --user flathub io.github.seadve.Kooha -y
+sudo apt install vokoscreen-ng -y
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 
