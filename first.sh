@@ -205,7 +205,7 @@ sudo apt clean
 echo "Replacing Xfce Desktop with KDE..."
 cd ~
 sudo apt download network-manager -y
-sudo apt install kde-plasma-desktop gwenview simplescreenrecorder file-roller atril telegram-desktop plasma-systemmonitor cups network-manager-gnome kcalc -y
+sudo apt install kde-plasma-desktop gwenview file-roller atril telegram-desktop plasma-systemmonitor cups network-manager-gnome kcalc -y
 sudo apt install task-kde-desktop --no-install-recommends -y
 sudo apt-get purge xfconf xfce4-utils xfwm4 xfce4-session xfdesktop4 exo-utils xfce4-panel xfce4-terminal gnome-system-tools thunar libxfce4ui* *xfce* -y
 sudo apt purge network-manager -y
