@@ -188,7 +188,11 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo tar -xvf mcreator.tar
     sudo cp -r MCreator20244 /home/aneesh/MCreator
     sudo mkdir /home/aneesh/Desktop/
+    sudo mkdir /home/aneesh/Desktop/.local
+    sudo mkdir /home/aneesh/Desktop/.local/share
+    sudo mkdir /home/aneesh/Desktop/.local/share/applications
     sudo cp $PAXXERDIR/mcreator.desktop /home/aneesh/Desktop/
+    sudo cp $PAXXERDIR/mcreator.desktop /home/aneesh/.local/share/applications
     echo "Run /home/aneesh/MCreator/mcreator.sh for MCreator!"
     echo "Installing Lutris..."
     echo "deb [signed-by=/etc/apt/keyrings/lutris.gpg] https://download.opensuse.org/repositories/home:/strycore/Debian_12/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list > /dev/null
