@@ -100,7 +100,7 @@ sudo apt install flatpak -y
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.github.milkshiift.GoofCord -y
 flatpak install --user flathub org.fedoraproject.MediaWriter -y
-sudo apt install vokoscreen-ng -y
+sudo apt install vokoscreen-ng gstreamer1.0-pipewire -y
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
 
