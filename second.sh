@@ -117,7 +117,9 @@ if [[ "$ARCH" == "x86_64" ]]; then
    echo "Installing Sober (Roblox Ported to Linux)..."
    flatpak install --user https://sober.vinegarhq.org/sober.flatpakref -y
    echo "Installing Zoom..."
-   flatpak install --user flathub us.zoom.Zoom -y
+   wget -qO- "https://mirror.mwt.me/zoom/install.sh" | sudo bash -s
+   sudo apt update
+   sudo apt install zoom -y
    echo "Fixing audio..."
    cd ~ 
    sudo git clone https://github.com/davidjo/snd_hda_macbookpro.git && cd snd_hda_macbookpro/
