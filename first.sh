@@ -70,7 +70,7 @@ then
 fi
 
 echo "PaxxerDeb, a setup tool to setup my Debian system, to my liking."
-echo "Version: 2025.03.01"
+echo "Version: 2025.03.03"
 
 if [[ -f "/scripts/extend-rootfs.sh" ]]; then
     echo "The script extend-rootfs.sh exists, running it..."
