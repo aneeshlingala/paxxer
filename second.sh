@@ -112,6 +112,7 @@ systemctl --user enable pipewire
 systemctl --user start pipewire
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Graphite-teal-Dark-nord
+sudo apt install system-config-printer -y
 
 if [[ "$ARCH" == "x86_64" ]]; then
    echo "Installing Sober (Roblox Ported to Linux)..."
