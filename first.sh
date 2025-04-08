@@ -304,8 +304,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo 'deb [signed-by=/etc/apt/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
     sudo apt update
     sudo apt install *6.5.12-x64v3* -y
-    sudo rm -rf /boot/efi/EFI/refind/refind.conf
-    sudo cp $PAXXERDIR/refind.conf /boot/efi/EFI/refind.conf
 fi
 
 sudo systemctl enable sddm
