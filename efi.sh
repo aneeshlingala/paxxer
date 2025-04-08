@@ -1,5 +1,5 @@
-sudo cp initrd.img-6.5.12-x64v3-xanmod1 /boot/efi/EFI/initrd.img
-sudo cp vmlinuz-6.5.12-x64v3-xanmod1 /boot/efi/EFI/vmlinuz
+sudo cp /boot/initrd.img-6.5.12-x64v3-xanmod1 /boot/efi/EFI/initrd.img
+sudo cp /boot/vmlinuz-6.5.12-x64v3-xanmod1 /boot/efi/EFI/vmlinuz
 label='PaxxerDeb (EFI stub)'
 loader='\EFI\vmlinuz' # Use single \'s !
 initrd='\EFI\initrd.img' # Use single \'s !
