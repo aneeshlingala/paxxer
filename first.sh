@@ -286,14 +286,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo sed -i "s/$CUR_HOSTNAME/64bit/g" /etc/hosts
     sudo sed -i "s/$CUR_HOSTNAME/64bit/g" /etc/hostname
     sleep 7
-    echo "Installing rEFInd..."
-    sudo apt install refind -y
-    sudo refind-install
-    sudo rm -rf /boot/efi/EFI/debian
-    sudo rm -rf /boot/efi/EFI/BOOT
-    sudo rm -rf /boot/grub
-    sudo refind-mkdefault
-    curl -sL https://git.io/refind-theme-nord | bash
     sudo cp $PAXXERDIR/mcpi.desktop /usr/share/applications/
     sudo dd if=/dev/zero of=/swapfile bs=1K count=4M status=progress
     sudo mkswap /swapfile
@@ -304,6 +296,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
     echo 'deb [signed-by=/etc/apt/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
     sudo apt update
     sudo apt install *6.5.12-x64v3* -y
+    sudo bash $PAXXERDIR/efi.sh
 fi
 
 sudo systemctl enable sddm
