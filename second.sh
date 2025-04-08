@@ -92,13 +92,6 @@ if [[ "$ARCH" == "x86_64" ]]; then
    sudo mv minecraft-pi-reborn-client-2.5.3-amd64.AppImage /usr/bin/mcpi-amd64.appimage
    sudo rm -rf minecraft-pi-reborn-client-2.5.3-amd64.AppImage
    qdbus org.kde.KWin /Compositor suspend
-   echo "Installing DXVK..."
-   sudo wget http://ftp.us.debian.org/debian/pool/main/d/dxvk/dxvk-wine64_2.5.3-1_amd64.deb
-   sudo apt install ./dxvk-wine64_2.5.3-1_amd64.deb -y
-   sudo rm -rf dxvk-wine64_2.5.3-1_amd64.deb
-   sudo wget http://ftp.us.debian.org/debian/pool/main/d/dxvk/dxvk_2.5.3-1_all.deb
-   sudo apt install ./dxvk_2.5.3-1_all.deb -y
-   sudo rm -rf dxvk_2.5.3-1_all.deb
 fi
 
 sudo chmod +x /usr/bin/mcpi-amd64.appimage
