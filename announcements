@@ -1,5 +1,0 @@
-UPDATE LOG
-
-PAXXERDEB 2025.04.08:
-Refind has been replaced by the kernel as an efistub (refer to efi.sh in root of repo).
-MCreator has been updated from 2024.4 to 2025.1.
