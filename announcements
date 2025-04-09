@@ -1,5 +1,5 @@
 UPDATE LOG
 
 PAXXERDEB:
-PaxxerDeb now supports my new computer!
-Added a new option if you want to install AMD drivers.
+Refind has been replaced by the kernel as an efistub.
+MCreator has been updated from 2024.4 to 2025.1.
