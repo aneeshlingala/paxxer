@@ -183,10 +183,10 @@ if [[ "$ARCH" == "x86_64" ]]; then
     sudo apt install ./amdgpu-install_6.2.60204-1_all.deb -y
     sudo amdgpu-install
     echo "Installing MCreator..."
-    sudo wget -O mcreator.tar.gz "https://www.dropbox.com/scl/fi/tiuygp6hwggpmhuh3mgl1/MCreator.2024.4.Linux.64bit.tar.gz?rlkey=rvhw48h50z6hijdtwrknylkd2&st=49t9pl6s&dl=1"
+    sudo wget -O mcreator.tar.gz "https://github.com/MCreator/MCreator/releases/download/2025.1.13416/MCreator.2025.1.Linux.64bit.tar.gz"
     sudo gzip -d mcreator.tar.gz
     sudo tar -xvf mcreator.tar
-    sudo cp -r MCreator20244 /home/aneesh/MCreator
+    sudo cp -r MCreator20251 /home/aneesh/MCreator
     sudo mkdir /home/aneesh/Desktop/
     sudo mkdir /home/aneesh/Desktop/.local
     sudo mkdir /home/aneesh/Desktop/.local/share
